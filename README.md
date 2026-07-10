@@ -30,7 +30,9 @@ never fabricate.** Agents are built and verified one at a time.
 | 15 | Final Report Agent | ✅ Built, sample-verified |
 | 16 | Planner Agent | ✅ Built, sample-verified |
 | 17 | Critic Agent | ✅ Built, sample-verified |
-| 18 | Supervisor Agent | ⏳ Not started |
+| 18 | Supervisor Agent | ✅ Built, sample-verified |
+
+**All 18 agents built and verified.**
 
 ## Architecture
 
@@ -62,6 +64,7 @@ career_copilot/
     final_report.py               # Agent 15 — synthesizes all 14 upstream agents' summaries
     planner.py                     # Agent 16 — orchestration layer; plans against AGENT_REGISTRY
     critic.py                       # Agent 17 — reviews agents 1-15's real outputs against AGENT_REGISTRY
+    supervisor.py                   # Agent 18 — top-level entry point; go/no-go verdict from Planner + Critic
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11, 12, 13, 14
@@ -84,6 +87,7 @@ outputs/
   final_report_sample_output.{json,md}             # verified sample output, agent 15 — the consolidated dashboard
   planner_sample_output.{json,md}                  # verified sample output, agent 16
   critic_sample_output.{json,md}                   # verified sample output, agent 17 — a real review of agents 1-15
+  supervisor_sample_output.{json,md}               # verified sample output, agent 18 — the final go/no-go verdict
 ```
 
 Every agent:
@@ -139,3 +143,10 @@ each agent's output shape.
   agent that doesn't exist or a dependency edge that isn't real — Planner
   Agent's sample plan had every `agent_id` and `depends_on` reference
   programmatically checked against the registry before being accepted.
+  Supervisor Agent (18) is the system's top-level entry point: it cross-checks
+  Planner's execution plan against what actually ran, cross-checks every
+  major/critical issue Critic found against a named, specific fix (never
+  marking something resolved on a general assurance), and renders a single
+  `quality_gate` / `final_deliverable_ready` verdict — while carrying forward
+  every limitation the other 17 agents raised, rather than letting the
+  verdict imply more confidence than the system actually earned.
