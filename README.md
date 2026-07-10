@@ -27,7 +27,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 12 | LinkedIn Optimization Agent | ✅ Built, sample-verified |
 | 13 | Application Assets Agent | ✅ Built, sample-verified |
 | 14 | Career Strategy Agent | ✅ Built, sample-verified |
-| 15 | Final Report Agent | ⏳ Not started |
+| 15 | Final Report Agent | ✅ Built, sample-verified |
 | 16 | Planner Agent | ⏳ Not started |
 | 17 | Critic Agent | ⏳ Not started |
 | 18 | Supervisor Agent | ⏳ Not started |
@@ -56,6 +56,7 @@ career_copilot/
     linkedin_optimization.py     # Agent 12
     application_assets.py        # Agent 13
     career_strategy.py           # Agent 14 — two-phase like Company Intelligence; synthesizes agents 6-10
+    final_report.py               # Agent 15 — synthesizes all 14 upstream agents' summaries
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11, 12, 13, 14
@@ -75,6 +76,7 @@ outputs/
   linkedin_optimization_sample_output.{json,md}    # verified sample output, agent 12
   application_assets_sample_output.{json,md}       # verified sample output, agent 13
   career_strategy_sample_output.{json,md}          # verified sample output, agent 14
+  final_report_sample_output.{json,md}             # verified sample output, agent 15 — the consolidated dashboard
 ```
 
 Every agent:

@@ -1,0 +1,119 @@
+{
+  "candidate_name": "Ananya Sharma",
+  "target_role": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "executive_summary": "Ananya Sharma is a strong, evidence-based candidate for the Senior Product Manager, Risk & Fraud role at Razorpay: 8 of 12 JD requirements are fully met, including the two hardest-to-fake ones (fraud/risk domain ownership and ML-product experience), and every quantified achievement on her resume (a 31% chargeback reduction, a 3-day-to-18-hour onboarding time cut) traces cleanly to real, verifiable resume text. The one substantive gap — no evidence of managing or mentoring other PMs, a JD Must-have — was independently flagged by six different agents across this analysis, which is the strongest possible signal that it's real and worth addressing directly rather than downstream noise. Recommendation: apply now with the optimized materials; treat closing the mentoring gap as the single highest-leverage action over the next 90 days.",
+  "resume_strengths": [
+    "Three headline, fully-quantified achievements in the current role: 3-day→18-hour onboarding cut, 31% chargeback reduction, 22% growth in weekly active merchants.",
+    "Direct, current-role domain match for fraud/risk in payments — confirmed independently by JD Intelligence, Gap Analysis, Skill Evidence, and Recruiter Simulation Agents as the single highest-signal thing on the resume.",
+    "Clean, unambiguous career trajectory (Associate PM → PM → Senior PM) with increasing scope.",
+    "Strong technical foundation (B.Tech CS, IIT Delhi) reinforced by a hands-on side project."
+  ],
+  "resume_weaknesses": [
+    "No evidence anywhere of managing or mentoring other PMs — the single most consistently flagged issue across this entire analysis.",
+    "SQL and Amplitude are listed as skills but never demonstrated in a bullet — an easy fix if real examples exist.",
+    "The earliest role (Zomato) uses generic, low-signal language ('worked on,' 'assisted with') that undersells whatever scope existed there.",
+    "Minor ATS formatting issues (em/en dash characters, an empty Certifications section) — low-severity but free to fix."
+  ],
+  "jd_match_analysis": "The JD screens hardest for domain-specific fluency in fraud/risk/compliance products, not just general PM seniority, and this is exactly where the resume is strongest. Gap Analysis found 8 of 12 requirements fully met with direct evidence, 2 partially evidenced (SQL claimed but undemonstrated; RBI covered but not PCI-DSS specifically, though the JD accepts either), 1 critical gap (PM mentoring), and 1 low-priority gap (certification, which the JD itself weights lightly). Skill Evidence Agent's independent, stricter evidence-strength grading reached a consistent picture — 5 skills HIGH confidence, 2 MEDIUM, 2 LOW, 2 NONE — with the same two weak spots surfacing again.",
+  "company_insights": "Razorpay is mid-IPO-prep (confidential DRHP filed with SEBI in 2026) while simultaneously making its biggest strategic pivot since launching RazorpayX — repositioning toward AI-native commerce via a new Agent Studio that lets AI agents transact autonomously on businesses' behalf. Both facts matter here: IPO-prep raises the bar on demonstrable risk-control rigor (which favors this candidate's quantified track record), and the agentic-payments push means the fraud surface this role owns is actively changing. Two company facts should be treated with some caution: an unreconciled revenue figure and forum-sourced (not official) engineering-culture commentary, both explicitly flagged rather than treated as settled.",
+  "ats_analysis": "82/100. Structure, parsing, and formatting are all clean — every risk identified is minor (em/en dash characters, an empty Certifications section) and easily fixed. The score is held back almost entirely by keyword coverage: 10 of 12 JD keywords are present, but SQL — a Must-have — is evidenced only as a bare skill listing with no demonstrating bullet, and the one missing critical keyword (PM mentoring) is a genuine content gap ATS optimization alone can't fix.",
+  "gap_analysis": "The headline finding across this entire analysis: 8 of 12 JD requirements are fully met, including the two requirements hardest to fake (fraud/risk domain ownership at ~4 years, double the JD's 2-year bar, and hands-on ML-product experience). There is exactly one critical gap — no evidence of managing or mentoring other PMs — and it is the single most consistently corroborated finding in this report, independently surfaced by six different agents using six different methods. Two minor/optional gaps exist (thin SQL evidence; PCI-DSS not specifically mentioned) but neither is disqualifying.",
+  "learning_roadmap": "A 5-competency plan sequenced by payoff: SQL and Amplitude first (weeks 1-4, using GoPractice and the official Amplitude Academy), a PCI-DSS overview and a written-communication memo exercise layered in alongside, and — critically — PM mentoring practice starting immediately and running 3-6 months in parallel, since it's the only gap that can't be accelerated by concentrated study. Total commitment: roughly 45-55 hours of concentrated work plus an ongoing mentoring relationship.",
+  "portfolio_recommendations": "Three domain-relevant projects, each tied to a specific evidence gap: a Merchant Risk Signal Dashboard (highest priority — closes both the SQL and Amplitude gaps using the JD's own 'pull your own data' language), an RBI/PCI-DSS Compliance-to-PRD Translator (turns the regulatory-depth gap into a demonstrable artifact), and a Public PRD Case Study reusing the real KYC redesign achievement. The PM mentoring and certification gaps were deliberately NOT turned into portfolio projects — a solo project can't simulate managing another person or substitute for a credential.",
+  "certification_roadmap": "Neither certification under consideration is recommended as a near-term priority. CSPO grades LOW ROI (attendance-based, not exam-rigorous, most valuable for career-switchers rather than an 8-year senior PM). Pragmatic Institute's program grades MEDIUM, with an explicit caveat that most available commentary on its value is promotional rather than independent. Both are outranked by the SQL and mentoring gaps, which the JD actually weighs as Must-haves — the JD itself states certifications are 'a bonus but not evaluated heavily.'",
+  "interview_preparation": "17 questions prepared across HR, behavioral, technical, product, and company-specific categories, all grounded in real resume content and current Razorpay context. Three of four behavioral questions have full, resume-backed STAR answers built on the KYC redesign and fraud scoring model achievements. The fourth — a direct question about PM mentoring — deliberately has no STAR answer, since none exists on the resume; this is flagged as the single highest-risk unprepared moment in the entire interview loop.",
+  "linkedin_optimization": "Headline and About both lead with domain ('Fraud & Risk @ Cashfree Payments') and the two headline metrics rather than generic seniority framing. The rewritten Skills list is evidence-honest: Fraud & Risk Management and Product Strategy lead since they're outcome-backed, SQL and Amplitude are included but kept out of the top 3 given thin evidence, and PM mentoring is excluded from the list entirely rather than ranked low, since there's zero evidence for it. Featured recommendations point at the two Portfolio Recommendation Agent projects (marked 'not yet built') plus a PRD case study reusing a real achievement.",
+  "application_assets": "All 6 core application assets are drafted — cover letter, recruiter outreach, LinkedIn connection request (237/300 characters, verified against the platform's real limit), referral request, follow-up email, and post-interview thank-you email — all grounded in the same verified resume facts. Nine bracketed placeholders remain across the six assets since this agent wasn't given real names, a referral relationship, or interview notes; these should be filled in with real specifics before sending, not left as-is.",
+  "final_readiness_dashboard": {
+    "metrics": [
+      {
+        "label": "ATS Compatibility Score",
+        "value": "82/100",
+        "status": "good"
+      },
+      {
+        "label": "JD Requirements Met",
+        "value": "8/12 fully, 2 partial",
+        "status": "good"
+      },
+      {
+        "label": "Critical Gaps Remaining",
+        "value": "1 (PM mentoring)",
+        "status": "warning"
+      },
+      {
+        "label": "Recruiter Screen Simulation",
+        "value": "Shortlist",
+        "status": "good"
+      },
+      {
+        "label": "Overall Role Fit",
+        "value": "Good Fit With Gaps",
+        "status": "warning"
+      },
+      {
+        "label": "Est. Market Compensation",
+        "value": "₹42L - ₹65L total comp",
+        "status": "good"
+      },
+      {
+        "label": "Interview Prep Coverage",
+        "value": "17 questions, 3/4 behavioral with STAR evidence",
+        "status": "good"
+      },
+      {
+        "label": "Application Assets Ready",
+        "value": "6/6 drafted, 9 placeholders to fill",
+        "status": "warning"
+      }
+    ],
+    "overall_readiness_summary": "Ready to apply now. Every readiness signal is positive except one, and it's the same one across the board: no evidence of PM mentoring experience. That single gap is well understood, has a concrete closing plan already in motion, and is not disqualifying on its own given how strong everything else is. Apply with the current materials; treat the mentoring gap as the top priority to close over the next quarter, not a blocker to submitting now.",
+    "overall_readiness_status": "good"
+  },
+  "prioritized_next_steps": [
+    {
+      "step": "Apply to the Razorpay Senior PM, Risk & Fraud role using the ATS-optimized resume and updated LinkedIn profile.",
+      "impact": "high",
+      "source_agent": "Resume Rewrite Agent / LinkedIn Optimization Agent / Career Strategy Agent"
+    },
+    {
+      "step": "Decide now how to handle the PM mentoring question in interviews — surface a real example if one exists, or prepare to address the gap honestly.",
+      "impact": "high",
+      "source_agent": "Interview Coach Agent / Career Strategy Agent"
+    },
+    {
+      "step": "Begin the SQL and Amplitude learning track and start volunteer PM mentoring practice in parallel.",
+      "impact": "high",
+      "source_agent": "Learning & Certification Agent / Career Strategy Agent"
+    },
+    {
+      "step": "Fill in the 9 bracketed placeholders in the application assets (names, referral relationship, application date) with real specifics before sending.",
+      "impact": "medium",
+      "source_agent": "Application Assets Agent"
+    },
+    {
+      "step": "Build the Merchant Risk Signal Dashboard portfolio project to convert the SQL/Amplitude evidence gap into demonstrated proof.",
+      "impact": "medium",
+      "source_agent": "Portfolio Recommendation Agent"
+    },
+    {
+      "step": "Do not pursue CSPO or Pragmatic Institute certifications as a near-term priority — redirect that time/budget to the higher-impact gaps above.",
+      "impact": "low",
+      "source_agent": "Learning & Certification Agent"
+    }
+  ],
+  "coherence_check": [
+    "ATS Optimization Agent's score (82/100, held back mainly by keyword coverage) is fully consistent with Gap Analysis Agent's finding (8/12 met) and Skill Evidence Agent's grading (5 HIGH / 2 MEDIUM / 2 LOW / 2 NONE) — all three independently point at the same two weak spots (SQL/Amplitude evidence, PM mentoring).",
+    "Recruiter Simulation Agent's 'Shortlist' recommendation is consistent with Career Strategy Agent's 'Good Fit With Gaps' role-fit assessment — both treat the mentoring gap as significant but not disqualifying.",
+    "The PM mentoring gap is the single most corroborated finding in this report, independently surfaced by six different agents (Gap Analysis, Skill Evidence, Recruiter Simulation, Interview Coach, LinkedIn Optimization, Career Strategy) using six different methods — strong signal the finding is real.",
+    "No contradictions were found across the 14 upstream summaries reviewed."
+  ],
+  "human_readable_summary": "# Final Report: Ananya Sharma → Senior Product Manager, Risk & Fraud @ Razorpay\n\n## Executive Summary\n8 of 12 JD requirements fully met, including the two hardest to fake. One real, heavily-corroborated gap: no PM mentoring evidence. Recommendation: apply now, close the mentoring gap over the next quarter.\n\n## Readiness Dashboard\n| Metric | Value | Status |\n|---|---|---|\n| ATS Score | 82/100 | Good |\n| JD Requirements Met | 8/12 fully, 2 partial | Good |\n| Critical Gaps | 1 (PM mentoring) | Warning |\n| Recruiter Screen | Shortlist | Good |\n| Role Fit | Good Fit With Gaps | Warning |\n| Est. Compensation | ₹42L–₹65L | Good |\n| Interview Prep | 17 questions ready | Good |\n| Application Assets | 6/6 drafted | Warning (9 placeholders) |\n\n**Overall: Ready to apply now.**\n\n## Top Priorities\n1. Apply with the optimized resume + LinkedIn profile\n2. Prepare an honest answer for the mentoring gap\n3. Start the SQL/Amplitude/mentoring tracks this month\n",
+  "report_confidence": "high",
+  "limitations": [
+    "This report synthesizes upstream agents' findings; it does not independently re-verify any of them. Any error in an upstream agent's analysis would carry through here unchanged.",
+    "The 'good' overall readiness status refers to readiness to apply, not to interview outcome or offer likelihood, which depend on factors outside this system's visibility.",
+    "Coherence checking here is a lightweight sanity pass across summaries, not the rigorous, scored validation the eventual Critic Agent (agent 17) is designed to perform."
+  ]
+}
