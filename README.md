@@ -20,7 +20,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 5 | Resume Rewrite Agent | ✅ Built, sample-verified |
 | 6 | Gap Analysis Agent | ✅ Built, sample-verified |
 | 7 | Skill Evidence Agent | ✅ Built, sample-verified |
-| 8 | Portfolio Recommendation Agent | ⏳ Not started |
+| 8 | Portfolio Recommendation Agent | ✅ Built, sample-verified |
 | 9 | Learning & Certification Agent | ⏳ Not started |
 | 10 | Recruiter Simulation Agent | ⏳ Not started |
 | 11 | Interview Coach Agent | ⏳ Not started |
@@ -49,7 +49,8 @@ career_copilot/
     resume_rewrite.py        # Agent 5
     gap_analysis.py           # Agent 6
     skill_evidence.py         # Agent 7
-  cli.py              # run a single agent from the command line
+    portfolio_recommendation.py  # Agent 8 — takes structured gaps, not a raw document
+  cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7
   sample_jd.txt        # fixture used to verify agents 2, 4, 5, 6, 7 (paired with sample_resume.txt's PM/fintech profile)
@@ -61,6 +62,7 @@ outputs/
   resume_rewrite_sample_output.{json,md}       # verified sample output, agent 5
   gap_analysis_sample_output.{json,md}         # verified sample output, agent 6
   skill_evidence_sample_output.{json,md}       # verified sample output, agent 7
+  portfolio_recommendation_sample_output.{json,md} # verified sample output, agent 8
 ```
 
 Every agent:
@@ -97,5 +99,13 @@ each agent's output shape.
   phases — a research call with Anthropic's server-side `web_search` tool,
   then a non-searching structuring call — so fabrication risk on real facts
   stays low and every claim can be traced to a cited source.
+- **Extraction vs. synthesis agents:** agents 1-7 take raw source text
+  (resume/JD) and re-derive their own findings independently — this keeps
+  them testable in isolation and lets a later Supervisor/Critic agent
+  cross-check their outputs for consistency rather than trusting one agent's
+  chain blindly. Agent 8 (Portfolio Recommendation) is the first pure
+  synthesis agent: it takes an already-identified list of gaps (typically
+  sourced from Gap Analysis / Skill Evidence) rather than re-reading the
+  resume, since its job is generative, not extractive.
 - **Reporting:** agents return JSON for machine consumption; the Final Report
   Agent (agent 15) is responsible for rendering the consolidated HTML dashboard.

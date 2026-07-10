@@ -1,7 +1,14 @@
-"""Run a single agent from the command line against a text file input.
+"""Run a single agent from the command line against one or more text files.
 
 Usage:
     python -m career_copilot.cli resume_analysis samples/sample_resume.txt
+    python -m career_copilot.cli gap_analysis samples/sample_resume.txt samples/sample_jd.txt
+
+Each agent declares how many file arguments it needs and which input field
+each one fills, in order — see AGENTS below. Agents whose input isn't
+"one or more documents" (e.g. portfolio_recommendation, which takes a
+structured list of gaps rather than a file) aren't reachable from this CLI;
+use the Python API directly for those (see README).
 
 Requires ANTHROPIC_API_KEY to be set (see README). Writes JSON output to
 stdout.
@@ -9,7 +16,6 @@ stdout.
 
 from __future__ import annotations
 
-import json
 import sys
 
 from career_copilot.agents.resume_analysis import ResumeAnalysisAgent, ResumeAnalysisInput
@@ -20,40 +26,51 @@ from career_copilot.agents.resume_rewrite import ResumeRewriteAgent, ResumeRewri
 from career_copilot.agents.gap_analysis import GapAnalysisAgent, GapAnalysisInput
 from career_copilot.agents.skill_evidence import SkillEvidenceAgent, SkillEvidenceInput
 
+# agent_key -> (agent_cls, input_cls, field_names)
+# field_names is an ordered tuple of input fields, one per file argument.
+# Fields not listed here (e.g. optional context fields) simply aren't set
+# from the CLI — use the Python API if you need them.
 AGENTS = {
-    "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, "resume_text"),
-    "jd_intelligence": (JDIntelligenceAgent, JDIntelligenceInput, "jd_text"),
-    # company_intelligence takes a plain company name, not a document — the input
-    # file's stripped content becomes company_name (see README for how to also
-    # pass target_role via the Python API instead of this CLI).
-    "company_intelligence": (CompanyIntelligenceAgent, CompanyIntelligenceInput, "company_name"),
-    # ats_optimization and resume_rewrite also accept an optional jd_text — only
-    # reachable via the Python API, not this single-file CLI.
-    "ats_optimization": (ATSOptimizationAgent, ATSOptimizationInput, "resume_text"),
-    "resume_rewrite": (ResumeRewriteAgent, ResumeRewriteInput, "resume_text"),
-    # gap_analysis and skill_evidence require both resume_text and jd_text — only
-    # reachable via the Python API, not this single-file CLI.
-    "gap_analysis": (GapAnalysisAgent, GapAnalysisInput, "resume_text"),
-    "skill_evidence": (SkillEvidenceAgent, SkillEvidenceInput, "resume_text"),
+    "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, ("resume_text",)),
+    "jd_intelligence": (JDIntelligenceAgent, JDIntelligenceInput, ("jd_text",)),
+    # company_intelligence takes a plain company name, not a document — the
+    # file's stripped content becomes company_name.
+    "company_intelligence": (CompanyIntelligenceAgent, CompanyIntelligenceInput, ("company_name",)),
+    "ats_optimization": (ATSOptimizationAgent, ATSOptimizationInput, ("resume_text", "jd_text")),
+    "resume_rewrite": (ResumeRewriteAgent, ResumeRewriteInput, ("resume_text", "jd_text")),
+    "gap_analysis": (GapAnalysisAgent, GapAnalysisInput, ("resume_text", "jd_text")),
+    "skill_evidence": (SkillEvidenceAgent, SkillEvidenceInput, ("resume_text", "jd_text")),
+    # portfolio_recommendation is intentionally absent: its required input
+    # (gaps_to_close, a list) isn't a document to read from a file.
 }
 
 
 def main() -> None:
-    if len(sys.argv) != 3:
-        print(f"Usage: python -m career_copilot.cli <{'|'.join(AGENTS)}> <input_file>", file=sys.stderr)
+    if len(sys.argv) < 3:
+        print(f"Usage: python -m career_copilot.cli <{'|'.join(AGENTS)}> <file1> [file2 ...]", file=sys.stderr)
         raise SystemExit(1)
 
-    agent_key, input_path = sys.argv[1], sys.argv[2]
+    agent_key, file_paths = sys.argv[1], sys.argv[2:]
     if agent_key not in AGENTS:
         print(f"Unknown agent '{agent_key}'. Choices: {', '.join(AGENTS)}", file=sys.stderr)
         raise SystemExit(1)
 
-    agent_cls, input_cls, text_field = AGENTS[agent_key]
-    with open(input_path, "r", encoding="utf-8") as f:
-        text = f.read()
+    agent_cls, input_cls, field_names = AGENTS[agent_key]
+    if len(file_paths) != len(field_names):
+        print(
+            f"'{agent_key}' needs {len(field_names)} file argument(s) ({', '.join(field_names)}), "
+            f"got {len(file_paths)}.",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
+
+    kwargs = {}
+    for field_name, path in zip(field_names, file_paths):
+        with open(path, "r", encoding="utf-8") as f:
+            kwargs[field_name] = f.read()
 
     agent = agent_cls()
-    result = agent.run(input_cls(**{text_field: text}))
+    result = agent.run(input_cls(**kwargs))
     print(result.model_dump_json(indent=2))
 
 
