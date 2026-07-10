@@ -77,3 +77,24 @@ class LLMClient:
                 return output_model.model_validate(block.input)
 
         raise LLMError(f"Model response did not include the expected '{tool_name}' tool call.")
+
+    def run_with_web_search(self, *, system: str, user: str, max_uses: int = 8) -> str:
+        """Call the model with Anthropic's server-side web_search tool enabled and
+        return its final text answer.
+
+        Used by agents that need to ground claims about the real world (e.g. Company
+        Intelligence) in current, citable sources instead of parametric knowledge —
+        the model decides when and what to search; the search itself runs server-side
+        within this single call. The returned text is meant to be fed into
+        run_structured() as a second pass to shape it into a schema, keeping "did we
+        research this" and "did we format this correctly" as separate concerns.
+        """
+        client = self._get_client()
+        response = client.messages.create(
+            model=self.model,
+            max_tokens=self.max_tokens,
+            system=system,
+            messages=[{"role": "user", "content": user}],
+            tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": max_uses}],
+        )
+        return "".join(block.text for block in response.content if getattr(block, "type", None) == "text")

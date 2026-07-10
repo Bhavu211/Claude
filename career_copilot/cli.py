@@ -14,10 +14,15 @@ import sys
 
 from career_copilot.agents.resume_analysis import ResumeAnalysisAgent, ResumeAnalysisInput
 from career_copilot.agents.jd_intelligence import JDIntelligenceAgent, JDIntelligenceInput
+from career_copilot.agents.company_intelligence import CompanyIntelligenceAgent, CompanyIntelligenceInput
 
 AGENTS = {
     "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, "resume_text"),
     "jd_intelligence": (JDIntelligenceAgent, JDIntelligenceInput, "jd_text"),
+    # company_intelligence takes a plain company name, not a document — the input
+    # file's stripped content becomes company_name (see README for how to also
+    # pass target_role via the Python API instead of this CLI).
+    "company_intelligence": (CompanyIntelligenceAgent, CompanyIntelligenceInput, "company_name"),
 }
 
 
