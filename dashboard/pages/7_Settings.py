@@ -21,6 +21,12 @@ st.subheader("API status")
 has_key = bool(os.environ.get("ANTHROPIC_API_KEY"))
 st.write("✅ `ANTHROPIC_API_KEY` is set — Live mode available." if has_key else "⚠️ `ANTHROPIC_API_KEY` is not set — only Demo mode will work.")
 
+has_passcode = bool(os.environ.get("LIVE_MODE_PASSCODE"))
+if has_passcode:
+    st.write("🔒 `LIVE_MODE_PASSCODE` is set — visitors must enter it before Live mode (billed calls) will run.")
+elif has_key:
+    st.write("🔓 No `LIVE_MODE_PASSCODE` set — anyone with this app's URL can trigger billed Live-mode runs.")
+
 st.subheader("Database")
 st.write(f"Dashboard DB: `{db.DEFAULT_DB_PATH}`")
 st.write(f"Pipeline run log: `career_copilot_runs.sqlite3`")
