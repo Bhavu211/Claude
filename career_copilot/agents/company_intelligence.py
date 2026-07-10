@@ -25,7 +25,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 
 from career_copilot.core.base_agent import BaseAgent
-from career_copilot.core.common import ConfidenceLevel
+from career_copilot.core.common import ConfidenceLevel, SourceRef
 
 # ---------------------------------------------------------------------------
 # Input
@@ -54,13 +54,6 @@ class NewsItem(BaseModel):
     date: Optional[str] = Field(default=None, description="As precise as the source allows, e.g. 'June 2026'")
     summary: str
     source: Optional[str] = None
-
-
-class SourceRef(BaseModel):
-    title: str
-    publisher: Optional[str] = None
-    date: Optional[str] = None
-    url: Optional[str] = None
 
 
 class CompanyIntelligenceOutput(BaseModel):

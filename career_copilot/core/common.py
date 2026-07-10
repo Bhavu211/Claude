@@ -6,6 +6,7 @@ the same enums with slightly different values.
 """
 
 from enum import Enum
+from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -43,6 +44,19 @@ class QualityIssue(BaseModel):
     location: str = Field(..., description="Where in the source document this occurs")
     severity: Severity
     recommendation: str = Field(..., description="Concrete fix, not a vague suggestion")
+
+
+class SourceRef(BaseModel):
+    """A citation for a claim grounded in external research (e.g. web search).
+
+    Used by any agent that runs a research phase, so a human (or the Critic
+    Agent) can trace a claim back to where it came from.
+    """
+
+    title: str
+    publisher: Optional[str] = None
+    date: Optional[str] = None
+    url: Optional[str] = None
 
 
 class SourcedClaim(BaseModel):

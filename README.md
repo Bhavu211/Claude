@@ -21,7 +21,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 6 | Gap Analysis Agent | ✅ Built, sample-verified |
 | 7 | Skill Evidence Agent | ✅ Built, sample-verified |
 | 8 | Portfolio Recommendation Agent | ✅ Built, sample-verified |
-| 9 | Learning & Certification Agent | ⏳ Not started |
+| 9 | Learning & Certification Agent | ✅ Built, sample-verified |
 | 10 | Recruiter Simulation Agent | ⏳ Not started |
 | 11 | Interview Coach Agent | ⏳ Not started |
 | 12 | LinkedIn Optimization Agent | ⏳ Not started |
@@ -50,6 +50,7 @@ career_copilot/
     gap_analysis.py           # Agent 6
     skill_evidence.py         # Agent 7
     portfolio_recommendation.py  # Agent 8 — takes structured gaps, not a raw document
+    learning_certification.py    # Agent 9 — two-phase like Company Intelligence
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7
@@ -63,6 +64,7 @@ outputs/
   gap_analysis_sample_output.{json,md}         # verified sample output, agent 6
   skill_evidence_sample_output.{json,md}       # verified sample output, agent 7
   portfolio_recommendation_sample_output.{json,md} # verified sample output, agent 8
+  learning_certification_sample_output.{json,md}   # verified sample output, agent 9
 ```
 
 Every agent:

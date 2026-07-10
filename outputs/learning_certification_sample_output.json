@@ -1,0 +1,239 @@
+{
+  "target_role": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "competency_plans": [
+    {
+      "skill": "SQL (claimed on resume, not demonstrated in a bullet)",
+      "why_it_matters": "The JD lists 'Strong SQL skills' as a Must-have, explicitly tied to self-service data pulls for prioritization decisions — this is the single most concretely-specified Must-have skill gap in the application.",
+      "learning_resources": [
+        {
+          "title": "SQL for Product Managers",
+          "resource_type": "course",
+          "source": "GoPractice",
+          "url": "https://gopractice.io/course/sql/",
+          "is_free": false
+        },
+        {
+          "title": "SQL for Product Managers",
+          "resource_type": "course",
+          "source": "SQL Habit",
+          "url": "https://www.sqlhabit.com/sql-for-product-managers",
+          "is_free": false
+        },
+        {
+          "title": "Learn Intermediate SQL for Marketers and Product Managers",
+          "resource_type": "course",
+          "source": "Codecademy",
+          "url": "https://www.codecademy.com/learn/sql-marketing",
+          "is_free": true
+        }
+      ],
+      "practice_plan": "Complete GoPractice's SQL Simulator using its marketplace dataset, then apply the same query patterns to a public fraud-adjacent dataset (e.g. the IEEE-CIS Fraud Detection dataset on Kaggle) to answer one real prioritization-style question end-to-end — this directly feeds the Merchant Risk Signal Dashboard portfolio project.",
+      "estimated_time": "15-20 hours over 3-4 weeks (course completion plus applied practice)",
+      "portfolio_project": "Merchant Risk Signal Dashboard — see Portfolio Recommendation Agent for the full project spec; this is the artifact where SQL practice becomes interview-ready evidence.",
+      "interview_questions": [
+        "Walk me through a SQL query you'd write to find which merchant cohort has the highest 30-day chargeback rate.",
+        "How would you decide which metric to pull first when prioritizing a fraud/risk roadmap with limited analyst bandwidth?",
+        "Tell me about a time a specific number you pulled yourself changed a product decision."
+      ]
+    },
+    {
+      "skill": "Amplitude / product analytics tool usage (claimed, not demonstrated)",
+      "why_it_matters": "The JD's Preferred Qualifications name Amplitude/Mixpanel exposure directly — the resume lists Amplitude as a skill but no bullet shows it driving an actual decision.",
+      "learning_resources": [
+        {
+          "title": "Amplitude Academy — Getting Started with Amplitude Analytics",
+          "resource_type": "course",
+          "source": "Amplitude (official, free)",
+          "url": "https://academy.amplitude.com/",
+          "is_free": true
+        },
+        {
+          "title": "Product Analytics Fundamentals",
+          "resource_type": "course",
+          "source": "Amplitude",
+          "url": "https://amplitude.com/product-analytics-fundamentals",
+          "is_free": true
+        }
+      ],
+      "practice_plan": "Use Amplitude's free demo/pre-loaded account to build one funnel analysis and one retention chart answering a fraud/risk-flavored question (e.g. 'where do merchants drop off during KYC'), then write a 2-3 sentence insight-to-decision writeup — the same discipline the SQL project applies, using Amplitude's UI instead of raw queries.",
+      "estimated_time": "5-8 hours (Amplitude Academy's free courses are short, self-paced)",
+      "portfolio_project": "Fold into the Merchant Risk Signal Dashboard project as the analytics-tool component alongside the SQL work, rather than a separate project.",
+      "interview_questions": [
+        "How would you use a tool like Amplitude to spot where merchants are dropping out of onboarding?",
+        "What's the difference between a funnel analysis and a retention analysis, and when would you use each?"
+      ]
+    },
+    {
+      "skill": "Regulatory translation depth (RBI, PCI-DSS specifics)",
+      "why_it_matters": "The JD requires 'demonstrated experience translating regulatory requirements into product requirements' as a Must-have. RBI experience is evidenced; PCI-DSS specifically is not mentioned anywhere on the resume.",
+      "learning_resources": [
+        {
+          "title": "Official Program, Training and Qualification resources",
+          "resource_type": "documentation",
+          "source": "PCI Security Standards Council (official)",
+          "url": "https://www.pcisecuritystandards.org/program_training_and_qualification/",
+          "is_free": true
+        },
+        {
+          "title": "PCI DSS Foundation Self-Paced Online Training Course",
+          "resource_type": "course",
+          "source": "GRC Solutions",
+          "url": "https://us.grcsolutions.io/product/pci-dss-foundation-self-paced-online-training-course",
+          "is_free": false
+        }
+      ],
+      "practice_plan": "Read the official PCI DSS overview (not a paid course first) to get the 12-requirement structure, then pick ONE requirement (e.g. cardholder data retention limits) and write a one-page mock product requirement translating it — directly reusable as the worked example for the RBI/PCI-DSS Compliance-to-PRD Translator portfolio project.",
+      "estimated_time": "6-10 hours for the overview plus one worked example",
+      "portfolio_project": "RBI/PCI-DSS Compliance-to-PRD Translator — see Portfolio Recommendation Agent for the full project spec.",
+      "interview_questions": [
+        "Walk me through how you'd translate a specific RBI or PCI-DSS requirement into a product spec.",
+        "How do you balance shipping speed against getting compliance sign-off on a risk-sensitive feature?"
+      ]
+    },
+    {
+      "skill": "PM mentoring / people leadership (no evidence on resume)",
+      "why_it_matters": "The JD lists 'experience managing or mentoring other PMs' as a Must-have — this is the single JD requirement with zero supporting evidence anywhere in the resume, per both Gap Analysis and Skill Evidence Agent findings.",
+      "learning_resources": [
+        {
+          "title": "Empowered: Ordinary People, Extraordinary Products",
+          "resource_type": "book",
+          "source": "Marty Cagan & Chris Jones",
+          "url": null,
+          "is_free": false
+        },
+        {
+          "title": "Aligned: Stakeholder Management for Product Leaders",
+          "resource_type": "book",
+          "source": "Bruce McCarthy & Melissa Appel",
+          "url": null,
+          "is_free": false
+        },
+        {
+          "title": "Find a Product Management mentor / become a mentor",
+          "resource_type": "practice_platform",
+          "source": "MentorCruise",
+          "url": "https://mentorcruise.com/filter/productmanagement/",
+          "is_free": false
+        }
+      ],
+      "practice_plan": "Volunteer as a mentor for 1-2 junior/associate PMs on a platform like MentorCruise or GrowthMentor for at least one quarter (roughly 1-2 hours/week); keep a short running log of specific coaching moments (a decision you helped someone reason through, feedback that changed their approach) to turn into resume bullets and interview stories once real experience accumulates. This is an experience gap, not a course gap — reading alone won't close it.",
+      "estimated_time": "3-6 months of ongoing, low-intensity mentoring to accumulate genuine, specific examples",
+      "portfolio_project": "Not a build project — this gap is explicitly excluded from Portfolio Recommendation Agent's project list (see its gaps_not_addressed) since a solo project cannot simulate managing another person.",
+      "interview_questions": [
+        "Tell me about a time you helped a less experienced PM think through a hard product decision.",
+        "How would you approach mentoring a junior PM on your team in their first 90 days?",
+        "What's a piece of difficult feedback you'd want to give a struggling PM, and how would you deliver it?"
+      ]
+    },
+    {
+      "skill": "Written communication for leadership audiences (evidenced but under-specified)",
+      "why_it_matters": "The JD calls out presenting the roadmap in quarterly business reviews specifically — the resume shows PRD-writing responsibility but no evidence of presenting to leadership.",
+      "learning_resources": [
+        {
+          "title": "Working Backwards: Insights, Stories, and Secrets from Inside Amazon",
+          "resource_type": "book",
+          "source": "Colin Bryar & Bill Carr",
+          "url": null,
+          "is_free": false
+        }
+      ],
+      "practice_plan": "Write a 1-2 page narrative memo (in the press-release-plus-FAQ style described in 'Working Backwards') for the real KYC flow redesign already on the resume — this doubles as the Public PRD Case Study portfolio project, so the practice IS the artifact.",
+      "estimated_time": "4-6 hours to draft and revise one memo",
+      "portfolio_project": "Public PRD Case Study: KYC Onboarding Redesign — see Portfolio Recommendation Agent for the full project spec.",
+      "interview_questions": [
+        "How would you structure a one-page update on the fraud/risk roadmap for a quarterly business review?",
+        "Tell me about a time you had to convince a skeptical stakeholder using data rather than opinion."
+      ]
+    }
+  ],
+  "certification_assessments": [
+    {
+      "certification": "CSPO (Certified Scrum Product Owner)",
+      "roi": "low",
+      "reasoning": "CSPO is awarded on course completion/instructor sign-off rather than a rigorous exam, and broader practitioner discussion (e.g. Hacker News threads on breaking into PM) treats certifications generally as a 'support tool,' not a real differentiator — value is highest for people breaking into PM, not an 8-year senior PM. The JD itself explicitly states this category of certification is 'a bonus but not evaluated heavily.'",
+      "stronger_alternative": "The same ~$349-549 and ~20 hours would have far higher ROI closing the SQL or PM-mentoring gaps instead, both of which are Must-haves in this specific JD — unlike CSPO, which addresses nothing the JD actually screens for.",
+      "estimated_cost": "$349-549 (per Scrum Alliance's published course pricing)",
+      "estimated_time": "~16-20 hours (2-3 day course)"
+    },
+    {
+      "certification": "Pragmatic Institute Certified Product Manager",
+      "roi": "medium",
+      "reasoning": "Pragmatic Institute's program has deeper curriculum and better market longevity than CSPO, and some hiring-side sources describe it as a credential employers name directly in job postings — but most of the supporting material found (PR wire releases, an 'Expert Consumers' award, the institute's own site) reads as promotional rather than independent evaluation, so this claim should be treated with some skepticism. As with CSPO, the target JD explicitly weights certifications low.",
+      "stronger_alternative": "If pursued, treat it as a mid-career refresher rather than a differentiator for this specific application — the regulatory-translation and mentoring gaps are higher-leverage uses of the same budget given what this JD actually screens for.",
+      "estimated_cost": null,
+      "estimated_time": null
+    }
+  ],
+  "overall_learning_roadmap": "Sequence by JD priority and time-to-payoff, not input order. First (weeks 1-4): SQL and Amplitude together — both are quick, both are Must-have/Preferred JD items, and both feed directly into the same Merchant Risk Signal Dashboard portfolio project, so building them together is efficient. Second (weeks 3-6, can overlap): the PCI-DSS overview and the written-communication memo exercise — both are single-artifact deliverables under 10 hours each. Third (ongoing, start immediately since it takes months to bear fruit): begin the PM mentoring practice in parallel with everything else, since it's the only gap that can't be accelerated by concentrated study — the earlier it starts, the more real examples will exist by the time an interview happens. Certifications are not recommended as a priority given the JD's own low weighting and the stronger alternatives available.",
+  "total_estimated_time": "~45-55 hours of concentrated learning/building over 4-6 weeks, plus an ongoing 3-6 month mentoring commitment running in parallel",
+  "sources": [
+    {
+      "title": "SQL course for Product Managers - Master Data Analytics",
+      "publisher": "GoPractice",
+      "date": null,
+      "url": "https://gopractice.io/course/sql/"
+    },
+    {
+      "title": "SQL for Product Managers",
+      "publisher": "SQL Habit",
+      "date": null,
+      "url": "https://www.sqlhabit.com/sql-for-product-managers"
+    },
+    {
+      "title": "Amplitude Academy",
+      "publisher": "Amplitude (official)",
+      "date": null,
+      "url": "https://academy.amplitude.com/"
+    },
+    {
+      "title": "Program, Training and Qualification",
+      "publisher": "PCI Security Standards Council (official)",
+      "date": null,
+      "url": "https://www.pcisecuritystandards.org/program_training_and_qualification/"
+    },
+    {
+      "title": "Do Product Management Certifications Really Matter to Employers?",
+      "publisher": "Product Leadership",
+      "date": null,
+      "url": "https://www.productleadership.com/blog/do-employers-value-product-management-certifications/"
+    },
+    {
+      "title": "Certified Scrum Product Owner (CSPO) Certification",
+      "publisher": "Scrum Alliance (official)",
+      "date": null,
+      "url": "https://www.scrumalliance.org/get-certified/product-owner-track/certified-scrum-product-owner"
+    },
+    {
+      "title": "Product Management Certification",
+      "publisher": "Pragmatic Institute (official)",
+      "date": null,
+      "url": "https://www.pragmaticinstitute.com/product/product-management-certification/"
+    },
+    {
+      "title": "Best Certified Product Manager Program (2025): Pragmatic Institute Awarded Top Credential by Expert Consumers",
+      "publisher": "PR Newswire",
+      "date": "2025",
+      "url": "https://www.prnewswire.com/news-releases/best-certified-product-manager-program-2025-pragmatic-institute-awarded-top-credential-by-expert-consumers-302584713.html"
+    },
+    {
+      "title": "Top product management books and resources for 2026",
+      "publisher": "Mind the Product",
+      "date": null,
+      "url": "https://www.mindtheproduct.com/top-books-and-resources-in-2026-for-product-managers/"
+    },
+    {
+      "title": "Book Briefing: 'Working Backwards' by Colin Bryar and Bill Carr",
+      "publisher": "Charter",
+      "date": null,
+      "url": "https://www.charterworks.com/book-briefing-working-backwards-by-colin-bryar-and-bill-carr/"
+    }
+  ],
+  "human_readable_summary": "## Learning & Certification Plan: Senior PM — Risk & Fraud @ Razorpay\n\n**5 competencies, sequenced by payoff.** Start with SQL and Amplitude (weeks 1-4) — both quick, both Must-have/Preferred JD items, and both feed the same portfolio project. Layer in the PCI-DSS overview and a written-communication memo exercise alongside. Start PM mentoring immediately and in parallel, since it's the only gap that takes months to build real evidence for — waiting to start it would waste the most valuable head start available.\n\n**Certifications: neither is recommended as a priority.** CSPO grades LOW ROI for this candidate specifically — it's attendance-based, not exam-rigorous, and most valuable for career-switchers rather than an 8-year senior PM. Pragmatic Institute's program grades MEDIUM, with an explicit caveat: most of what's written about its value online is promotional material (PR wires, the institute's own site), not independent evaluation. Both are outranked by the SQL and mentoring gaps, which the JD actually weighs as Must-haves.\n\n**Total commitment:** ~45-55 hours of concentrated work over 4-6 weeks, plus an ongoing 3-6 month mentoring relationship running in the background.\n",
+  "plan_confidence": "high",
+  "limitations": [
+    "Certification cost/time figures are based on publicly published pricing where found (CSPO); Pragmatic Institute's current price was not confirmed in research and is left blank rather than estimated.",
+    "Most available commentary on certification value skews promotional (vendor sites, PR wires); independent, skeptical evaluation was harder to find and this is flagged explicitly rather than treated as settled.",
+    "The PM mentoring practice plan assumes access to a mentoring platform or informal network; effectiveness depends on actually following through over months, which this agent cannot verify happened."
+  ]
+}
