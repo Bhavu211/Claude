@@ -16,6 +16,7 @@ from career_copilot.agents.resume_analysis import ResumeAnalysisAgent, ResumeAna
 from career_copilot.agents.jd_intelligence import JDIntelligenceAgent, JDIntelligenceInput
 from career_copilot.agents.company_intelligence import CompanyIntelligenceAgent, CompanyIntelligenceInput
 from career_copilot.agents.ats_optimization import ATSOptimizationAgent, ATSOptimizationInput
+from career_copilot.agents.resume_rewrite import ResumeRewriteAgent, ResumeRewriteInput
 
 AGENTS = {
     "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, "resume_text"),
@@ -24,9 +25,10 @@ AGENTS = {
     # file's stripped content becomes company_name (see README for how to also
     # pass target_role via the Python API instead of this CLI).
     "company_intelligence": (CompanyIntelligenceAgent, CompanyIntelligenceInput, "company_name"),
-    # ats_optimization also accepts an optional jd_text for keyword coverage scoring —
-    # only reachable via the Python API, not this single-file CLI.
+    # ats_optimization and resume_rewrite also accept an optional jd_text — only
+    # reachable via the Python API, not this single-file CLI.
     "ats_optimization": (ATSOptimizationAgent, ATSOptimizationInput, "resume_text"),
+    "resume_rewrite": (ResumeRewriteAgent, ResumeRewriteInput, "resume_text"),
 }
 
 

@@ -17,7 +17,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 2 | JD Intelligence Agent | ✅ Built, sample-verified |
 | 3 | Company Intelligence Agent | ✅ Built, sample-verified |
 | 4 | ATS Optimization Agent | ✅ Built, sample-verified |
-| 5 | Resume Rewrite Agent | ⏳ Not started |
+| 5 | Resume Rewrite Agent | ✅ Built, sample-verified |
 | 6 | Gap Analysis Agent | ⏳ Not started |
 | 7 | Skill Evidence Agent | ⏳ Not started |
 | 8 | Portfolio Recommendation Agent | ⏳ Not started |
@@ -46,15 +46,17 @@ career_copilot/
     jd_intelligence.py       # Agent 2
     company_intelligence.py  # Agent 3 — two-phase: web research, then structure
     ats_optimization.py      # Agent 4
+    resume_rewrite.py        # Agent 5
   cli.py              # run a single agent from the command line
 samples/
-  sample_resume.txt   # fixture used to verify agents 1 and 4
-  sample_jd.txt        # fixture used to verify agents 2 and 4 (paired with sample_resume.txt's PM/fintech profile)
+  sample_resume.txt   # fixture used to verify agents 1, 4, 5
+  sample_jd.txt        # fixture used to verify agents 2, 4, 5 (paired with sample_resume.txt's PM/fintech profile)
 outputs/
   resume_analysis_sample_output.{json,md}     # verified sample output, agent 1
   jd_intelligence_sample_output.{json,md}      # verified sample output, agent 2
   company_intelligence_sample_output.{json,md} # verified sample output, agent 3
   ats_optimization_sample_output.{json,md}     # verified sample output, agent 4
+  resume_rewrite_sample_output.{json,md}       # verified sample output, agent 5
 ```
 
 Every agent:
