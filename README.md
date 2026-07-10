@@ -65,6 +65,7 @@ career_copilot/
     planner.py                     # Agent 16 — orchestration layer; plans against AGENT_REGISTRY
     critic.py                       # Agent 17 — reviews agents 1-15's real outputs against AGENT_REGISTRY
     supervisor.py                   # Agent 18 — top-level entry point; go/no-go verdict from Planner + Critic
+  pipeline.py          # run_pipeline() — wires all 18 agents together in real dependency order
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11, 12, 13, 14
@@ -98,7 +99,36 @@ Every agent:
   recruiter, ATS expert, etc.) with an explicit non-fabrication rule.
 - Implements `build_user_prompt(data) -> str`.
 
-## Running an agent
+## Running the full pipeline
+
+`career_copilot/pipeline.py` is the real top-to-bottom entry point all 18
+agents were built to compose into. `run_pipeline()` runs Planner Agent to
+decide what's needed, executes every specialist agent the plan calls for in
+real dependency order (topologically sorted from `AGENT_REGISTRY`, not a
+hardcoded sequence), wires each agent's actual required fields from its
+dependencies' real structured output (e.g. Portfolio Recommendation's
+`gaps_to_close` comes from Gap Analysis's `critical_gaps`, not raw text),
+runs Final Report, then Critic, then Supervisor for the final verdict:
+
+```python
+from career_copilot.pipeline import run_pipeline, PipelineInput
+
+result = run_pipeline(PipelineInput(
+    candidate_name="...", target_role="...",
+    resume_text=open("samples/sample_resume.txt").read(),
+    jd_text=open("samples/sample_jd.txt").read(),
+    company_name="...",
+    user_goal="I want a tailored resume, a gap analysis, and interview prep.",
+))
+print(result.supervisor_output.quality_gate, result.supervisor_output.final_deliverable_ready)
+```
+
+This wiring was dry-run-verified (dependency order, inter-agent field
+mapping) by replaying the project's own validated `outputs/*_sample_output.json`
+fixtures through a monkeypatched `LLMClient` — no `ANTHROPIC_API_KEY` needed
+to confirm the plumbing is correct; a live run needs one.
+
+## Running a single agent
 
 ```bash
 pip install -r requirements.txt
