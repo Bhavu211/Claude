@@ -1,0 +1,88 @@
+{
+  "headline": {
+    "headline": "Senior Product Manager | Fraud & Risk @ Cashfree Payments | Cut chargebacks 31% & merchant onboarding time 3 days→ 18 hrs | Fintech, Payments, Trust & Safety",
+    "rationale": "Leads with the exact domain (fraud & risk in payments) the target JD screens hardest for, and front-loads the two most quotable metrics so they're visible in search results and notification previews without opening the profile."
+  },
+  "about": {
+    "about_text": "I'm a product manager who's spent the last four years living inside one of the hardest tensions in fintech: cutting fraud losses without slowing down legitimate merchants.\n\nAt Cashfree Payments, I own the risk and fraud detection roadmap — most recently leading a cross-functional team of 6 through a KYC flow redesign that cut merchant onboarding time from 3 days to 18 hours, and partnering with our data science team on a fraud scoring model that reduced chargeback rate by 31%. I work directly with compliance and legal on RBI regulatory requirements, because in payments, \"ship it\" and \"stay compliant\" have to happen in the same sentence.\n\nBefore Cashfree, I built product experience across two other high-growth Indian consumer platforms — Swiggy and Zomato — giving me a grounding in both B2B risk products and large-scale B2C marketplaces.\n\nCurrently exploring senior product roles where quantifiable risk/fraud impact and regulatory fluency matter — open to a conversation if that's what you're hiring for.",
+    "key_points_covered": [
+      "Domain expertise (fraud/risk in payments)",
+      "Two headline metrics (31% chargeback cut, 3-day→18-hour onboarding cut)",
+      "Regulatory/compliance collaboration",
+      "Career trajectory across recognizable companies",
+      "Soft signal of current openness to new roles"
+    ]
+  },
+  "experience_entries": [
+    {
+      "company": "Cashfree Payments",
+      "title": "Senior Product Manager",
+      "rewritten_description": "I own the merchant onboarding and risk/fraud detection roadmap for Cashfree's payment gateway.\n• Led a cross-functional team of 6 (engineering, design, data) through a KYC flow redesign, cutting merchant onboarding time from 3 days to 18 hours\n• Partnered with our data science team to ship a fraud scoring model, reducing chargeback rate by 31%\n• Launched a self-serve merchant dashboard, growing weekly active merchants by 22%\n• Work directly with compliance and legal on RBI regulatory requirements",
+      "source_evidence": "Cashfree Payments bullets in the source resume (KYC flow, fraud scoring model, dashboard, RBI compliance)."
+    },
+    {
+      "company": "Swiggy",
+      "title": "Product Manager",
+      "rewritten_description": "I managed the restaurant partner rating and feedback product and ran experimentation on the delivery partner app.\n• Drove A/B experiments that improved order acceptance rate by 9%\n• Coordinated a partner payout redesign across 4 engineering pods in two cities\n• Owned PRDs and backlog prioritization for the partner tools squad",
+      "source_evidence": "Swiggy bullets in the source resume."
+    },
+    {
+      "company": "Zomato",
+      "title": "Associate Product Manager",
+      "rewritten_description": "As an Associate PM on the search & discovery team, I partnered with senior PMs on user research and competitive analysis, and contributed to a redesign of the restaurant listing page.",
+      "source_evidence": "Zomato bullets in the source resume."
+    }
+  ],
+  "skills": {
+    "top_skills": [
+      "Fraud & Risk Management",
+      "Product Strategy",
+      "Cross-functional Leadership",
+      "A/B Testing & Experimentation",
+      "Regulatory Compliance (RBI)",
+      "Stakeholder Management",
+      "SQL",
+      "Product Analytics (Amplitude)"
+    ],
+    "rationale": "Fraud & Risk Management and Product Strategy lead since they're both JD-critical and backed by the strongest, most outcome-specific bullets on the resume (KYC redesign, fraud scoring model). SQL and Amplitude are included since they're genuinely part of the toolkit, but ranked near the bottom rather than the top three, since the resume lists them as skills without a demonstrating bullet — consistent with Skill Evidence Agent's LOW confidence grading. Mentoring/people management is deliberately excluded entirely, since the resume has zero evidence for it and including it would overstate the profile."
+  },
+  "featured_recommendations": [
+    {
+      "title": "Merchant Risk Signal Dashboard",
+      "content_type": "portfolio_project",
+      "description": "A self-serve SQL/analytics dashboard demonstrating fraud/chargeback cohort analysis — once built, pin this to directly evidence the SQL and Amplitude skills the resume currently only lists.",
+      "source": "From Portfolio Recommendation Agent (agent 8) — not yet built; recommended once completed."
+    },
+    {
+      "title": "RBI/PCI-DSS Compliance-to-PRD Translator",
+      "content_type": "portfolio_project",
+      "description": "A working tool translating regulatory text into draft product requirements — directly evidences regulatory-translation depth beyond the current resume bullet.",
+      "source": "From Portfolio Recommendation Agent (agent 8) — not yet built; recommended once completed."
+    },
+    {
+      "title": "KYC Onboarding Redesign — PRD Case Study",
+      "content_type": "article",
+      "description": "A published one-page PRD case study reusing the real, already-verified KYC flow redesign achievement (3 days → 18 hours), reframed as a leadership narrative.",
+      "source": "Reuses a real resume achievement already on Cashfree Payments; matches the 'Public PRD Case Study' project from Portfolio Recommendation Agent."
+    }
+  ],
+  "alignment_notes": [
+    "Headline and About both foreground fraud/risk domain ownership and the two headline metrics, directly answering the JD's Must-have for 2+ years owning a fraud/risk-adjacent product.",
+    "Skills list leads with Fraud & Risk Management and Product Strategy rather than generic PM skills, since those are what this specific JD screens hardest for.",
+    "About section explicitly names RBI regulatory collaboration since the JD calls out regulatory translation as a Must-have.",
+    "Featured recommendations point directly at closing the SQL/Amplitude evidence gap and the regulatory-depth gap the JD's own language emphasizes."
+  ],
+  "authenticity_check": [
+    "Headline and About do not claim any people-management or mentoring experience — the resume has zero evidence for this, and LinkedIn convention (implying seniority) makes it tempting to imply management scope the resume doesn't support. Deliberately avoided.",
+    "Skills list does not rank SQL or Amplitude in the top 3 despite their JD relevance, since the resume only lists them without a demonstrating bullet.",
+    "Featured recommendations for the two portfolio projects are explicitly marked 'not yet built' rather than presented as existing proof.",
+    "No specific compensation, availability date, or notice period is stated, since none of that is in the source resume."
+  ],
+  "human_readable_summary": "## LinkedIn Optimization: Ananya Sharma\n\n**Headline and About lead with domain, not seniority** — \"Fraud & Risk @ Cashfree Payments\" plus the two headline metrics (31% chargeback cut, 3-day→18-hour onboarding cut), which is exactly what this JD screens hardest for.\n\n**Skills list is evidence-honest:** Fraud & Risk Management and Product Strategy lead since they're outcome-backed; SQL and Amplitude are included but ranked near the bottom since the resume only lists them without a demonstrating bullet. People management is deliberately excluded entirely — the resume has zero evidence for it.\n\n**Featured section points at closing real gaps:** two Portfolio Recommendation Agent projects (SQL dashboard, compliance translator) are recommended once built, plus a PRD case study reusing an achievement already on the resume — all clearly marked as either aspirational or already-real, never blurred together.\n",
+  "optimization_confidence": "high",
+  "limitations": [
+    "Featured recommendations for the two Portfolio Recommendation Agent projects assume those projects get built — until then they're aspirational content, not existing proof.",
+    "LinkedIn's actual character limits and formatting may differ slightly from what's shown here; verify against LinkedIn's current editor before publishing.",
+    "This agent optimized presentation only — it did not independently re-verify any resume fact; any inaccuracy already in the resume would carry through to the profile."
+  ]
+}

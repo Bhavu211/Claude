@@ -1,0 +1,165 @@
+{
+  "company_name": "Razorpay",
+  "industry": "Fintech — payments infrastructure and business banking (payment gateway, neobanking, payroll, lending) for Indian businesses",
+  "products": [
+    {
+      "name": "Payment Gateway",
+      "description": "Core payment acceptance product across cards, UPI, netbanking, and wallets; ~55% share of India's online payment gateway market by merchant count (8M+ businesses)"
+    },
+    {
+      "name": "RazorpayX",
+      "description": "Business banking / neobanking suite: current accounts, automated payroll, corporate credit cards, and vendor payouts, used by 25,000+ businesses"
+    },
+    {
+      "name": "Razorpay Agent Studio / Agentic Experience Platform",
+      "description": "B2B marketplace and builder platform for deploying purpose-built AI agents (e.g. an Abandoned Cart Conversion Agent, a Dispute Responder Agent) for payments and commerce, built on Anthropic's Claude Agent SDK"
+    },
+    {
+      "name": "Agentic Payments",
+      "description": "Conversational/voice commerce features letting customers browse, decide, and pay without leaving a chat or voice interface; piloted with Zomato, PVR INOX, Vodafone Idea, Bluestone, and Honasa"
+    }
+  ],
+  "customers": [
+    "8 million+ businesses on the core payment gateway (by merchant count)",
+    "25,000+ businesses on RazorpayX neo-banking accounts",
+    "Enterprise pilot partners for agentic payments: Zomato, PVR INOX, Vodafone Idea, Bluestone, Honasa"
+  ],
+  "competitors": [
+    "PayU — enterprise/large-marketplace focus, deep banking relationships, strongest in international payment volume",
+    "Cashfree — best for vendor payouts and bulk disbursals; market-leading T+0 instant settlement",
+    "PhonePe — UPI transaction volume leader (45%+ UPI market share), weaker on cards/international"
+  ],
+  "revenue_model": "Primarily transaction-based (merchant discount rate on card and netbanking payments; UPI carries 0% MDR under the RBI cap), plus subscription and value-add revenue from RazorpayX banking, payroll, payouts, and lending/BNPL products. FY25 revenue was reported at ₹3,783 crore (~65% YoY growth) with gross profit of ₹1,277 crore (~41% growth); a separately reported 'Q2 FY26 adjusted revenue' figure did not reconcile with this and is not treated as reliable (see limitations).",
+  "ai_initiatives": [
+    "Razorpay Sprint 2026: over 100 product launches themed around AI-native payments and agentic business banking",
+    "Agent Studio: a B2B agent marketplace/builder platform built on Anthropic's Claude Agent SDK, with production agents including an Abandoned Cart Conversion Agent and a Dispute Responder Agent",
+    "Agentic Payments: AI-led conversational/voice commerce enabling assistants to complete purchases autonomously; piloted with Zomato, PVR INOX, Vodafone Idea, Bluestone, Honasa",
+    "Voice-first payments pilot with Gnani.ai and SuperU",
+    "Partnership with Replit embedding UPI-powered payments into AI-built apps"
+  ],
+  "product_strategy": "Expanding from a payments gateway into full-stack business banking (RazorpayX) and, most recently, into agentic/AI-native commerce — positioning the platform as infrastructure for AI agents to transact on a business's behalf, not just a checkout page. This is happening in parallel with active IPO preparation, which suggests a push toward visible revenue diversification beyond core MDR.",
+  "engineering_culture": "Described by the Head of Engineering as favoring a pragmatic, deliberately simple approach to the tech stack over over-engineering, with an emphasis on Kubernetes and scaling discipline; public tech-blog framing uses the phrase 'the best build the best.' New projects are reported to be built primarily in Go, with legacy PHP still present and under active migration. Employee-review-site commentary (Blind) describes the engineering culture positively, but that source is anecdotal rather than official.",
+  "product_culture": "Not documented as a distinct concept separate from engineering culture or general company values in the sources found; public messaging emphasizes ownership, experimentation, and cross-functional collaboration without a dedicated product-org culture statement.",
+  "leadership_principles": [
+    "Transparency",
+    "Challenging the status quo",
+    "Drive with autonomy",
+    "Agility with integrity",
+    "Execution with a customer-first mindset"
+  ],
+  "hiring_philosophy": "Public hiring messaging emphasizes cultural fit alongside technical qualification — curiosity, passion for learning, and bringing new perspectives — over matching a fixed checklist. The company describes trying to match what a candidate wants to work on to the role rather than only evaluating against a static requirement list, and expects hires to take ownership and act proactively rather than wait for direction.",
+  "tech_stack": [
+    "Go (all new projects, per the Head of Engineering)",
+    "PHP (legacy, under active migration)",
+    "Kubernetes"
+  ],
+  "recent_news": [
+    {
+      "headline": "Confidentially filed DRHP with SEBI for a India IPO",
+      "date": "~June 2026",
+      "summary": "Razorpay filed draft IPO papers targeting a listing by end of 2026, with shareholder approval reported for a large rupee-crore raise; exact deal size varies by source (see limitations).",
+      "source": "Business Today / Medianama, June 2026"
+    },
+    {
+      "headline": "Razorpay Sprint 2026 launched 100+ AI-native and agentic banking features",
+      "date": "Feb–Jun 2026",
+      "summary": "A sustained run of product announcements spanning AI agents for payments, banking-layer integration, and biometric authentication — including Agentic Payments on Claude (Feb 20), Biometric Passkey with Mastercard/Visa (Mar 31), Google Pay card payments (Apr 22), and RazorpayX connected banking (Jun 1).",
+      "source": "Razorpay Sprint 2026 site"
+    },
+    {
+      "headline": "Agent Studio and Agentic Experience Platform launched at FTX'26",
+      "date": "2026",
+      "summary": "New B2B marketplace/builder platform for deploying AI agents in payments and commerce, built on Anthropic's Claude Agent SDK.",
+      "source": "The Paypers"
+    }
+  ],
+  "funding_stage": "Late-stage / pre-IPO. Total funding raised is reported at ~$742M across 11 rounds, last valued at ~$9.2B (June 2025); the company confidentially filed IPO paperwork in 2026 targeting a listing by end of 2026.",
+  "future_direction": "Two parallel bets: (1) going public on Indian exchanges by end of 2026, and (2) repositioning from 'payment gateway' to 'AI-native commerce infrastructure' via Agent Studio and agentic payments — betting that AI agents transacting on behalf of users and businesses becomes a meaningful new payments surface, not just a support-chat feature.",
+  "application_implications": [
+    "Because the company is mid-IPO-prep, expect applications to be read with an eye toward operating rigorously under external scrutiny — quantified risk/fraud metrics (e.g. onboarding time cut from 3 days to 18 hours, a 31% chargeback reduction) map directly to what a pre-IPO fintech needs to show: tightening risk controls without hurting growth.",
+    "Razorpay's stated hiring philosophy (matching candidate interest to the role rather than pure checklist-matching) means the application should foreground genuine interest in the fraud/risk problem space specifically, not generic 'strong PM' positioning.",
+    "Given the company's heavy current investment in agentic/AI payment products, explicitly connecting any ML/data-science collaboration experience to Razorpay's AI direction would differentiate the application, even though the target JD itself doesn't require AI-specific experience."
+  ],
+  "interview_prep_implications": [
+    "Prepare to discuss fraud/risk metrics in investor-grade terms (loss rate vs. false-positive trade-offs) — this vocabulary shows up in both the company's public KPI framing and typical risk-PM interview loops here.",
+    "Be ready to discuss regulatory translation (RBI/PCI-DSS-style) concretely; this is plausibly heightened in importance given the company's active IPO filing and the resulting governance scrutiny.",
+    "Expect questions probing comfort with ambiguity and a flat structure — this echoes the company's own stated values ('challenging the status quo,' 'drive with autonomy').",
+    "Consider asking how the Risk & Fraud roadmap will interact with the new Agent Studio/agentic payments initiatives — fraud surface area likely changes once AI agents can transact autonomously, and a thoughtful question here signals research depth."
+  ],
+  "sources": [
+    {
+      "title": "Razorpay Statistics 2026: Revenue, Valuation and the Road to an India IPO",
+      "publisher": "coinlaw.io",
+      "date": "2026",
+      "url": "https://coinlaw.io/razorpay-statistics/"
+    },
+    {
+      "title": "Razorpay Financials 2026 – Revenue, P&L & Cash Flow",
+      "publisher": "Inc42",
+      "date": "2026",
+      "url": "https://inc42.com/company/razorpay/financials/"
+    },
+    {
+      "title": "Tech at Razorpay",
+      "publisher": "razorpay.com",
+      "date": null,
+      "url": "https://razorpay.com/tech/"
+    },
+    {
+      "title": "Scaling a Startup Successfully: The Tech Stack Behind RazorPay",
+      "publisher": "Medium / CTOtalk",
+      "date": null,
+      "url": "https://medium.com/blog-ctotalk-in/scaling-a-startup-successfully-the-tech-stack-behind-razorpay-2173285fd78d"
+    },
+    {
+      "title": "Razorpay Sprint 2026: The Age of AI-Native Payments",
+      "publisher": "razorpay.com",
+      "date": "2026",
+      "url": "https://razorpay.com/sprint/26"
+    },
+    {
+      "title": "Razorpay rolls out AI Agent Studio for payments",
+      "publisher": "The Paypers",
+      "date": "2026",
+      "url": "https://thepaypers.com/payments/news/razorpay-launches-ai-agent-studio-and-agentic-experience-platform"
+    },
+    {
+      "title": "Fintech Unicorn Razorpay files confidential DRHP to launch its IPO",
+      "publisher": "Business Today",
+      "date": "June 2026",
+      "url": "https://www.businesstoday.in/markets/ipo-corner/story/fintech-unicorn-razorpay-files-confidential-drhp-to-launch-its-ipo-check-details-537107-2026-06-16"
+    },
+    {
+      "title": "Razorpay gets shareholder nod for Rs 2,700 crore IPO",
+      "publisher": "Medianama",
+      "date": "May 2026",
+      "url": "https://www.medianama.com/2026/05/223-exclusive-razorpay-shareholder-approval-rs-2700-crore-ipo/"
+    },
+    {
+      "title": "Razorpay vs PayU vs Cashfree vs PhonePe",
+      "publisher": "Big Helpers",
+      "date": "2026",
+      "url": "https://bighelpers.in/insights/payment-gateway-india-2026/"
+    },
+    {
+      "title": "Razorpay Careers",
+      "publisher": "razorpay.com",
+      "date": null,
+      "url": "https://razorpay.com/careers/"
+    }
+  ],
+  "unverified_or_assumed": [
+    "Engineering culture described as 'quite good' is sourced from Blind (an anonymous employee forum), not an official Razorpay source — treated as anecdotal, not confirmed.",
+    "A third-party aggregator's claim of '58 tools and technologies' could not be corroborated with a specific list, so it was excluded from `tech_stack`; only Go, legacy PHP, and Kubernetes are included since those were attributed to a named Razorpay engineering leader.",
+    "Two revenue figures surfaced during research use different, unreconciled methodologies: FY25 revenue of ₹3,783 crore (~65% YoY growth) versus a separately reported 'Q2 FY26 adjusted revenue of ₹9,891 crore, 756% growth.' The basis for the second figure could not be confirmed, so it is not presented as a reliable data point.",
+    "IPO size estimates vary across sources (~$600M / ₹5,000-6,000 crore in some reports vs. a ₹2,700 crore shareholder-approval figure in another) — likely reflects different reporting stages or scope, but this was not confirmed.",
+    "'Product culture' as a concept distinct from engineering culture or general company values was not clearly documented in any source found; the description given blends general company-values messaging rather than a dedicated product-org statement."
+  ],
+  "human_readable_summary": "## Company Intelligence: Razorpay\n\n**Where the company is right now:** mid-IPO-prep (confidential DRHP filed with SEBI in 2026, targeting a listing by end of year) while simultaneously making its biggest strategic pivot since launching RazorpayX — repositioning from \"payment gateway\" to \"AI-native commerce infrastructure\" via a new Agent Studio built on Anthropic's Claude Agent SDK.\n\n**Why this matters for a Risk & Fraud PM application:** two forces are pulling in the same direction — an IPO raises the bar on demonstrable risk-control rigor, and the agentic-payments push means fraud surface area is actively changing as AI agents start transacting autonomously. A candidate who can speak to both quantified fraud/risk impact *and* how that changes when agents (not just humans) initiate payments will stand out.\n\n**Confidence caveat:** core facts (products, funding history, the AI/agentic push, competitive position) are well corroborated across multiple sources including Razorpay's own channels. Two things are NOT fully reliable: a conflicting \"adjusted revenue\" figure that doesn't reconcile with FY25 reported revenue, and engineering-culture color sourced from an anonymous forum rather than an official source. Both are flagged rather than blended in as fact.\n",
+  "research_confidence": "medium",
+  "limitations": [
+    "Two different 'revenue' figures for FY25/FY26 surfaced from different sources and could not be reconciled to one confirmed number — see `unverified_or_assumed`.",
+    "No official, primary-sourced description of a distinct 'product culture' (as opposed to engineering culture or general company values) was found.",
+    "Some funding/investor detail pages (e.g. PitchBook, Crunchbase) were not fully accessible during research, so investor-level funding detail may be incomplete."
+  ]
+}

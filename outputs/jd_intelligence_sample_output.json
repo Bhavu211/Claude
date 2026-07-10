@@ -1,0 +1,149 @@
+{
+  "role_title": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "seniority_level": "Senior",
+  "years_of_experience_required": "5+ years of product management experience, with at least 2 years owning a fraud, risk, trust & safety, or compliance-adjacent product",
+  "requirements": [
+    {
+      "requirement": "5+ years of product management experience",
+      "type": "experience",
+      "priority": "critical",
+      "evidence_text": "5+ years of product management experience, with at least 2 years owning a fraud, risk, trust & safety, or compliance-adjacent product",
+      "reasoning": "Listed under the 'Requirements' heading with a quantified minimum, not hedged with 'preferred' or 'nice to have' language."
+    },
+    {
+      "requirement": "At least 2 years owning a fraud/risk/trust & safety/compliance-adjacent product",
+      "type": "domain_expertise",
+      "priority": "critical",
+      "evidence_text": "5+ years of product management experience, with at least 2 years owning a fraud, risk, trust & safety, or compliance-adjacent product",
+      "reasoning": "Explicit minimum stated in the same Requirements bullet as years of experience; this is the domain-specificity bar, not generic PM tenure."
+    },
+    {
+      "requirement": "Hands-on experience shipping ML/scoring-model-backed products",
+      "type": "skill",
+      "priority": "critical",
+      "evidence_text": "Must have hands-on experience shipping products backed by ML/scoring models (you don't need to build the model, but you need to know how to work with one)",
+      "reasoning": "Explicit 'Must have' language under Requirements."
+    },
+    {
+      "requirement": "Strong SQL skills",
+      "type": "skill",
+      "priority": "critical",
+      "evidence_text": "Strong SQL skills — you will pull your own data for prioritization decisions",
+      "reasoning": "Listed under Requirements with no hedging; framed as needed for the day-to-day function, not a bonus."
+    },
+    {
+      "requirement": "Experience translating regulatory requirements (RBI, PCI-DSS) into product requirements",
+      "type": "domain_expertise",
+      "priority": "critical",
+      "evidence_text": "Demonstrated experience translating regulatory requirements (RBI, PCI-DSS, or equivalent) into product requirements",
+      "reasoning": "'Demonstrated experience' under the Requirements heading, and reinforced by a dedicated responsibility bullet about compliance/legal work."
+    },
+    {
+      "requirement": "Experience managing or mentoring other PMs",
+      "type": "leadership",
+      "priority": "critical",
+      "evidence_text": "Experience managing or mentoring other PMs",
+      "reasoning": "Listed under Requirements without hedging, and reinforced by the 'Mentor 1-2 junior PMs' responsibility bullet."
+    },
+    {
+      "requirement": "Excellent written communication (PRDs, leadership presentations)",
+      "type": "skill",
+      "priority": "critical",
+      "evidence_text": "Excellent written communication — you will write PRDs and present to leadership regularly",
+      "reasoning": "Listed under Requirements heading."
+    },
+    {
+      "requirement": "Prior experience at a payments company, bank, or fintech",
+      "type": "domain_expertise",
+      "priority": "important",
+      "evidence_text": "Prior experience at a payments company, bank, or fintech",
+      "reasoning": "Listed under 'Preferred qualifications', one tier below Requirements."
+    },
+    {
+      "requirement": "Familiarity with A/B testing platforms and experimentation culture",
+      "type": "skill",
+      "priority": "important",
+      "evidence_text": "Familiarity with A/B testing platforms and experimentation culture",
+      "reasoning": "Listed under 'Preferred qualifications'."
+    },
+    {
+      "requirement": "Exposure to Amplitude, Mixpanel, or similar product analytics tools",
+      "type": "tool",
+      "priority": "important",
+      "evidence_text": "Exposure to Amplitude, Mixpanel, or similar product analytics tools",
+      "reasoning": "Listed under 'Preferred qualifications'."
+    },
+    {
+      "requirement": "Technical background (CS degree or engineering experience)",
+      "type": "skill",
+      "priority": "nice_to_have",
+      "evidence_text": "Technical background (CS degree or engineering experience) — a plus, not required",
+      "reasoning": "Explicitly labeled 'a plus, not required' under the 'Nice to have' heading."
+    },
+    {
+      "requirement": "Product management certification (CSPO, Pragmatic Institute, etc.)",
+      "type": "certification",
+      "priority": "nice_to_have",
+      "evidence_text": "Certification in product management (CSPO, Pragmatic Institute, etc.) is a bonus but not evaluated heavily",
+      "reasoning": "Explicitly described as a bonus that is 'not evaluated heavily' under 'Nice to have'."
+    }
+  ],
+  "responsibilities": [
+    "Own the end-to-end roadmap for merchant risk scoring and fraud detection products",
+    "Partner with data science and engineering to ship and iterate on ML-based risk models",
+    "Define and track KPIs: fraud loss rate, false positive rate, merchant onboarding time, dispute resolution TAT",
+    "Work directly with Compliance and Legal to ensure product decisions hold up under RBI and PCI-DSS scrutiny",
+    "Write PRDs, run sprint planning with a pod of 5-6 engineers, and represent the risk roadmap in quarterly business reviews",
+    "Mentor 1-2 junior PMs on the broader Payments product team"
+  ],
+  "kpis": [
+    "Fraud loss rate trending down quarter over quarter",
+    "False positive rate held steady or improved even as fraud loss decreases",
+    "Merchant onboarding time / onboarding friction stays low as risk controls tighten",
+    "Dispute resolution turnaround time (TAT)"
+  ],
+  "hidden_expectations": [
+    {
+      "expectation": "High tolerance for ambiguity and self-direction — expected to start moving without a fully-formed spec",
+      "signal_text": "You thrive in ambiguity and don't need a fully-formed spec to start moving.",
+      "confidence": "high"
+    },
+    {
+      "expectation": "Willingness to take on generalist, outside-the-lane work, especially in the first six months",
+      "signal_text": "you'll wear a lot of hats in the first six months",
+      "confidence": "high"
+    },
+    {
+      "expectation": "Comfort operating in a flat structure without a fixed hierarchy of seniority",
+      "signal_text": "You're comfortable being the most senior person in the room on some days and the most junior on others — this is a flat team",
+      "confidence": "medium"
+    },
+    {
+      "expectation": "Must be excited by a role whose scope will keep changing rather than settle into a fixed job description",
+      "signal_text": "We're a fast-growing company, so this role will evolve; the person who takes it should be excited by that, not unsettled by it.",
+      "confidence": "high"
+    },
+    {
+      "expectation": "Success is measured partly on cross-functional trust (compliance, data science, engineering), not just shipped features",
+      "signal_text": "Cross-functional stakeholders (compliance, data science, engineering) see you as the person who translates ambiguity into a shippable plan",
+      "confidence": "medium"
+    }
+  ],
+  "recruiter_intent": "Razorpay is hiring a PM who can independently own a high-stakes, regulator-facing product area (fraud/risk) without heavy hand-holding, and who already speaks the language of both data science (ML-backed scoring models) and compliance (RBI/PCI-DSS) well enough to translate between them. The 'Must have' language is concentrated on domain-specific fluency (ML products, regulatory translation) rather than generic PM tenure, and the role also expects the hire to absorb light people-leadership duties (mentoring 1-2 junior PMs) on top of their own roadmap. A generalist PM who meets the '5+ years' bar but lacks fraud/risk/compliance exposure would likely be screened out despite meeting the headline experience requirement.",
+  "hiring_priorities": [
+    "Proven ownership of a fraud, risk, trust & safety, or compliance-adjacent product — not just generic PM experience",
+    "Hands-on comfort working with ML/scoring-model-backed products",
+    "Ability to translate regulatory requirements (RBI, PCI-DSS) into product decisions",
+    "Strong SQL/data fluency for self-service prioritization",
+    "People-leadership signal (mentoring other PMs) as a secondary but explicit requirement",
+    "Cultural fit for ambiguity, a flat team structure, and a role that will keep evolving"
+  ],
+  "human_readable_summary": "## JD Intelligence: Senior Product Manager — Risk & Fraud @ Razorpay\n\n**What this role is really screening for:** domain-specific fluency in fraud/risk/compliance products, not just PM seniority. Three of the seven critical requirements are about proven exposure to this exact problem space (fraud/risk ownership, ML-backed products, RBI/PCI-DSS translation) — a strong generalist PM without that background is likely to be screened out even with 5+ years of experience.\n\n**Explicit bar:** 5+ years of PM experience with 2+ years specifically owning fraud/risk/trust & safety/compliance-adjacent products, hands-on ML-product experience, strong SQL, regulatory-translation experience, PM mentoring experience, and strong written communication — all listed as \"Requirements,\" not preferences.\n\n**Soft signals worth prepping for:** the JD repeatedly signals a fast-changing, flat, ambiguous environment (\"wear a lot of hats,\" \"thrive in ambiguity,\" \"this role will evolve\"). Interview prep should include concrete stories of operating without a full spec and adapting scope quickly.\n\n**Nice-to-haves that don't matter much:** a technical/CS background and PM certifications are explicitly flagged as low-weight (\"a plus, not required\" / \"not evaluated heavily\") — not worth over-indexing on in an application.\n",
+  "analysis_confidence": "high",
+  "limitations": [
+    "Compensation is stated only as 'competitive, based on experience' with no range given, so nothing about pay expectations can be determined from this JD.",
+    "Team size is only partially stated ('a pod of 5-6 engineers' the PM works with); the broader org structure and reporting line are not described.",
+    "Soft requirements like 'excellent written communication' are stated without concrete evaluation criteria (e.g. writing sample, case study format), so how they'll actually be assessed in the interview process is unclear from the JD alone."
+  ]
+}

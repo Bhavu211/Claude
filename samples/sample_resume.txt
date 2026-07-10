@@ -1,0 +1,48 @@
+Ananya Sharma
+Bengaluru, India | ananya.sharma.pm@gmail.com | +91-98765-43210 | linkedin.com/in/ananyasharma-pm
+
+SUMMARY
+Product manager with experience building consumer and fintech products. Passionate about
+solving user problems and working with cross-functional teams.
+
+WORK EXPERIENCE
+
+Senior Product Manager — Cashfree Payments, Bengaluru
+June 2022 – Present
+- Owned the merchant onboarding product line for Cashfree's payment gateway
+- Led a cross-functional team of 6 (engineering, design, data) to launch a revamped KYC flow,
+  reducing merchant onboarding time from 3 days to 18 hours
+- Responsible for the roadmap of the risk and fraud detection product area
+- Worked closely with compliance and legal teams on RBI regulatory requirements
+- Launched a self-serve merchant dashboard that increased weekly active merchants by 22%
+- Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%
+
+Product Manager — Swiggy, Bengaluru
+July 2020 – May 2022
+- Managed the restaurant partner rating and feedback product
+- Helped improve partner satisfaction scores
+- Drove A/B experiments on the delivery partner app, improving order acceptance rate by 9%
+- Coordinated with 4 engineering pods across two cities to ship a partner payout redesign
+- Responsible for writing PRDs and prioritizing the backlog for the partner tools squad
+
+Associate Product Manager — Zomato, Gurugram
+May 2018 – June 2020
+- Worked on the search and discovery team
+- Assisted senior PMs with user research and competitive analysis
+- Contributed to a redesign of the restaurant listing page
+
+PROJECTS
+
+Campus Meal-Split App (side project)
+- Built a simple expense-splitting app for hostel meal groups using React Native and Firebase
+- Used by around 300 students at IIT Delhi during a 6-month pilot
+
+SKILLS
+Product strategy, Roadmapping, SQL, A/B testing, Figma, JIRA, Amplitude, Stakeholder management,
+User research, RBI compliance basics, Payments domain knowledge
+
+EDUCATION
+B.Tech, Computer Science — Indian Institute of Technology (IIT) Delhi, 2018
+
+CERTIFICATIONS
+(none listed)

@@ -1,0 +1,231 @@
+{
+  "ats_compatibility_score": 82,
+  "score_reasoning": "82/100. Full marks are withheld mainly for keyword coverage, not technical parsing risk: structure uses all-standard section headings ATS parsers reliably recognize (no penalty), formatting is clean and consistent with no bullet-glyph or table/column risk detectable in the text (no penalty). Deductions: -8 because 1 of 7 critical JD keywords (PM mentoring/management experience) has no evidence anywhere in the resume; -6 because a second critical keyword (SQL) is present only as a bare skill-list entry with no demonstrated bullet; -4 for two minor technical risks (em dash and en dash separators that some legacy ATS parsers mis-tokenize in header/date fields).",
+  "structure_assessment": [
+    {
+      "section_name": "Contact Information",
+      "present": true,
+      "heading_text_found": null,
+      "is_ats_standard_heading": true,
+      "notes": "Name, location, email, phone, and LinkedIn present in a single pipe-separated header line — standard and reliably parsed."
+    },
+    {
+      "section_name": "Summary",
+      "present": true,
+      "heading_text_found": "SUMMARY",
+      "is_ats_standard_heading": true,
+      "notes": "Standard heading, reliably recognized."
+    },
+    {
+      "section_name": "Work Experience",
+      "present": true,
+      "heading_text_found": "WORK EXPERIENCE",
+      "is_ats_standard_heading": true,
+      "notes": "Standard heading, reliably recognized."
+    },
+    {
+      "section_name": "Skills",
+      "present": true,
+      "heading_text_found": "SKILLS",
+      "is_ats_standard_heading": true,
+      "notes": "Standard heading, but positioned last among content sections — see skills_placement_notes."
+    },
+    {
+      "section_name": "Education",
+      "present": true,
+      "heading_text_found": "EDUCATION",
+      "is_ats_standard_heading": true,
+      "notes": "Standard heading, reliably recognized."
+    },
+    {
+      "section_name": "Certifications",
+      "present": true,
+      "heading_text_found": "CERTIFICATIONS",
+      "is_ats_standard_heading": true,
+      "notes": "Standard heading, but content is a literal placeholder ('(none listed)') rather than being omitted."
+    },
+    {
+      "section_name": "Projects",
+      "present": true,
+      "heading_text_found": "PROJECTS",
+      "is_ats_standard_heading": true,
+      "notes": "Non-required but commonly recognized heading; fine to keep."
+    }
+  ],
+  "section_hierarchy_issues": [
+    {
+      "issue": "Skills section appears after Projects, near the very end of the document",
+      "location": "Resume-wide section order",
+      "severity": "minor",
+      "recommendation": "Move Skills directly below Summary so JD-matching keywords appear earlier — both ATS ranking that weights earlier content and recruiters skimming top-down benefit."
+    }
+  ],
+  "parsing_compatibility_issues": [
+    {
+      "issue": "Em dash ('—') used to separate title, company, and location in work experience headers",
+      "location": "All three work experience entry headers",
+      "severity": "minor",
+      "recommendation": "Replace with a comma or pipe ('|') — some legacy ATS field parsers mis-tokenize em dashes when splitting title/company/location."
+    },
+    {
+      "issue": "En dash ('–') used between start and end dates",
+      "location": "All work experience and education date lines",
+      "severity": "minor",
+      "recommendation": "Replace with a plain hyphen ('-') for maximum compatibility with date-range parsers that look for a standard hyphen."
+    }
+  ],
+  "formatting_issues": [
+    {
+      "issue": "Certifications section contains literal placeholder text '(none listed)' instead of being omitted",
+      "location": "CERTIFICATIONS section",
+      "severity": "suggestion",
+      "recommendation": "Remove the section entirely — an empty/placeholder section adds no keyword value and reads as unfinished."
+    }
+  ],
+  "skills_placement_notes": [
+    "Skills section is positioned near the end of the document (after Projects), meaning critical JD-matching keywords like SQL, RBI compliance basics, and Payments domain knowledge only appear after roughly 80% of the document.",
+    "Several JD-relevant terms are demonstrated in Work Experience bullets (e.g. RBI regulatory work, data-driven fraud model collaboration) but aren't mirrored as standalone Skills entries — duplicating them there would reinforce keyword matches without adding anything untrue."
+  ],
+  "keyword_coverage": [
+    {
+      "keyword": "5+ years of product management experience",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "Work history spans May 2018–Present (Zomato APM through current Cashfree Senior PM role), ~8 years.",
+      "recommendation": "No action needed — clearly met."
+    },
+    {
+      "keyword": "2+ years owning a fraud/risk/compliance-adjacent product",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "Cashfree Senior PM (June 2022–Present, ~4 years): 'roadmap of the risk and fraud detection product area', fraud scoring model bullet, RBI regulatory bullet.",
+      "recommendation": "No action needed — exceeds the stated bar."
+    },
+    {
+      "keyword": "Hands-on experience shipping ML/scoring-model-backed products",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "'Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%'",
+      "recommendation": "No action needed — direct match."
+    },
+    {
+      "keyword": "Strong SQL skills",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "'SQL' listed in the Skills section.",
+      "recommendation": "Present but thin — add or edit a bullet showing SQL used for a specific decision (e.g. tying it to prioritization or fraud analysis already described elsewhere) rather than leaving it as a bare skill."
+    },
+    {
+      "keyword": "Regulatory translation experience (RBI, PCI-DSS)",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "'Worked closely with compliance and legal teams on RBI regulatory requirements'; 'RBI compliance basics' in Skills.",
+      "recommendation": "RBI coverage is present and the JD accepts 'RBI, PCI-DSS, or equivalent' — consider making the regulatory bullet more outcome-oriented (what changed as a result) rather than just descriptive."
+    },
+    {
+      "keyword": "Experience managing or mentoring other PMs",
+      "priority": "critical",
+      "present_in_resume": false,
+      "resume_evidence": null,
+      "recommendation": "No mentoring/management activity appears anywhere in the resume. If any exists (even informal), add a specific bullet. If genuinely absent, this cannot be manufactured by rewriting — flag as a real gap rather than optimizing around it."
+    },
+    {
+      "keyword": "Excellent written communication (PRDs, leadership)",
+      "priority": "critical",
+      "present_in_resume": true,
+      "resume_evidence": "'Responsible for writing PRDs and prioritizing the backlog for the partner tools squad' (Swiggy).",
+      "recommendation": "Present but stated passively ('Responsible for') — rephrasing with an active verb would strengthen this without adding anything untrue."
+    },
+    {
+      "keyword": "Prior experience at a payments company, bank, or fintech",
+      "priority": "important",
+      "present_in_resume": true,
+      "resume_evidence": "Cashfree Payments is a fintech/payments company.",
+      "recommendation": "No action needed — direct, strong match."
+    },
+    {
+      "keyword": "Familiarity with A/B testing platforms",
+      "priority": "important",
+      "present_in_resume": true,
+      "resume_evidence": "'Drove A/B experiments on the delivery partner app' (Swiggy); 'A/B testing' in Skills.",
+      "recommendation": "No action needed."
+    },
+    {
+      "keyword": "Exposure to Amplitude, Mixpanel, or similar analytics tools",
+      "priority": "important",
+      "present_in_resume": true,
+      "resume_evidence": "'Amplitude' explicitly listed in Skills — exact keyword match.",
+      "recommendation": "No action needed."
+    },
+    {
+      "keyword": "Technical background (CS degree or engineering experience)",
+      "priority": "nice_to_have",
+      "present_in_resume": true,
+      "resume_evidence": "B.Tech, Computer Science, IIT Delhi.",
+      "recommendation": "No action needed — exceeds the stated bar."
+    },
+    {
+      "keyword": "PM certification (CSPO, Pragmatic Institute, etc.)",
+      "priority": "nice_to_have",
+      "present_in_resume": false,
+      "resume_evidence": null,
+      "recommendation": "Genuinely absent and explicitly low-weight per the JD ('a bonus but not evaluated heavily') — not worth optimizing for."
+    }
+  ],
+  "keyword_coverage_summary": "10/12 JD keywords present, including 6 of 7 critical requirements. The one missing critical keyword (PM mentoring/management experience) is a real content gap, not something resume optimization can fabricate.",
+  "keyword_density_notes": [
+    "'RBI' appears twice and 'fraud' appears three times across the resume — reasonable, natural density for a fraud/risk-focused application, not stuffed.",
+    "'SQL' appears exactly once, only in the Skills list — thin for a JD that calls it a 'Must have' tied to a specific use case (self-service data pulls for prioritization).",
+    "No evidence of keyword stuffing — all keyword occurrences read naturally in context rather than as an inserted list."
+  ],
+  "readability_notes": [
+    "Bullets are concise (mostly one line) with consistent tense per role (present tense for the current Cashfree role, past tense for prior roles) — good practice.",
+    "The Skills section as one dense comma-separated line is harder to visually scan than a categorized list, though this is a human-readability concern rather than an ATS parsing risk.",
+    "Domain terminology (KYC, chargeback, onboarding TAT) is used appropriately for a product-management audience without jargon overload."
+  ],
+  "prioritized_recommendations": [
+    {
+      "issue": "Critical JD keyword 'PM mentoring/management experience' has no evidence anywhere in the resume",
+      "location": "Entire resume",
+      "severity": "critical",
+      "recommendation": "Add a specific bullet if any mentoring experience exists, even informal; if genuinely absent, treat as a real gap rather than something to paper over here."
+    },
+    {
+      "issue": "'Must have' keyword SQL is present only as a bare skill, not demonstrated in any bullet",
+      "location": "SKILLS section",
+      "severity": "major",
+      "recommendation": "Add or edit a bullet tying SQL to a specific decision already described elsewhere in the resume."
+    },
+    {
+      "issue": "Skills section buried at the end of the document, after Projects",
+      "location": "Resume-wide section order",
+      "severity": "minor",
+      "recommendation": "Move Skills directly below Summary."
+    },
+    {
+      "issue": "Em dash and en dash characters used in headers and date ranges",
+      "location": "All work experience entry headers and date lines",
+      "severity": "minor",
+      "recommendation": "Replace with a plain hyphen and pipe for maximum legacy-ATS-parser compatibility."
+    },
+    {
+      "issue": "Certifications section contains literal placeholder text '(none listed)'",
+      "location": "CERTIFICATIONS section",
+      "severity": "suggestion",
+      "recommendation": "Remove the section entirely rather than including an empty placeholder."
+    },
+    {
+      "issue": "Skills listed as one dense comma-separated paragraph",
+      "location": "SKILLS section",
+      "severity": "suggestion",
+      "recommendation": "Group into categories (Product, Technical, Tools, Domain) for human scannability; ATS parsing risk itself is low."
+    }
+  ],
+  "human_readable_summary": "## ATS Optimization: Ananya Sharma vs. Senior PM — Risk & Fraud @ Razorpay\n\n**Score: 82/100.** Technical ATS parsing risk is low — every section uses a standard, reliably-recognized heading, and formatting is clean and consistent. The score is held back almost entirely by keyword coverage against this specific JD, not by parsing/structure problems.\n\n**Keyword coverage: 10/12, including 6 of 7 critical requirements.** The one missing critical keyword — PM mentoring/management experience — cannot be fixed by resume optimization; it's either true and needs a bullet, or it's a real gap for Gap Analysis to flag. SQL, a \"Must have,\" is technically present but only as a bare skill-list entry with no demonstrating bullet — an easy, truthful strengthening opportunity.\n\n**Quick wins that don't require adding anything untrue:** move Skills up near the top of the document, add a bullet demonstrating SQL in action, swap em/en dashes for plain hyphens and pipes, and drop the empty Certifications section.\n",
+  "analysis_confidence": "high",
+  "limitations": [
+    "This assessment is based on extracted resume text only — the source file's visual layout (columns, tables, text boxes, images, headers/footers) cannot be evaluated and could carry ATS parsing risk not visible here.",
+    "Exact page count/length cannot be determined from raw text; if the source document exceeds roughly one page for this seniority level, that could affect recruiter preferences not assessed here.",
+    "Regulatory-requirement coverage counts RBI experience only — PCI-DSS specifically is not mentioned anywhere in the resume, though the JD accepts 'RBI, PCI-DSS, or equivalent' as satisfying this requirement."
+  ]
+}

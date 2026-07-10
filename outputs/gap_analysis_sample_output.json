@@ -1,0 +1,119 @@
+{
+  "role_title": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "rows": [
+    {
+      "requirement": "5+ years of product management experience",
+      "jd_priority": "critical",
+      "present_in_resume": "yes",
+      "supporting_evidence": "Work history spans May 2018-Present across Zomato (Associate PM), Swiggy (PM), and Cashfree (Senior PM), ~8 years total.",
+      "gap_severity": "none",
+      "recommendation": "No action needed — clearly exceeds the stated minimum."
+    },
+    {
+      "requirement": "2+ years owning a fraud/risk/trust & safety/compliance-adjacent product",
+      "jd_priority": "critical",
+      "present_in_resume": "yes",
+      "supporting_evidence": "Cashfree Senior PM (June 2022-Present, ~4 years): 'roadmap of the risk and fraud detection product area', fraud scoring model bullet, RBI regulatory-requirements bullet.",
+      "gap_severity": "none",
+      "recommendation": "No action needed — exceeds the stated 2-year bar with ~4 years directly in this domain."
+    },
+    {
+      "requirement": "Hands-on experience shipping ML/scoring-model-backed products",
+      "jd_priority": "critical",
+      "present_in_resume": "yes",
+      "supporting_evidence": "'Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%'",
+      "gap_severity": "none",
+      "recommendation": "No action needed — direct match."
+    },
+    {
+      "requirement": "Strong SQL skills",
+      "jd_priority": "critical",
+      "present_in_resume": "partial",
+      "supporting_evidence": "'SQL' listed in the Skills section; no bullet ties it to a specific decision or outcome.",
+      "gap_severity": "important",
+      "recommendation": "Not a true ability gap, but the resume provides no evidence of SQL in action. If the candidate has a concrete example (e.g. a prioritization decision informed by a query), adding a bullet would fully close this. This is a resume-optimization fix, not an experience gap, assuming the underlying experience is real."
+    },
+    {
+      "requirement": "Experience translating regulatory requirements (RBI, PCI-DSS) into product requirements",
+      "jd_priority": "critical",
+      "present_in_resume": "partial",
+      "supporting_evidence": "'Worked closely with compliance and legal teams on RBI regulatory requirements'; 'RBI compliance basics' listed in Skills. PCI-DSS is not mentioned anywhere.",
+      "gap_severity": "optional",
+      "recommendation": "The JD explicitly accepts 'RBI, PCI-DSS, or equivalent' — RBI experience alone satisfies this requirement. Marked as only a minor/optional gap because PCI-DSS specifically isn't evidenced; no resume change needed unless the candidate wants to preempt a card-network-compliance question in the interview."
+    },
+    {
+      "requirement": "Experience managing or mentoring other PMs",
+      "jd_priority": "critical",
+      "present_in_resume": "no",
+      "supporting_evidence": null,
+      "gap_severity": "critical",
+      "recommendation": "No mentoring/management activity appears anywhere in the resume. This is a genuine experience gap, not a resume-optimization issue — it cannot be closed by rewriting. If any real (even informal) mentoring exists, it must be added; if it doesn't, the candidate should be prepared to address this directly in the interview process rather than have the resume imply something untrue."
+    },
+    {
+      "requirement": "Excellent written communication (PRDs, leadership presentations)",
+      "jd_priority": "critical",
+      "present_in_resume": "yes",
+      "supporting_evidence": "'Responsible for writing PRDs and prioritizing the backlog for the partner tools squad' (Swiggy).",
+      "gap_severity": "none",
+      "recommendation": "No action needed — direct evidence of PRD-writing responsibility exists."
+    },
+    {
+      "requirement": "Prior experience at a payments company, bank, or fintech",
+      "jd_priority": "important",
+      "present_in_resume": "yes",
+      "supporting_evidence": "Cashfree Payments is a payments/fintech company.",
+      "gap_severity": "none",
+      "recommendation": "No action needed — strong, direct match."
+    },
+    {
+      "requirement": "Familiarity with A/B testing platforms and experimentation culture",
+      "jd_priority": "important",
+      "present_in_resume": "yes",
+      "supporting_evidence": "'Drove A/B experiments on the delivery partner app, improving order acceptance rate by 9%' (Swiggy); 'A/B testing' in Skills.",
+      "gap_severity": "none",
+      "recommendation": "No action needed."
+    },
+    {
+      "requirement": "Exposure to Amplitude, Mixpanel, or similar product analytics tools",
+      "jd_priority": "important",
+      "present_in_resume": "yes",
+      "supporting_evidence": "'Amplitude' explicitly listed in Skills — exact keyword match.",
+      "gap_severity": "none",
+      "recommendation": "No action needed — exact match."
+    },
+    {
+      "requirement": "Technical background (CS degree or engineering experience)",
+      "jd_priority": "nice_to_have",
+      "present_in_resume": "yes",
+      "supporting_evidence": "B.Tech, Computer Science, IIT Delhi.",
+      "gap_severity": "none",
+      "recommendation": "No action needed — exceeds this nice-to-have."
+    },
+    {
+      "requirement": "Product management certification (CSPO, Pragmatic Institute, etc.)",
+      "jd_priority": "nice_to_have",
+      "present_in_resume": "no",
+      "supporting_evidence": null,
+      "gap_severity": "optional",
+      "recommendation": "Genuinely absent, but the JD explicitly states this is 'a bonus but not evaluated heavily' — low priority to pursue for this specific application."
+    }
+  ],
+  "strongest_matches": [
+    "2+ years directly owning a fraud/risk/compliance-adjacent product (Cashfree Senior PM, ~4 years) — exceeds the JD's stated bar",
+    "Hands-on ML/scoring-model product experience via the fraud scoring model that cut chargebacks 31%",
+    "Direct payments/fintech company experience (Cashfree Payments)",
+    "Amplitude — exact tool match with the JD's preferred qualifications"
+  ],
+  "critical_gaps": [
+    "Experience managing or mentoring other PMs — no evidence found anywhere in the resume"
+  ],
+  "overall_fit_assessment": "Strong overall fit: 8 of 12 requirements are fully met with direct evidence, including the two hardest-to-fake critical requirements — fraud/risk domain ownership and ML-product experience. The profile has exactly one critical gap (PM mentoring/management experience), which is a genuine experience gap rather than a resume-optimization issue, plus two minor/optional nuances: SQL usage isn't demonstrated in a bullet (likely fixable if the experience is real), and PCI-DSS specifically isn't mentioned though RBI experience satisfies the JD's 'or equivalent' language. None of these gaps individually should be disqualifying, but the mentoring gap is the one worth proactively addressing before or during the interview process.",
+  "human_readable_summary": "## Gap Analysis: Ananya Sharma vs. Senior PM — Risk & Fraud @ Razorpay\n\n**8 of 12 requirements fully met**, including both of the requirements hardest to fake: hands-on ownership of a fraud/risk product (~4 years, double the JD's 2-year bar) and direct ML/scoring-model shipping experience.\n\n**1 critical gap:** no evidence anywhere in the resume of managing or mentoring other PMs. This is flagged as a genuine experience gap, not something a rewrite can paper over — either it needs to be added if real, or the candidate should be ready to address it directly in the interview.\n\n**2 minor nuances, not real gaps:** SQL is claimed but never demonstrated in a bullet (an easy resume fix if the underlying experience is real), and PCI-DSS specifically isn't mentioned — though the JD accepts RBI experience as equivalent, so this barely counts as a gap at all.\n\n**Bottom line:** this is a strong-fit candidate on the substance of the role; the one thing worth proactively addressing is the mentoring gap.\n",
+  "analysis_confidence": "high",
+  "limitations": [
+    "Presence assessment is limited to what's stated in the resume text; the candidate may have unlisted experience (e.g. informal PM mentoring, PCI-DSS exposure) that simply isn't written down.",
+    "'Gap severity' reflects how much this shortfall matters for this specific application, not a general skill assessment applicable to other roles.",
+    "This agent does not verify claims beyond text-matching — it cannot confirm the fraud model's actual impact or the accuracy of any stated metric."
+  ]
+}

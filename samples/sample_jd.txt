@@ -1,0 +1,66 @@
+Senior Product Manager — Risk & Fraud
+Razorpay | Bengaluru, India (Hybrid) | Full-time
+
+About the team
+Razorpay's Risk & Fraud team builds the systems that keep our payment
+platform safe for millions of merchants while keeping friction near zero for
+legitimate transactions. We sit at the intersection of product, data science,
+and compliance, and we move fast — priorities shift weekly as new fraud
+patterns emerge, so you'll need to be comfortable making calls with
+incomplete information.
+
+What you'll do
+- Own the end-to-end roadmap for merchant risk scoring and fraud detection
+  products
+- Partner with data science and engineering to ship and iterate on ML-based
+  risk models
+- Define and track the KPIs that matter: fraud loss rate, false positive
+  rate, merchant onboarding time, and dispute resolution TAT
+- Work directly with Compliance and Legal to ensure product decisions hold up
+  under RBI and PCI-DSS scrutiny
+- Write clear PRDs, run sprint planning with a pod of 5-6 engineers, and
+  represent the risk roadmap in quarterly business reviews
+- Mentor 1-2 junior PMs on the broader Payments product team
+
+Requirements
+- 5+ years of product management experience, with at least 2 years owning a
+  fraud, risk, trust & safety, or compliance-adjacent product
+- Must have hands-on experience shipping products backed by ML/scoring models
+  (you don't need to build the model, but you need to know how to work with
+  one)
+- Strong SQL skills — you will pull your own data for prioritization
+  decisions
+- Demonstrated experience translating regulatory requirements (RBI, PCI-DSS,
+  or equivalent) into product requirements
+- Experience managing or mentoring other PMs
+- Excellent written communication — you will write PRDs and present to
+  leadership regularly
+
+Preferred qualifications
+- Prior experience at a payments company, bank, or fintech
+- Familiarity with A/B testing platforms and experimentation culture
+- Exposure to Amplitude, Mixpanel, or similar product analytics tools
+
+Nice to have
+- Technical background (CS degree or engineering experience) — a plus, not
+  required
+- Certification in product management (CSPO, Pragmatic Institute, etc.) is a
+  bonus but not evaluated heavily
+
+What success looks like
+- Fraud loss rate trending down quarter over quarter without materially
+  increasing false positives
+- Onboarding friction stays low even as risk controls tighten
+- Cross-functional stakeholders (compliance, data science, engineering) see
+  you as the person who translates ambiguity into a shippable plan
+
+About you
+You thrive in ambiguity and don't need a fully-formed spec to start moving.
+You're comfortable being the most senior person in the room on some days and
+the most junior on others — this is a flat team and you'll wear a lot of
+hats in the first six months. We're a fast-growing company, so this role
+will evolve; the person who takes it should be excited by that, not
+unsettled by it.
+
+Compensation: competitive, based on experience. Location: Bengaluru,
+hybrid (3 days/week in office).

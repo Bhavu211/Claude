@@ -1,0 +1,166 @@
+{
+  "target_role": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "projects": [
+    {
+      "title": "Merchant Risk Signal Dashboard",
+      "addresses_gaps": [
+        "SQL skills claimed but not demonstrated in a bullet (low confidence)",
+        "Amplitude/analytics tools claimed but not demonstrated (low confidence)"
+      ],
+      "business_problem": "Fraud/risk PMs need to self-serve merchant risk signals (chargeback trends, onboarding drop-off, fraud-score distribution) without waiting on data science for every ad hoc question — mirrors the JD's own call-out that this role 'pulls your own data for prioritization decisions.'",
+      "target_users": [
+        "Risk/fraud PMs",
+        "Trust & safety analysts",
+        "Compliance stakeholders needing self-serve visibility"
+      ],
+      "features": [
+        "SQL-backed queries surfacing merchant risk cohorts by fraud-score band",
+        "A dashboard showing chargeback rate trend, onboarding funnel drop-off, and false-positive rate over time",
+        "Threshold-based alerting when a risk metric crosses a defined bound",
+        "A written case study documenting 2-3 specific SQL queries and the prioritization decisions they informed"
+      ],
+      "ai_opportunities": [
+        "LLM-generated plain-English weekly risk summary from the underlying SQL results",
+        "Anomaly detection flagging unusual spikes in chargeback or false-positive rate for follow-up"
+      ],
+      "apis": [
+        "A public/synthetic transaction dataset (e.g. IEEE-CIS Fraud Detection on Kaggle)",
+        "Amplitude free tier for event-level tracking",
+        "Optional LLM API for the summary feature"
+      ],
+      "tech_stack": [
+        "PostgreSQL or SQLite",
+        "Python for ETL/data generation",
+        "Amplitude (free tier)",
+        "Streamlit or a lightweight BI layer for the dashboard",
+        "Optional LLM API"
+      ],
+      "kpis": [
+        "Number of distinct self-serve questions the dashboard answers without an analyst",
+        "Time-to-insight for a sample question (e.g. 'which merchant cohort had the biggest fraud spike this month')",
+        "Whether the written case study clearly traces a decision back to a specific query"
+      ],
+      "prd_outline": [
+        "Problem Statement — risk PMs lack self-serve visibility into fraud/chargeback trends",
+        "Goals — enable N self-serve queries; cut time-to-insight from days to minutes",
+        "Non-goals — not a replacement for the full data-science fraud model",
+        "Target Users — risk/fraud PM, trust & safety analyst",
+        "Requirements — SQL-backed cohort queries, trend dashboard, threshold alerting",
+        "Success Metrics — time-to-insight, decisions traced to a specific query",
+        "Risks — synthetic data may not reflect real-world fraud patterns"
+      ],
+      "mvp": "A single dashboard view answering one concrete question end-to-end (e.g. 'which merchant onboarding cohort has the highest 30-day chargeback rate') built on a synthetic transaction dataset, with the underlying SQL query and resulting decision documented in a short case-study writeup.",
+      "future_enhancements": [
+        "Scheduled real-time alerting job",
+        "Correlate risk signals with a second data source (e.g. support ticket volume)",
+        "Self-serve query builder UI for non-SQL stakeholders"
+      ],
+      "estimated_build_time": "1-2 weekends for the MVP dashboard plus case study",
+      "priority_rank": 1,
+      "priority_reasoning": "Closes two LOW-confidence gaps at once using the exact domain (fraud/risk) and exact JD language ('pull your own data for prioritization decisions') — highest leverage per unit of build effort."
+    },
+    {
+      "title": "RBI/PCI-DSS Compliance-to-PRD Translator",
+      "addresses_gaps": [
+        "Regulatory translation (RBI/PCI-DSS) evidenced but under-specified, no concrete example (medium confidence)"
+      ],
+      "business_problem": "Product teams in regulated fintech repeatedly need to turn dense regulatory text (RBI circulars, PCI-DSS requirements) into concrete, engineering-ready product requirements — a slow, manual process today.",
+      "target_users": [
+        "Product managers at fintech/payments companies",
+        "Compliance leads partnering with product teams"
+      ],
+      "features": [
+        "Paste a regulatory excerpt; the tool extracts discrete obligations",
+        "Maps each obligation to a suggested product requirement (e.g. a retention obligation becomes a data-retention policy field)",
+        "Outputs a mini one-page PRD draft from the mapped obligations",
+        "A small library of 3-4 worked examples (one RBI circular, one PCI-DSS requirement) as the case-study centerpiece"
+      ],
+      "ai_opportunities": [
+        "LLM-powered extraction of discrete obligations from unstructured regulatory text",
+        "LLM-drafted first-pass PRD requirement language from each obligation, clearly labeled as a draft for human review"
+      ],
+      "apis": [
+        "An LLM API (Anthropic/OpenAI) for extraction and drafting",
+        "Publicly available RBI circulars and the public PCI-DSS standard as source text"
+      ],
+      "tech_stack": [
+        "Python backend",
+        "A simple web UI (Streamlit or a small Next.js app)",
+        "LLM API",
+        "No database required for the MVP"
+      ],
+      "kpis": [
+        "Extraction accuracy (precision/recall) on the 3-4 worked examples vs. manual identification",
+        "Time to go from raw regulatory text to a draft PRD requirements section"
+      ],
+      "prd_outline": [
+        "Problem Statement — regulatory-to-product translation is slow and manual today",
+        "Goals — cut first-draft PRD time for a regulatory requirement from hours to minutes",
+        "Non-goals — this tool provides drafting assistance only, never legal/compliance sign-off",
+        "Target Users — fintech PMs, compliance leads",
+        "Requirements — obligation extraction, requirement drafting, worked-example library",
+        "Success Metrics — extraction accuracy on worked examples, time saved",
+        "Risks — regulatory misinterpretation if used without human review; must be clearly labeled as a drafting aid"
+      ],
+      "mvp": "A single working example end-to-end: paste one real RBI KYC circular excerpt, get back 3-5 extracted obligations and a draft PRD requirements section, with a clear disclaimer that this is a drafting aid, not compliance guidance.",
+      "future_enhancements": [
+        "Expand the worked-example library to PCI-DSS and GDPR",
+        "Add a review/approval workflow for compliance sign-off",
+        "Track regulatory changes over time"
+      ],
+      "estimated_build_time": "1 weekend for the MVP (single worked example end-to-end)",
+      "priority_rank": 2,
+      "priority_reasoning": "Targets the MEDIUM-confidence regulatory-translation gap with a project that IS the skill being practiced — the resulting artifact becomes interview-ready evidence, but it addresses a less severe gap than Project 1."
+    },
+    {
+      "title": "Public PRD Case Study: KYC Onboarding Redesign",
+      "addresses_gaps": [
+        "Written communication (PRDs, leadership presentations) evidenced but under-specified (medium confidence)"
+      ],
+      "business_problem": "The resume shows PRD-writing responsibility but no artifact demonstrates communication quality or leadership-level framing — hiring teams for senior/leadership-track roles often want to see actual writing, not just a bullet claiming it.",
+      "target_users": [
+        "Hiring managers and interview panels evaluating communication skill directly"
+      ],
+      "features": [
+        "A polished, publicly shareable one-page PRD reusing the candidate's real, existing KYC-flow-redesign achievement (already on the resume — authentic, not speculative)",
+        "Reframed as a leadership-style document: problem framing, options considered, recommendation, success metrics",
+        "A one-paragraph 'how I'd present this to leadership' summary"
+      ],
+      "ai_opportunities": [],
+      "apis": [],
+      "tech_stack": [
+        "A published doc (Notion page, PDF, or personal site) — no engineering build needed"
+      ],
+      "kpis": [
+        "Qualitative only: reviewer feedback on clarity and leadership-level framing"
+      ],
+      "prd_outline": [
+        "Problem Statement",
+        "Options Considered",
+        "Recommendation",
+        "Success Metrics (the real 3-day→18-hour and 22%/31% outcomes already on the resume)",
+        "Leadership Summary — a one-paragraph executive framing"
+      ],
+      "mvp": "A single one-page PRD case study for the KYC redesign, published somewhere linkable (Notion or a personal site) and referenced from the resume/LinkedIn.",
+      "future_enhancements": [
+        "A second case study for the fraud scoring model achievement",
+        "A short video walkthrough reusable for interview prep"
+      ],
+      "estimated_build_time": "1 evening — a writing exercise, not a build",
+      "priority_rank": 3,
+      "priority_reasoning": "Lowest build cost and reuses already-verified achievements rather than requiring new work, but ranked last because it targets a MEDIUM-confidence gap that was already partially evidenced, versus the other two projects' LOWER-confidence, higher-severity gaps."
+    }
+  ],
+  "gaps_not_addressed": [
+    "Experience managing or mentoring other PMs — a people-management/mentoring gap is an interpersonal experience gap a solo portfolio project cannot credibly simulate. Closing it requires an actual mentoring relationship (e.g. volunteering to mentor a junior/associate PM) or adding real informal mentoring to the resume if it already exists — this is Career Strategy / Learning & Certification Agent territory, not a portfolio project.",
+    "PM certification — a credential isn't something a portfolio project substitutes for. If pursued, this is a direct enrollment decision (Learning & Certification Agent territory), and the JD itself marks this low-priority for this specific application."
+  ],
+  "human_readable_summary": "## Portfolio Recommendations: Senior PM — Risk & Fraud @ Razorpay\n\n**3 projects proposed, all in the fraud/risk/payments domain** to stay directly relevant to the target role rather than generic portfolio filler.\n\n1. **Merchant Risk Signal Dashboard** (highest priority) — closes both the SQL and Amplitude evidence gaps at once, using the JD's own language about self-serve data pulls.\n2. **RBI/PCI-DSS Compliance-to-PRD Translator** — turns the regulatory-translation gap into a project that IS the skill being demonstrated.\n3. **Public PRD Case Study** — lowest effort (one evening), reuses a real, already-verified achievement rather than inventing new work.\n\n**2 gaps deliberately not portfolio'd:** PM mentoring/management experience and the PM certification. Neither can be credibly simulated or substituted by a solo project — see `gaps_not_addressed` for why, and what to do instead.\n",
+  "recommendation_confidence": "high",
+  "limitations": [
+    "Build-time estimates are approximate; actual effort depends on the candidate's familiarity with the specific tools chosen.",
+    "The compliance-translator project produces drafting aids only — its own description must clearly label output as non-authoritative, not real compliance guidance.",
+    "Portfolio projects can only address demonstrable-skill gaps; experience-based gaps (mentoring) and credentials (certification) are explicitly out of scope — see gaps_not_addressed."
+  ]
+}

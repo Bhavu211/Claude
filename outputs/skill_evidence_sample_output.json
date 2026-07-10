@@ -1,0 +1,115 @@
+{
+  "role_title": "Senior Product Manager — Risk & Fraud",
+  "company_name": "Razorpay",
+  "skills": [
+    {
+      "skill": "2+ years owning a fraud/risk/trust & safety/compliance-adjacent product",
+      "jd_priority": "critical",
+      "resume_evidence": "Cashfree Senior PM (June 2022-Present, ~4 years): 'roadmap of the risk and fraud detection product area'; fraud scoring model cut chargeback rate 31%; RBI regulatory work.",
+      "confidence": "high",
+      "missing_proof": null,
+      "recommendation": "Well-evidenced with concrete outcomes — lead with this in interviews and cover letters; no further evidence needed."
+    },
+    {
+      "skill": "Hands-on experience shipping ML/scoring-model-backed products",
+      "jd_priority": "critical",
+      "resume_evidence": "'Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%'",
+      "confidence": "high",
+      "missing_proof": null,
+      "recommendation": "Strong evidence with a clear outcome — in interviews, be ready to detail your specific PM contribution to the model (e.g. feature definition, launch criteria, monitoring) versus data science's role, since the resume states partnership without specifying that split."
+    },
+    {
+      "skill": "Strong SQL skills",
+      "jd_priority": "critical",
+      "resume_evidence": "'SQL' listed in the Skills section; no bullet ties it to a specific decision or outcome.",
+      "confidence": "low",
+      "missing_proof": "A bullet showing a specific decision, analysis, or prioritization call informed by a SQL query — e.g. what data was pulled and what it changed.",
+      "recommendation": "Add a bullet if a real example exists; if none does, prepare a verbal example for interviews since 'Strong SQL skills' is a Must-have in this JD."
+    },
+    {
+      "skill": "Regulatory translation (RBI, PCI-DSS) into product requirements",
+      "jd_priority": "critical",
+      "resume_evidence": "'Worked closely with compliance and legal teams on RBI regulatory requirements'; 'RBI compliance basics' listed in Skills.",
+      "confidence": "medium",
+      "missing_proof": "A specific example of a regulatory requirement translated into a shipped product decision, with a stated outcome — the current bullet describes the collaboration but not a concrete case. PCI-DSS specifically is never mentioned.",
+      "recommendation": "If a specific regulatory-to-product example exists (e.g. a policy change driven by an RBI requirement), add it as a bullet with an outcome. Since PCI-DSS isn't evidenced at all, be ready to speak to any card-network compliance exposure verbally, or note that RBI experience is the closer analog."
+    },
+    {
+      "skill": "Experience managing or mentoring other PMs",
+      "jd_priority": "critical",
+      "resume_evidence": "No evidence available.",
+      "confidence": "none",
+      "missing_proof": "Any bullet describing mentoring, coaching, or formally managing another PM — even informal onboarding of a junior PM would count.",
+      "recommendation": "The single weakest-evidenced requirement in the JD. If any real mentoring experience exists, even informal, add a specific bullet describing who was mentored and what improved. If none exists, prepare to address this directly and honestly in the interview rather than implying it via vague language."
+    },
+    {
+      "skill": "Excellent written communication (PRDs, leadership presentations)",
+      "jd_priority": "critical",
+      "resume_evidence": "'Responsible for writing PRDs and prioritizing the backlog for the partner tools squad' (Swiggy).",
+      "confidence": "medium",
+      "missing_proof": "Evidence of presenting to leadership specifically — the JD calls this out explicitly and the resume only shows PRD-writing, not presentation — plus any external signal of communication quality.",
+      "recommendation": "The JD's responsibilities section explicitly calls out presenting the roadmap in quarterly business reviews — if the candidate has done something equivalent, add it; otherwise prepare a specific example for the interview given this is a Must-have."
+    },
+    {
+      "skill": "Prior experience at a payments company, bank, or fintech",
+      "jd_priority": "important",
+      "resume_evidence": "Employer 'Cashfree Payments' — the entire current role is embedded in a payments/fintech company.",
+      "confidence": "high",
+      "missing_proof": null,
+      "recommendation": "Extremely well-evidenced — no action needed."
+    },
+    {
+      "skill": "Familiarity with A/B testing platforms and experimentation culture",
+      "jd_priority": "important",
+      "resume_evidence": "'Drove A/B experiments on the delivery partner app, improving order acceptance rate by 9%' (Swiggy); 'A/B testing' listed in Skills.",
+      "confidence": "high",
+      "missing_proof": null,
+      "recommendation": "Well-evidenced with a clear outcome — no action needed."
+    },
+    {
+      "skill": "Exposure to Amplitude, Mixpanel, or similar product analytics tools",
+      "jd_priority": "important",
+      "resume_evidence": "'Amplitude' listed in the Skills section; no bullet demonstrates using it for a specific analysis.",
+      "confidence": "low",
+      "missing_proof": "A bullet showing a specific insight or decision derived from Amplitude data.",
+      "recommendation": "Currently a bare skill listing — if a specific Amplitude-driven insight exists (e.g. informed the KYC redesign or dashboard launch), add it; this would also reinforce the SQL and A/B testing evidence simultaneously."
+    },
+    {
+      "skill": "Technical background (CS degree or engineering experience)",
+      "jd_priority": "nice_to_have",
+      "resume_evidence": "B.Tech, Computer Science, Indian Institute of Technology (IIT) Delhi.",
+      "confidence": "high",
+      "missing_proof": null,
+      "recommendation": "Fully evidenced via degree; the Campus Meal-Split App side project (React Native + Firebase) further reinforces hands-on technical comfort, though it's not required since this is only a nice-to-have."
+    },
+    {
+      "skill": "Product management certification (CSPO, Pragmatic Institute, etc.)",
+      "jd_priority": "nice_to_have",
+      "resume_evidence": "No evidence available.",
+      "confidence": "none",
+      "missing_proof": "Completion of a recognized PM certification (CSPO, Pragmatic Institute, or similar), if pursued.",
+      "recommendation": "No evidence exists, but the JD explicitly states this is 'a bonus but not evaluated heavily' — not worth prioritizing for this specific application."
+    }
+  ],
+  "well_evidenced_skills": [
+    "2+ years owning a fraud/risk/compliance-adjacent product",
+    "Hands-on ML/scoring-model product experience",
+    "Prior fintech/payments experience",
+    "A/B testing familiarity",
+    "Technical/CS background"
+  ],
+  "weakly_evidenced_skills": [
+    "Strong SQL skills (LOW — bare skill, no demonstrating bullet)",
+    "Amplitude / analytics tools (LOW — bare skill, no demonstrating bullet)",
+    "Managing/mentoring other PMs (NONE)",
+    "PM certification (NONE)"
+  ],
+  "overall_evidence_strength": "Evidence strength is bimodal. Five requirements — domain ownership, ML-product experience, fintech background, A/B testing, and technical background — are HIGH-confidence with concrete, outcome-backed bullets; these are genuinely strong, well-proven claims. Four requirements sit at LOW or NONE confidence: SQL and Amplitude are both listed only as bare skills with no demonstrating bullet (an easy fix if real examples exist), while PM mentoring and PM certification have no evidence at all. The two MEDIUM items (regulatory translation, written communication) are real but under-specified — evidenced by activity without a stated outcome.",
+  "human_readable_summary": "## Skill Evidence: Ananya Sharma vs. Senior PM — Risk & Fraud @ Razorpay\n\n**5 of 11 skill-shaped requirements are HIGH confidence** — genuinely well-proven with outcome-backed bullets, not just keyword matches: fraud/risk domain ownership, ML-product experience, fintech background, A/B testing, and technical background.\n\n**4 are LOW or NONE confidence.** SQL and Amplitude are both claimed but never demonstrated in a bullet — the easiest fix here if real examples exist. PM mentoring and PM certification have zero evidence; mentoring is the most consequential of the two since the JD marks it critical.\n\n**2 sit at MEDIUM** — regulatory translation and written communication are real (a bullet exists) but under-specified (no stated outcome, and written communication doesn't cover the JD's specific call-out of presenting to leadership).\n\n**For interview prep:** SQL, Amplitude, regulatory translation, and written communication are the four areas where a specific verbal example would meaningfully strengthen the case beyond what the resume currently proves.\n",
+  "analysis_confidence": "high",
+  "limitations": [
+    "Confidence grades reflect what's written in the resume, not the candidate's actual skill level — a real skill with weak resume evidence is graded the same as a skill that may not exist.",
+    "The two MEDIUM-confidence items (regulatory translation, written communication) involve judgment about where 'demonstrated' ends and 'stated without outcome' begins; a different reviewer might grade them slightly differently.",
+    "This agent only has the resume and JD text supplied — no access to LinkedIn, a portfolio, or verbal candidate input that might contain additional evidence."
+  ]
+}

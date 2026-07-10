@@ -1,0 +1,99 @@
+{
+  "candidate_name": "Ananya Sharma",
+  "target_role": "Senior Product Manager — Risk & Fraud",
+  "versions": [
+    {
+      "version": "ats",
+      "applicable": true,
+      "skip_reason": null,
+      "tailored_for": "Single-column, keyword-forward structure for reliable ATS parsing and JD keyword matching (aligned to the Razorpay Risk & Fraud JD).",
+      "formatting_notes": "Single column, standard section headings, plain hyphens instead of em/en dashes, no tables or graphics. Skills moved directly below Summary for early keyword density.",
+      "key_changes": [
+        "Moved Skills section from last to second position",
+        "Replaced em dash (—) and en dash (–) characters with commas and plain hyphens",
+        "Replaced 'Responsible for' and 'Helped' openers with active verbs (Drove, Improved) without changing claimed scope",
+        "Removed the empty Certifications section"
+      ],
+      "full_text": "Ananya Sharma\nBengaluru, India | ananya.sharma.pm@gmail.com | +91-98765-43210 | linkedin.com/in/ananyasharma-pm\n\nSUMMARY\nSenior Product Manager with 8 years of experience across fintech and consumer marketplaces, including 4 years owning risk, fraud, and compliance-adjacent products. Skilled in product strategy, roadmapping, SQL, A/B testing, and stakeholder management.\n\nSKILLS\nProduct Strategy, Roadmapping, SQL, A/B Testing, Stakeholder Management, User Research, RBI Compliance Basics, Payments Domain Knowledge, Figma, JIRA, Amplitude\n\nWORK EXPERIENCE\n\nSenior Product Manager, Cashfree Payments, Bengaluru\nJune 2022 - Present\n- Owned the merchant onboarding product line for Cashfree's payment gateway\n- Led a cross-functional team of 6 (engineering, design, data) to launch a revamped KYC flow, reducing merchant onboarding time from 3 days to 18 hours\n- Drove the roadmap for the risk and fraud detection product area\n- Worked closely with compliance and legal teams on RBI regulatory requirements\n- Launched a self-serve merchant dashboard that increased weekly active merchants by 22%\n- Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%\n\nProduct Manager, Swiggy, Bengaluru\nJuly 2020 - May 2022\n- Managed the restaurant partner rating and feedback product\n- Improved partner satisfaction scores\n- Drove A/B experiments on the delivery partner app, improving order acceptance rate by 9%\n- Coordinated with 4 engineering pods across two cities to ship a partner payout redesign\n- Authored PRDs and prioritized the backlog for the partner tools squad\n\nAssociate Product Manager, Zomato, Gurugram\nMay 2018 - June 2020\n- Supported the search and discovery team\n- Partnered with senior PMs on user research and competitive analysis\n- Contributed to a redesign of the restaurant listing page\n\nPROJECTS\n\nCampus Meal-Split App (Side Project)\n- Built an expense-splitting app for hostel meal groups using React Native and Firebase\n- Reached approximately 300 students at IIT Delhi during a 6-month pilot\n\nEDUCATION\nB.Tech, Computer Science, Indian Institute of Technology (IIT) Delhi, 2018\n"
+    },
+    {
+      "version": "recruiter",
+      "applicable": true,
+      "skip_reason": null,
+      "tailored_for": "Optimized for a ~30-second recruiter scan — leads with quantified achievements before process detail.",
+      "formatting_notes": "Adds a 4-line Highlights block up top; reorders bullets within each role to lead with metrics; compresses the Zomato entry to its two strongest lines.",
+      "key_changes": [
+        "Added a Highlights section surfacing the 4 strongest quantified results",
+        "Reordered Cashfree and Swiggy bullets to lead with metrics, not process description",
+        "Compressed Zomato from 3 bullets to 2 without dropping any factual content"
+      ],
+      "full_text": "Ananya Sharma\nSenior Product Manager — Payments & Risk | Bengaluru, India\nananya.sharma.pm@gmail.com | +91-98765-43210 | linkedin.com/in/ananyasharma-pm\n\nSUMMARY\nSenior PM who cut chargebacks 31% and slashed merchant onboarding time from 3 days to 18 hours at Cashfree Payments. 8 years building product across fintech and consumer marketplaces (Cashfree, Swiggy, Zomato), including 4 years owning risk, fraud, and compliance-adjacent products.\n\nHIGHLIGHTS\n- Cut chargeback rate 31% by partnering with data science on a fraud scoring model\n- Reduced merchant onboarding time from 3 days to 18 hours, leading a 6-person KYC flow redesign\n- Grew weekly active merchants 22% with a new self-serve merchant dashboard\n- Improved delivery-partner order acceptance rate 9% through A/B experimentation at Swiggy\n\nEXPERIENCE\n\nSenior Product Manager, Cashfree Payments — Jun 2022-Present\n- Cut chargeback rate 31% by partnering with data science to introduce a fraud scoring model\n- Reduced merchant onboarding time from 3 days to 18 hours, leading a 6-person cross-functional team through a KYC flow redesign\n- Grew weekly active merchants 22% by launching a self-serve merchant dashboard\n- Owned the merchant onboarding product line and the risk and fraud detection roadmap\n- Worked directly with compliance and legal on RBI regulatory requirements\n\nProduct Manager, Swiggy — Jul 2020-May 2022\n- Improved delivery-partner order acceptance rate 9% by driving A/B experiments\n- Coordinated 4 engineering pods across two cities to ship a partner payout redesign\n- Managed the restaurant partner rating and feedback product; improved partner satisfaction scores\n- Authored PRDs and prioritized the backlog for the partner tools squad\n\nAssociate Product Manager, Zomato — May 2018-Jun 2020\n- Partnered with senior PMs on user research and competitive analysis for the search and discovery team\n- Contributed to a redesign of the restaurant listing page\n\nSIDE PROJECT: Campus Meal-Split App — React Native + Firebase app reaching ~300 students at IIT Delhi (6-month pilot)\n\nSKILLS: Product Strategy - Roadmapping - SQL - A/B Testing - Stakeholder Management - RBI Compliance Basics - Payments Domain Knowledge\n\nEDUCATION: B.Tech, Computer Science, IIT Delhi, 2018\n"
+    },
+    {
+      "version": "startup",
+      "applicable": true,
+      "skip_reason": null,
+      "tailored_for": "Emphasizes ownership, breadth, and comfort with ambiguity for a startup audience.",
+      "formatting_notes": "Title genericized to 'Product Manager' in the header for broader startup-role fit; summary and bullets foreground ownership language ('Owned', 'Drove') over process language.",
+      "key_changes": [
+        "Summary rewritten to foreground end-to-end ownership and the side project",
+        "Verbs shifted toward ownership framing ('Owned', 'Drove', 'Ran') where the underlying scope supports it",
+        "Side project given equal visual weight to full-time roles, since it demonstrates hands-on building"
+      ],
+      "full_text": "Ananya Sharma\nProduct Manager | Bengaluru, India\nananya.sharma.pm@gmail.com | +91-98765-43210 | linkedin.com/in/ananyasharma-pm\n\nSUMMARY\nProduct manager who owns problems end-to-end, from merchant risk scoring to a side-project app. 8 years shipping across fintech and consumer marketplaces, comfortable moving fast in ambiguous, high-stakes areas like fraud and compliance.\n\nEXPERIENCE\n\nSenior Product Manager, Cashfree Payments — Jun 2022-Present\n- Owned the merchant onboarding product line for Cashfree's payment gateway\n- Led a 6-person team from KYC flow concept to launch, cutting onboarding time from 3 days to 18 hours\n- Drove the risk and fraud detection roadmap, partnering with data science to ship a fraud scoring model that cut chargebacks 31%\n- Launched a self-serve merchant dashboard, growing weekly active merchants 22%\n- Worked directly with compliance and legal teams on RBI regulatory requirements\n\nProduct Manager, Swiggy — Jul 2020-May 2022\n- Owned the restaurant partner rating and feedback product, improving partner satisfaction scores\n- Ran A/B experiments on the delivery partner app, lifting order acceptance rate 9%\n- Coordinated 4 engineering pods across two cities to ship a partner payout redesign\n- Wrote PRDs and owned backlog prioritization for the partner tools squad\n\nAssociate Product Manager, Zomato — May 2018-Jun 2020\n- Partnered with senior PMs on user research and competitive analysis for the search and discovery team\n- Contributed to a redesign of the restaurant listing page\n\nSIDE PROJECT\nCampus Meal-Split App — Built an expense-splitting app for hostel meal groups (React Native + Firebase), reaching ~300 students at IIT Delhi over a 6-month pilot\n\nSKILLS: Product Strategy - Roadmapping - SQL - A/B Testing - RBI Compliance Basics - Payments Domain Knowledge - Figma - JIRA - Amplitude\n\nEDUCATION: B.Tech, Computer Science, IIT Delhi, 2018\n"
+    },
+    {
+      "version": "enterprise",
+      "applicable": true,
+      "skip_reason": null,
+      "tailored_for": "Emphasizes process rigor, cross-functional stakeholder management, and regulatory/compliance experience for a large-organization audience.",
+      "formatting_notes": "Formal tone throughout; present tense for the current role framed as ongoing organizational responsibility; side project omitted as out-of-scope for this audience (fact remains present in the other three versions).",
+      "key_changes": [
+        "Side project section removed — not typically weighted by enterprise reviewers, though the fact isn't lost (present in ATS/recruiter/startup versions)",
+        "Bullets reframed around cross-functional coordination and regulatory governance",
+        "Skills reordered to lead with Stakeholder Management and Cross-Functional Program Coordination"
+      ],
+      "full_text": "Ananya Sharma\nSenior Product Manager | Bengaluru, India\nananya.sharma.pm@gmail.com | +91-98765-43210 | linkedin.com/in/ananyasharma-pm\n\nSUMMARY\nSenior Product Manager with 8 years of experience leading cross-functional product delivery across fintech and consumer marketplace organizations, including 4 years managing risk, fraud, and regulatory-compliance-adjacent product areas within RBI-governed environments.\n\nPROFESSIONAL EXPERIENCE\n\nSenior Product Manager, Cashfree Payments, Bengaluru\nJune 2022 - Present\n- Own the merchant onboarding product line for Cashfree's payment gateway, coordinating across engineering, design, and data functions\n- Led a cross-functional team of 6 through a structured redesign of the KYC flow, reducing merchant onboarding time from 3 days to 18 hours\n- Direct the roadmap for the risk and fraud detection product area, partnering with compliance and legal teams to ensure decisions meet RBI regulatory requirements\n- Partnered with the data science team to develop and deploy a fraud scoring model, reducing chargeback rate by 31%\n- Launched a self-serve merchant dashboard, increasing weekly active merchants by 22%\n\nProduct Manager, Swiggy, Bengaluru\nJuly 2020 - May 2022\n- Managed the restaurant partner rating and feedback product, improving partner satisfaction scores\n- Led structured A/B testing on the delivery partner application, improving order acceptance rate by 9%\n- Coordinated a partner payout redesign across 4 engineering pods spanning two cities, aligning delivery timelines and dependencies\n- Authored product requirements documents and managed backlog prioritization for the partner tools team\n\nAssociate Product Manager, Zomato, Gurugram\nMay 2018 - June 2020\n- Supported the search and discovery product team, partnering with senior product managers on user research and competitive analysis\n- Contributed to a redesign of the restaurant listing page\n\nEDUCATION\nB.Tech, Computer Science, Indian Institute of Technology (IIT) Delhi, 2018\n\nSKILLS\nProduct Strategy, Roadmapping, Stakeholder Management, Cross-Functional Program Coordination, RBI Regulatory Compliance, SQL, A/B Testing, Payments Domain Knowledge\n"
+    },
+    {
+      "version": "executive",
+      "applicable": false,
+      "skip_reason": "The source resume's highest title is 'Senior Product Manager' with no VP/Director-level title, no stated P&L or organizational ownership, and no evidence of direct reports (team leadership is scoped to a 6-person cross-functional project team and coordination with 4 engineering pods, not people management). An executive-tier rewrite would need to imply org-level scope the source doesn't support, which would misrepresent the candidate rather than just reframe them.",
+      "tailored_for": "Not generated — see skip_reason.",
+      "formatting_notes": "Not applicable.",
+      "key_changes": [],
+      "full_text": ""
+    }
+  ],
+  "global_changes_summary": [
+    "Replaced weak/passive openers ('Responsible for', 'Helped', 'Worked on') with active verbs across all versions without changing claimed scope",
+    "Reordered bullets within roles differently per version (chronological/process order for ATS and enterprise, achievement-first for recruiter and startup)",
+    "Preserved every factual claim (employers, titles, dates, team sizes, metrics) unchanged across all four applicable versions",
+    "Consistently declined to add scope, metrics, or claims (e.g. PM mentoring, SQL usage specifics) the source resume doesn't support — see unmet_improvement_opportunities"
+  ],
+  "unmet_improvement_opportunities": [
+    {
+      "location": "Swiggy — partner satisfaction bullet",
+      "reason_not_improved": "The source states satisfaction scores improved but gives no baseline or resulting number; a specific percentage could not be added without inventing one."
+    },
+    {
+      "location": "Cashfree — 'Owned the merchant onboarding product line' bullet",
+      "reason_not_improved": "No scale indicator (merchant volume, transaction value) is stated in the source, so this bullet could not be strengthened with a scope metric without fabricating one."
+    },
+    {
+      "location": "Skills — SQL",
+      "reason_not_improved": "SQL is listed as a skill but the source never ties it to a specific action or outcome, so no demonstrating bullet could be written without inventing a scenario."
+    },
+    {
+      "location": "Entire resume — people management / mentoring",
+      "reason_not_improved": "No version claims PM mentoring or management experience, since the source resume contains no evidence of it; this cannot be addressed by rewriting."
+    }
+  ],
+  "human_readable_summary": "## Resume Rewrite: Ananya Sharma\n\n**4 of 5 versions generated.** ATS, Recruiter, Startup, and Enterprise versions are ready to use. The **Executive version was deliberately not generated** — the source resume's scope (Senior PM, 6-person project team, no stated direct reports) doesn't support an executive-tier framing without overstating it, so it's marked `applicable: false` with a specific reason rather than force-generated.\n\n**What changed, and what didn't:** every version keeps the same employers, titles, dates, team sizes, and metrics — only tone, ordering, verb choice, and section emphasis differ per audience. Four specific opportunities to add metrics or specifics were identified and deliberately left alone rather than invented (see Unmet Improvement Opportunities) — most notably, SQL is a listed skill with no demonstrating bullet in the source, and no version claims PM mentoring experience since none exists in the source.\n\n**Fastest win if the candidate wants to close a gap for real:** get a concrete number for the Swiggy partner-satisfaction improvement and a scope indicator (merchant volume, GMV) for the Cashfree onboarding ownership bullet — both would meaningfully strengthen every version once available.\n",
+  "rewrite_confidence": "high",
+  "limitations": [
+    "The executive version was not generated because the source resume's title and scope don't support an executive-tier framing without overstating it — see that version's skip_reason.",
+    "Several bullets that could be stronger with a metric were left qualitative rather than invented — see unmet_improvement_opportunities.",
+    "Formatting is described in prose (formatting_notes) since output is plain text; actual visual layout (fonts, spacing, columns) needs to be applied when the candidate transfers this into a document."
+  ]
+}

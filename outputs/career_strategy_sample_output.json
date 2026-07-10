@@ -1,0 +1,139 @@
+{
+  "role_fit_assessment": "good_fit_with_gaps",
+  "role_fit_reasoning": "Gap Analysis found 8/12 JD requirements fully met, including the two hardest-to-fake critical ones (fraud/risk domain ownership, ML-product experience). Recruiter Simulation independently reached 'shortlist.' The one real critical gap (no PM mentoring evidence) keeps this from being a strong fit, but it's a single, well-understood gap against an otherwise strong match — not a pattern of mismatches.",
+  "market_salary_estimate": {
+    "range_low": "₹42,00,000",
+    "range_high": "₹65,00,000",
+    "currency_and_period": "INR per year, total compensation (base + variable/bonus)",
+    "reasoning": "Anchored primarily on Razorpay's own published Senior PM compensation data (Levels.fyi: median ₹60.8L, range ₹50.2L-₹80L+; Glassdoor Bangalore: ₹40L-₹61L total pay, base ~₹45L + ~₹5.5L variable), cross-checked against the broader Bengaluru Senior PM market (Glassdoor: ₹32.5L-₹55L 25th-75th percentile; Levels.fyi broad market: ₹47.9L-₹94.7L). Sources disagree by roughly 2x, so this range favors the middle-to-upper portion of Razorpay's own band given ~8 years of experience and a hard-to-find domain match, rather than picking one source's number as settled."
+  },
+  "seniority_evaluation": "Solidly Senior PM, with early signals toward a Lead/Principal or Group PM track but not yet there.",
+  "seniority_evidence": "~8 years of experience with a clear upward trajectory (Associate PM → PM → Senior PM), ownership of a full product area (risk/fraud) with measurable business outcomes, and cross-functional leadership of a 6-person team — consistent with strong Senior PM scope. Not yet evidenced: formal people management/mentoring of other PMs, and org-level (multi-team or P&L) scope, both of which typically distinguish Senior from Lead/Principal/Group PM titles.",
+  "promotion_readiness_summary": "Ready for a lateral or step-up Senior PM move at a comparable or slightly larger company (like this Razorpay req) now. Not yet clearly ready for a Lead/Principal-level jump — the resume's own gaps (no mentoring, no stated org-level scope) are exactly the evidence a promotion case to that level would need.",
+  "promotion_blockers": [
+    "No evidence of managing or mentoring other PMs — the single most common differentiator between Senior and Lead/Principal PM titles.",
+    "No stated scope beyond a single product area/project team — no evidence of owning multiple product lines or a P&L."
+  ],
+  "promotion_accelerants": [
+    "Directly quantified business impact on every recent bullet (31% chargeback reduction, 3-day→18-hour onboarding cut) — the kind of evidence promotion committees weight heavily.",
+    "Cross-functional leadership of a 6-person team through a shipped, measurable initiative — a credible stepping stone toward formal people leadership."
+  ],
+  "career_risks": [
+    {
+      "item": "Staying an individual-contributor-track Senior PM for another cycle without accumulating people-leadership evidence could make a future Lead/Principal jump harder.",
+      "expected_impact": "high",
+      "reasoning": "This is the same gap flagged independently by Gap Analysis, Skill Evidence, Recruiter Simulation, and Learning & Certification Agents — it compounds the longer it goes unaddressed, since competing candidates at the next level will have it."
+    },
+    {
+      "item": "Domain over-specialization in fraud/risk within Indian fintech could narrow future options if that specific niche cools.",
+      "expected_impact": "medium",
+      "reasoning": "Deep domain expertise is currently a strength (direct JD match), but concentrating entirely in one narrow niche across multiple roles increases re-positioning risk if the fraud/risk PM market softens."
+    },
+    {
+      "item": "SQL and analytics-tool claims remain unevidenced on the resume; if unaddressed across future applications, this could compound into a credibility gap in technical PM interview loops.",
+      "expected_impact": "low",
+      "reasoning": "Currently a minor, easily-fixed gap per Skill Evidence Agent, but worth resolving before it becomes a recurring theme."
+    }
+  ],
+  "career_opportunities": [
+    {
+      "item": "Razorpay's active push into agentic/AI-native payments (Agent Studio) creates a genuinely new, less-crowded specialization: fraud/risk for autonomous-agent transactions.",
+      "expected_impact": "high",
+      "reasoning": "A real, current, company-specific opportunity per Company Intelligence Agent's research — very few PMs currently have experience here since the problem space itself is new."
+    },
+    {
+      "item": "Closing the mentoring gap over the next 3-6 months directly unlocks Lead/Principal-track candidacy at the next role change, not just this one.",
+      "expected_impact": "high",
+      "reasoning": "The single highest-leverage gap across every upstream agent's findings — closing it has compounding value beyond this specific application."
+    },
+    {
+      "item": "Building the two Portfolio Recommendation Agent projects (SQL dashboard, compliance translator) would convert two currently-thin skill claims into demonstrated, interview-ready proof.",
+      "expected_impact": "medium",
+      "reasoning": "Meaningful for this and future applications, but addresses LOW-severity gaps rather than the one critical gap."
+    }
+  ],
+  "thirty_day_plan": [
+    {
+      "action": "Apply to the Razorpay Senior PM, Risk & Fraud role using the ATS-optimized resume version, with the LinkedIn profile updated to match.",
+      "expected_impact": "high",
+      "ties_to": "Resume Rewrite Agent's ATS version + LinkedIn Optimization Agent's rewritten profile"
+    },
+    {
+      "action": "Begin the SQL and Amplitude learning track (GoPractice + Amplitude Academy) and start volunteering as a PM mentor on a platform like MentorCruise.",
+      "expected_impact": "high",
+      "ties_to": "Learning & Certification Agent's weeks 1-4 roadmap and ongoing mentoring practice plan"
+    },
+    {
+      "action": "Prepare the mentoring-gap interview answer explicitly — decide now whether to surface a real (even informal) example or address the gap honestly.",
+      "expected_impact": "high",
+      "ties_to": "Interview Coach Agent's #1 preparation priority"
+    }
+  ],
+  "ninety_day_plan": [
+    {
+      "action": "Complete and publish the Merchant Risk Signal Dashboard portfolio project, converting the SQL/Amplitude evidence gap into demonstrated proof.",
+      "expected_impact": "medium",
+      "ties_to": "Portfolio Recommendation Agent's highest-priority project"
+    },
+    {
+      "action": "Publish the KYC Onboarding Redesign PRD case study to LinkedIn Featured, reusing a real, already-verified achievement.",
+      "expected_impact": "medium",
+      "ties_to": "Portfolio Recommendation Agent's Public PRD Case Study project + LinkedIn Optimization Agent's Featured recommendations"
+    },
+    {
+      "action": "Accumulate at least 2-3 concrete mentoring examples from the ongoing volunteer mentoring practice, logged with specifics.",
+      "expected_impact": "high",
+      "ties_to": "Learning & Certification Agent's mentoring practice plan"
+    }
+  ],
+  "one_year_roadmap": [
+    {
+      "action": "Convert accumulated mentoring experience (formal or informal) into a resume bullet and interview-ready STAR story, closing the single critical gap identified across every upstream agent.",
+      "expected_impact": "high",
+      "ties_to": "Gap Analysis / Skill Evidence Agent's critical gap"
+    },
+    {
+      "action": "Build a specific point of view and, ideally, hands-on exposure to agentic/AI-native payment risk — the newest, least-crowded specialization in this domain.",
+      "expected_impact": "high",
+      "ties_to": "Company Intelligence Agent's Agent Studio findings"
+    },
+    {
+      "action": "Reassess promotion readiness for a Lead/Principal PM title once the mentoring gap is closed and a second product area or larger scope has been demonstrated.",
+      "expected_impact": "medium",
+      "ties_to": null
+    }
+  ],
+  "sources": [
+    {
+      "title": "Razorpay Senior Product Manager Salary in India",
+      "publisher": "Levels.fyi",
+      "date": null,
+      "url": "https://www.levels.fyi/companies/razorpay/salaries/product-manager/levels/senior-product-manager/locations/india"
+    },
+    {
+      "title": "Razorpay Senior Product Manager Salaries in Bangalore",
+      "publisher": "Glassdoor",
+      "date": null,
+      "url": "https://www.glassdoor.com/Salary/Razorpay-Senior-Product-Manager-Bangalore-Salaries-EJI_IE1146550.0,8_KO9,31_IL.32,41_IM1091.htm"
+    },
+    {
+      "title": "Senior Product Manager Salary in Bengaluru, India",
+      "publisher": "Levels.fyi",
+      "date": null,
+      "url": "https://www.levels.fyi/t/product-manager/levels/senior/locations/greater-bengaluru"
+    },
+    {
+      "title": "Salary: Senior Product Manager in Bangalore, India 2026",
+      "publisher": "Glassdoor",
+      "date": null,
+      "url": "https://www.glassdoor.com/Salaries/bangalore-india-senior-product-manager-salary-SRCH_IL.0,15_IM1091_KO16,38.htm"
+    }
+  ],
+  "human_readable_summary": "## Career Strategy: Ananya Sharma → Senior PM, Risk & Fraud @ Razorpay\n\n**Role fit: Good fit with gaps.** 8/12 requirements met including the hardest-to-fake ones; one real critical gap (PM mentoring) keeps this from being a strong fit, consistent with Gap Analysis and Recruiter Simulation's independent findings.\n\n**Market salary: ₹42L-₹65L total comp**, anchored on Razorpay's own published Senior PM data and cross-checked against the broader Bengaluru market — sources disagreed by roughly 2x, so this is a negotiation anchor, not a precise figure.\n\n**Seniority: Solidly Senior PM**, with real signals toward Lead/Principal but not there yet — the same mentoring gap that shows up everywhere else in this system is also the single biggest lever for the next promotion, not just this application.\n\n**Biggest opportunity:** Razorpay's push into agentic/AI-native payments (Agent Studio) creates a genuinely new, uncrowded specialization — fraud/risk for autonomous-agent transactions — worth building real expertise in over the next year, well beyond just this one application.\n\n**The roadmap threads together everything upstream:** apply now with the ATS/LinkedIn-optimized materials, start the SQL/Amplitude/mentoring tracks in the first 30 days, ship the portfolio projects by 90 days, and use the accumulated mentoring evidence to reassess Lead/Principal readiness within a year.\n",
+  "strategy_confidence": "high",
+  "limitations": [
+    "Compensation sources disagreed by roughly 2x across the range (company-specific Razorpay data vs. broader Bengaluru market data); the estimate is a reasonable anchor, not a precise number, and should be treated as a negotiation starting point.",
+    "Seniority and promotion-readiness assessments are based on resume content only — actual promotion criteria vary significantly by company and were not researched company-by-company.",
+    "This agent synthesizes upstream agents' findings rather than re-verifying them; any error in Gap Analysis, Skill Evidence, or Recruiter Simulation's original findings would carry through here."
+  ]
+}

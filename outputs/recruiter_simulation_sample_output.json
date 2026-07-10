@@ -1,0 +1,44 @@
+{
+  "first_impression": "Name, then current title jumps out first: 'Senior Product Manager, Cashfree Payments' — that's an immediate domain match for a fraud/risk req at a payments company, which is rare enough to register in the first couple seconds. Scanning down, the numbers pop fast — '3 days to 18 hours,' '22%,' '31%' — more quantified bullets than most resumes have in the whole document. Worth a real look, not a 3-second pass.",
+  "strengths": [
+    "Direct fintech/payments/fraud domain match: current role is literally 'risk and fraud detection' at a payments company — the single highest-signal thing on the page for this specific req.",
+    "Numbers jump out immediately: 3 days→18 hrs, 22%, 31% — recruiters scanning fast latch onto quantified impact, and this resume has more of it than most.",
+    "Clean career progression: Associate PM → PM → Senior PM across three recognizable companies (Zomato, Swiggy, Cashfree) — no unexplained gaps or lateral moves, reads as a coherent trajectory.",
+    "IIT Delhi CS degree stands out in the education line — a strong pedigree signal even though it's only a nice-to-have for this req."
+  ],
+  "concerns": [
+    "No mention anywhere of managing or mentoring other PMs — this JD explicitly wants that, and it's just not on the page. That's the first thing I'd flag to the hiring manager.",
+    "The Zomato entry (earliest role) is generic — 'worked on,' 'assisted with' — doesn't hurt much since it's the oldest/most junior role, but it's the weakest section on the page.",
+    "SQL and Amplitude are listed as skills but neither has a bullet backing it up — common pattern, not a dealbreaker alone, but I'd want to probe it live.",
+    "No certifications listed at all, though the JD treats that as low-priority anyway."
+  ],
+  "missing_information": [
+    "No indication of team size managed, if any, beyond the specific project-team numbers (6, 4 pods) — unclear whether this is a fully IC-track senior PM or someone with any people-management scope at all.",
+    "No current compensation or notice period — standard screening-call info, absent from the resume itself (normal, but it's the first thing I'd follow up on).",
+    "No portfolio, writing sample, or public artifact linked — for a role that emphasizes PRD-writing and leadership communication, something skimmable beyond the resume itself would speed up screening."
+  ],
+  "likely_interview_questions": [
+    "Why are you looking to leave Cashfree, and what specifically drew you to this role?",
+    "Have you managed or mentored any other PMs, even informally? Tell me about that.",
+    "Walk me through the fraud scoring model project — what was your specific role versus data science's?",
+    "What's your notice period and current compensation expectations?"
+  ],
+  "reasons_to_shortlist": [
+    "Direct, current-role domain match (fraud/risk at a payments company) is rare and exactly what this req needs — most applicants won't have this.",
+    "Quantified impact across every bullet in the current role shows this candidate can both ship and measure, which is what the JD's 'What success looks like' section is asking for.",
+    "Clean, unambiguous career trajectory with increasing scope — low risk from a trajectory standpoint."
+  ],
+  "reasons_to_reject": [
+    "Zero evidence of managing/mentoring other PMs, which the JD marks as a Must-have — if treated as a hard requirement rather than a nice-to-have in practice, this resume doesn't clear the bar as written.",
+    "Generic, low-signal bullets on the oldest role could indicate either genuinely limited early scope or weak self-marketing — a mild risk either way, though it's the least recent, least-weighted part of the resume."
+  ],
+  "hiring_recommendation": "shortlist",
+  "recommendation_reasoning": "This is one of the stronger resumes I'd see for this specific req — direct fraud/risk domain experience at a payments company, and it's unusual to see quantified impact on every single current-role bullet. The one real gap (no PM mentoring evidence against a stated Must-have) isn't disqualifying on its own given how strong everything else is, but it's exactly the kind of thing I'd flag in my notes to the hiring manager and make sure gets probed directly in the first interview rather than assumed away. Shortlist, not strong-shortlist, specifically because that gap is real and against a Must-have, not a nice-to-have.",
+  "human_readable_summary": "## Recruiter Simulation: Ananya Sharma vs. Senior PM — Risk & Fraud @ Razorpay\n\n**First impression:** Domain match registers immediately (current title: risk & fraud PM at a payments company), then the numbers pop — more quantified bullets than most resumes in this pile.\n\n**Recommendation: Shortlist.** Direct domain match plus consistent quantified impact make this one of the stronger resumes for this specific req. The one real concern — zero evidence of PM mentoring/management against a stated Must-have — doesn't sink it, but it's flagged for the hiring manager to probe directly in the first interview.\n\n**What would come up on the screening call:** motivation for leaving, the mentoring gap specifically, and a quick sanity-check on the fraud-model project's actual scope (partnership vs. ownership).\n",
+  "simulation_confidence": "high",
+  "limitations": [
+    "This simulates one recruiter's fast, subjective first pass — a different recruiter, or the same recruiter on a different day, could reasonably reach a different call on borderline items (e.g. how much the mentoring gap matters).",
+    "This agent doesn't have access to how strictly this specific hiring team enforces 'Must-have' vs. treats it as aspirational — that materially affects how disqualifying the mentoring gap actually is in practice.",
+    "No information beyond the resume and JD text was used — no LinkedIn, referral context, or recruiter-network signal that would realistically also factor into a real screen."
+  ]
+}
