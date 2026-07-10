@@ -27,6 +27,15 @@ if has_passcode:
 elif has_key:
     st.write("🔓 No `LIVE_MODE_PASSCODE` set — anyone with this app's URL can trigger billed Live-mode runs.")
 
+_cost_cap_raw = os.environ.get("LIVE_MODE_COST_LIMIT_USD")
+if _cost_cap_raw:
+    try:
+        st.write(f"💵 `LIVE_MODE_COST_LIMIT_USD` is set to **${float(_cost_cap_raw):.2f}** — a Live run stops immediately once it hits this in estimated cost.")
+    except ValueError:
+        st.write(f"⚠️ `LIVE_MODE_COST_LIMIT_USD` is set to `{_cost_cap_raw}`, which isn't a valid number — it's being ignored.")
+elif has_key:
+    st.write("♾️ No `LIVE_MODE_COST_LIMIT_USD` set — Live runs have no automatic spending cap.")
+
 st.subheader("Database")
 st.write(f"Dashboard DB: `{db.DEFAULT_DB_PATH}`")
 st.write(f"Pipeline run log: `career_copilot_runs.sqlite3`")

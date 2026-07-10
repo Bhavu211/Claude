@@ -48,6 +48,32 @@ entered. Demo mode is never gated — it's always free to explore. Leaving
 `LIVE_MODE_PASSCODE` unset (the default) leaves Live mode ungated, exactly
 as before this option existed.
 
+### Capping Live-mode spend
+
+`ANTHROPIC_API_KEY` alone has no built-in spending cap, and a run can hit
+Company Intelligence / Learning & Certification / Career Strategy — three
+agents that also call Anthropic's billed `web_search` tool on top of normal
+token cost. To put a hard ceiling on any single run, set
+`LIVE_MODE_COST_LIMIT_USD`:
+
+```bash
+export LIVE_MODE_COST_LIMIT_USD=2.00
+```
+
+This is an admin-only setting (like `LIVE_MODE_PASSCODE`) — end users never
+see or choose it, only whether a run stops. Once set, the pipeline checks
+cumulative estimated cost after every single agent call during a Live run;
+the moment it's met or exceeded, execution stops immediately — no further
+agents, no Critic, no Supervisor, since those would themselves spend more.
+The dashboard shows a clear "Stopped early" banner with the amount spent,
+and whatever agents did complete before the cutoff are still saved to the
+output folder. If the model in use isn't in `core/pricing.py`'s pricing
+table (cost can't be computed), the run fails safe and stops rather than
+accumulating untracked spend. Demo mode is never subject to this limit —
+it never calls the billed API in the first place. Leaving
+`LIVE_MODE_COST_LIMIT_USD` unset (the default) leaves Live-mode runs
+uncapped, exactly as before this option existed.
+
 ## What's dynamic vs. what's fixed
 
 **Dynamic — no code change needed when agents change:** `dashboard/discovery.py`

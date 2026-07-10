@@ -25,7 +25,7 @@ from career_copilot.core.registry import AGENT_REGISTRY, AGENT_BY_ID
 
 if TYPE_CHECKING:
     from career_copilot.core.run_log import RunLogger
-    from career_copilot.core.llm_client import LLMClient
+from career_copilot.core.llm_client import LLMClient
 from career_copilot.agents.planner import PlannerAgent, PlannerInput, PlannerOutput
 from career_copilot.agents.critic import CriticAgent, CriticInput, CriticOutput
 from career_copilot.agents.supervisor import SupervisorAgent, SupervisorInput, SupervisorOutput
@@ -71,6 +71,12 @@ class PipelineResult(BaseModel):
     agent_outputs: Dict[str, dict] = Field(..., description="agent_id -> that agent's raw output dict")
     critic_output: Optional[CriticOutput] = None
     supervisor_output: Optional[SupervisorOutput] = None
+    stopped_for_cost_limit: bool = Field(
+        default=False, description="True if the run was cut short because total_cost_usd hit cost_limit_usd"
+    )
+    total_cost_usd: Optional[float] = Field(
+        default=None, description="Cumulative estimated cost across every agent call in this run, if trackable"
+    )
 
 
 class ExecutionEvent(BaseModel):
@@ -80,13 +86,16 @@ class ExecutionEvent(BaseModel):
 
     event_type: str = Field(
         ..., description="'plan_ready' | 'agent_started' | 'agent_completed' | 'agent_failed' | "
-        "'critic_started' | 'critic_completed' | 'supervisor_started' | 'supervisor_completed' | 'pipeline_completed'"
+        "'cost_limit_exceeded' | 'critic_started' | 'critic_completed' | "
+        "'supervisor_started' | 'supervisor_completed' | 'pipeline_completed'"
     )
     agent_id: Optional[str] = None
     message: str = ""
     timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     run_order: Optional[List[str]] = Field(default=None, description="Set only on 'plan_ready'")
     error: Optional[str] = Field(default=None, description="Set only on 'agent_failed'")
+    cost_usd: Optional[float] = Field(default=None, description="Set only on 'cost_limit_exceeded'")
+    cost_limit_usd: Optional[float] = Field(default=None, description="Set only on 'cost_limit_exceeded'")
 
 
 def _emit(on_event: Optional[Callable[[ExecutionEvent], None]], **kwargs) -> None:
@@ -308,6 +317,7 @@ def run_pipeline(
     logger: Optional["RunLogger"] = None,
     on_event: Optional[Callable[[ExecutionEvent], None]] = None,
     client_factory: Optional[Callable[[], "LLMClient"]] = None,
+    cost_limit_usd: Optional[float] = None,
 ) -> PipelineResult:
     """Run the full 18-agent system.
 
@@ -317,20 +327,45 @@ def run_pipeline(
       agent started/completed/failed, critic/supervisor started/completed) — lets
       a caller (e.g. a live dashboard) render progress without reimplementing
       any orchestration logic.
-    - `client_factory`: called with no args to build the `LLMClient` each agent
-      uses. Defaults to each agent's own default (a real `LLMClient`). Pass
+    - `client_factory`: called once (not per agent) to build the single `LLMClient`
+      every agent in this run shares. Defaults to a real `LLMClient`. Pass
       `lambda: DemoLLMClient()` (career_copilot.core.demo_client) to replay this
       project's verified sample fixtures instead of calling the live API.
+    - `cost_limit_usd`: if set, cumulative estimated cost is checked after every
+      agent call (and before Critic/Supervisor); the moment it's met or exceeded,
+      the run stops immediately — no further agents, Critic, or Supervisor calls
+      are made, since those would themselves spend more. The caller (e.g. the
+      dashboard) is expected to set this only for real Live-mode runs, since
+      Demo mode never calls the billed API in the first place. If the model in
+      use isn't in the pricing table (cost can't be computed), this fails safe
+      and stops the run rather than accumulating untracked spend.
 
     A single agent failing does not abort the run — it's recorded as
     'agent_failed' and skipped; agents that hard-depend on its output will
     then also fail naturally when they can't find what they need, and are
     themselves recorded rather than raising out of this function. Planner,
     Critic, and Supervisor are still run at the end against whatever
-    actually completed.
+    actually completed, unless the run was stopped early for the cost limit.
     """
+    shared_client = client_factory() if client_factory else LLMClient()
+
     def _agent(agent_cls):
-        return agent_cls(client=client_factory()) if client_factory else agent_cls()
+        return agent_cls(client=shared_client)
+
+    def _cost_exceeded() -> bool:
+        if cost_limit_usd is None:
+            return False
+        total = shared_client.total_cost_usd()
+        return total is None or total >= cost_limit_usd
+
+    def _stop_for_cost(after: str) -> None:
+        total = shared_client.total_cost_usd()
+        total_str = f"${total:.4f}" if total is not None else "unknown (untracked model)"
+        _emit(
+            on_event, event_type="cost_limit_exceeded",
+            message=f"Cost limit reached after {after} — stopping immediately (spent {total_str}, limit ${cost_limit_usd:.2f}).",
+            cost_usd=total, cost_limit_usd=cost_limit_usd,
+        )
 
     planner = _agent(PlannerAgent)
     plan = planner.run(PlannerInput(
@@ -346,19 +381,30 @@ def run_pipeline(
 
     outputs: Dict[str, BaseModel] = {}
     failed_ids: List[str] = []
-    for agent_id in order:
-        agent_cls, _ = _AGENT_CLASSES[agent_id]
-        _emit(on_event, event_type="agent_started", agent_id=agent_id, message=f"Running {agent_cls.__name__}")
-        try:
-            agent_input = _build_input(agent_id, data, outputs)
-            outputs[agent_id] = _agent(agent_cls).run(agent_input)
-            _emit(on_event, event_type="agent_completed", agent_id=agent_id, message="Completed")
-        except Exception as exc:  # noqa: BLE001 — a failing agent must not abort the whole run
-            failed_ids.append(agent_id)
-            _emit(on_event, event_type="agent_failed", agent_id=agent_id, message="Failed", error=str(exc))
+    stopped_for_cost = False
+    if _cost_exceeded():
+        stopped_for_cost = True
+        _stop_for_cost("planning")
+
+    if not stopped_for_cost:
+        for agent_id in order:
+            agent_cls, _ = _AGENT_CLASSES[agent_id]
+            _emit(on_event, event_type="agent_started", agent_id=agent_id, message=f"Running {agent_cls.__name__}")
+            try:
+                agent_input = _build_input(agent_id, data, outputs)
+                outputs[agent_id] = _agent(agent_cls).run(agent_input)
+                _emit(on_event, event_type="agent_completed", agent_id=agent_id, message="Completed")
+            except Exception as exc:  # noqa: BLE001 — a failing agent must not abort the whole run
+                failed_ids.append(agent_id)
+                _emit(on_event, event_type="agent_failed", agent_id=agent_id, message="Failed", error=str(exc))
+
+            if _cost_exceeded():
+                stopped_for_cost = True
+                _stop_for_cost(agent_id)
+                break
 
     critic_output = None
-    if any(aid != "final_report" for aid in outputs):
+    if not stopped_for_cost and any(aid != "final_report" for aid in outputs):
         _emit(on_event, event_type="critic_started", message="Reviewing all completed agent outputs")
         critic = _agent(CriticAgent)
         critic_kwargs = {
@@ -371,26 +417,34 @@ def run_pipeline(
         critic_output = critic.run(CriticInput(**critic_kwargs))
         _emit(on_event, event_type="critic_completed", message="Review complete")
 
-    _emit(on_event, event_type="supervisor_started", message="Rendering final verdict")
-    supervisor = _agent(SupervisorAgent)
-    supervisor_output = supervisor.run(SupervisorInput(
-        candidate_name=data.candidate_name,
-        target_role=data.target_role,
-        company_name=data.company_name,
-        user_goal=data.user_goal,
-        planner_output=plan.model_dump_json(),
-        completed_agent_ids=list(outputs.keys()),
-        failed_agent_ids=failed_ids,
-        critic_output=critic_output.model_dump_json() if critic_output else None,
-        final_report_output=outputs["final_report"].model_dump_json() if "final_report" in outputs else None,
-    ))
-    _emit(on_event, event_type="supervisor_completed", message="Verdict ready")
+        if _cost_exceeded():
+            stopped_for_cost = True
+            _stop_for_cost("critic")
+
+    supervisor_output = None
+    if not stopped_for_cost:
+        _emit(on_event, event_type="supervisor_started", message="Rendering final verdict")
+        supervisor = _agent(SupervisorAgent)
+        supervisor_output = supervisor.run(SupervisorInput(
+            candidate_name=data.candidate_name,
+            target_role=data.target_role,
+            company_name=data.company_name,
+            user_goal=data.user_goal,
+            planner_output=plan.model_dump_json(),
+            completed_agent_ids=list(outputs.keys()),
+            failed_agent_ids=failed_ids,
+            critic_output=critic_output.model_dump_json() if critic_output else None,
+            final_report_output=outputs["final_report"].model_dump_json() if "final_report" in outputs else None,
+        ))
+        _emit(on_event, event_type="supervisor_completed", message="Verdict ready")
 
     result = PipelineResult(
         planner_output=plan,
         agent_outputs={aid: out.model_dump() for aid, out in outputs.items()},
         critic_output=critic_output,
         supervisor_output=supervisor_output,
+        stopped_for_cost_limit=stopped_for_cost,
+        total_cost_usd=shared_client.total_cost_usd(),
     )
 
     if logger is not None:
