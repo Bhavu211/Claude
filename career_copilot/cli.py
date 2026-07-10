@@ -18,6 +18,7 @@ from career_copilot.agents.company_intelligence import CompanyIntelligenceAgent,
 from career_copilot.agents.ats_optimization import ATSOptimizationAgent, ATSOptimizationInput
 from career_copilot.agents.resume_rewrite import ResumeRewriteAgent, ResumeRewriteInput
 from career_copilot.agents.gap_analysis import GapAnalysisAgent, GapAnalysisInput
+from career_copilot.agents.skill_evidence import SkillEvidenceAgent, SkillEvidenceInput
 
 AGENTS = {
     "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, "resume_text"),
@@ -30,9 +31,10 @@ AGENTS = {
     # reachable via the Python API, not this single-file CLI.
     "ats_optimization": (ATSOptimizationAgent, ATSOptimizationInput, "resume_text"),
     "resume_rewrite": (ResumeRewriteAgent, ResumeRewriteInput, "resume_text"),
-    # gap_analysis requires both resume_text and jd_text — only reachable via the
-    # Python API, not this single-file CLI.
+    # gap_analysis and skill_evidence require both resume_text and jd_text — only
+    # reachable via the Python API, not this single-file CLI.
     "gap_analysis": (GapAnalysisAgent, GapAnalysisInput, "resume_text"),
+    "skill_evidence": (SkillEvidenceAgent, SkillEvidenceInput, "resume_text"),
 }
 
 

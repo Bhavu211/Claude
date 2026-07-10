@@ -19,7 +19,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 4 | ATS Optimization Agent | ✅ Built, sample-verified |
 | 5 | Resume Rewrite Agent | ✅ Built, sample-verified |
 | 6 | Gap Analysis Agent | ✅ Built, sample-verified |
-| 7 | Skill Evidence Agent | ⏳ Not started |
+| 7 | Skill Evidence Agent | ✅ Built, sample-verified |
 | 8 | Portfolio Recommendation Agent | ⏳ Not started |
 | 9 | Learning & Certification Agent | ⏳ Not started |
 | 10 | Recruiter Simulation Agent | ⏳ Not started |
@@ -48,10 +48,11 @@ career_copilot/
     ats_optimization.py      # Agent 4
     resume_rewrite.py        # Agent 5
     gap_analysis.py           # Agent 6
+    skill_evidence.py         # Agent 7
   cli.py              # run a single agent from the command line
 samples/
-  sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6
-  sample_jd.txt        # fixture used to verify agents 2, 4, 5, 6 (paired with sample_resume.txt's PM/fintech profile)
+  sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7
+  sample_jd.txt        # fixture used to verify agents 2, 4, 5, 6, 7 (paired with sample_resume.txt's PM/fintech profile)
 outputs/
   resume_analysis_sample_output.{json,md}     # verified sample output, agent 1
   jd_intelligence_sample_output.{json,md}      # verified sample output, agent 2
@@ -59,6 +60,7 @@ outputs/
   ats_optimization_sample_output.{json,md}     # verified sample output, agent 4
   resume_rewrite_sample_output.{json,md}       # verified sample output, agent 5
   gap_analysis_sample_output.{json,md}         # verified sample output, agent 6
+  skill_evidence_sample_output.{json,md}       # verified sample output, agent 7
 ```
 
 Every agent:
