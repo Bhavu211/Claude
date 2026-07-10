@@ -1,0 +1,336 @@
+{
+  "candidate_name": "Ananya Sharma",
+  "summary": "Product manager with experience building consumer and fintech products. Passionate about solving user problems and working with cross-functional teams.",
+  "work_experience": [
+    {
+      "company": "Cashfree Payments",
+      "title": "Senior Product Manager",
+      "location": "Bengaluru",
+      "dates": {
+        "start": "June 2022",
+        "end": "Present",
+        "duration_months": 49
+      },
+      "bullets": [
+        {
+          "text": "Owned the merchant onboarding product line for Cashfree's payment gateway",
+          "has_metric": false,
+          "action_verb": "Owned",
+          "verb_strength": "strong"
+        },
+        {
+          "text": "Led a cross-functional team of 6 (engineering, design, data) to launch a revamped KYC flow, reducing merchant onboarding time from 3 days to 18 hours",
+          "has_metric": true,
+          "action_verb": "Led",
+          "verb_strength": "strong"
+        },
+        {
+          "text": "Responsible for the roadmap of the risk and fraud detection product area",
+          "has_metric": false,
+          "action_verb": "Responsible for",
+          "verb_strength": "weak"
+        },
+        {
+          "text": "Worked closely with compliance and legal teams on RBI regulatory requirements",
+          "has_metric": false,
+          "action_verb": "Worked",
+          "verb_strength": "neutral"
+        },
+        {
+          "text": "Launched a self-serve merchant dashboard that increased weekly active merchants by 22%",
+          "has_metric": true,
+          "action_verb": "Launched",
+          "verb_strength": "strong"
+        },
+        {
+          "text": "Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%",
+          "has_metric": true,
+          "action_verb": "Partnered",
+          "verb_strength": "strong"
+        }
+      ],
+      "technologies_used": [],
+      "is_leadership_role": true,
+      "is_product_role": true
+    },
+    {
+      "company": "Swiggy",
+      "title": "Product Manager",
+      "location": "Bengaluru",
+      "dates": {
+        "start": "July 2020",
+        "end": "May 2022",
+        "duration_months": 22
+      },
+      "bullets": [
+        {
+          "text": "Managed the restaurant partner rating and feedback product",
+          "has_metric": false,
+          "action_verb": "Managed",
+          "verb_strength": "neutral"
+        },
+        {
+          "text": "Helped improve partner satisfaction scores",
+          "has_metric": false,
+          "action_verb": "Helped",
+          "verb_strength": "weak"
+        },
+        {
+          "text": "Drove A/B experiments on the delivery partner app, improving order acceptance rate by 9%",
+          "has_metric": true,
+          "action_verb": "Drove",
+          "verb_strength": "strong"
+        },
+        {
+          "text": "Coordinated with 4 engineering pods across two cities to ship a partner payout redesign",
+          "has_metric": false,
+          "action_verb": "Coordinated",
+          "verb_strength": "neutral"
+        },
+        {
+          "text": "Responsible for writing PRDs and prioritizing the backlog for the partner tools squad",
+          "has_metric": false,
+          "action_verb": "Responsible for",
+          "verb_strength": "weak"
+        }
+      ],
+      "technologies_used": [],
+      "is_leadership_role": false,
+      "is_product_role": true
+    },
+    {
+      "company": "Zomato",
+      "title": "Associate Product Manager",
+      "location": "Gurugram",
+      "dates": {
+        "start": "May 2018",
+        "end": "June 2020",
+        "duration_months": 25
+      },
+      "bullets": [
+        {
+          "text": "Worked on the search and discovery team",
+          "has_metric": false,
+          "action_verb": "Worked",
+          "verb_strength": "weak"
+        },
+        {
+          "text": "Assisted senior PMs with user research and competitive analysis",
+          "has_metric": false,
+          "action_verb": "Assisted",
+          "verb_strength": "weak"
+        },
+        {
+          "text": "Contributed to a redesign of the restaurant listing page",
+          "has_metric": false,
+          "action_verb": "Contributed",
+          "verb_strength": "weak"
+        }
+      ],
+      "technologies_used": [],
+      "is_leadership_role": false,
+      "is_product_role": true
+    }
+  ],
+  "projects": [
+    {
+      "name": "Campus Meal-Split App (side project)",
+      "description": "Built a simple expense-splitting app for hostel meal groups using React Native and Firebase",
+      "technologies": [
+        "React Native",
+        "Firebase"
+      ],
+      "metrics": [
+        "Used by around 300 students at IIT Delhi during a 6-month pilot"
+      ],
+      "url": null
+    }
+  ],
+  "skills": {
+    "technical_skills": [
+      "SQL"
+    ],
+    "tools": [
+      "Figma",
+      "JIRA",
+      "Amplitude"
+    ],
+    "soft_skills": [
+      "Stakeholder management"
+    ],
+    "domain_skills": [
+      "Product strategy",
+      "Roadmapping",
+      "A/B testing",
+      "User research",
+      "RBI compliance basics",
+      "Payments domain knowledge"
+    ]
+  },
+  "certifications": [],
+  "education": [
+    {
+      "institution": "Indian Institute of Technology (IIT) Delhi",
+      "degree": "B.Tech",
+      "field_of_study": "Computer Science",
+      "graduation_year": "2018",
+      "honors": null
+    }
+  ],
+  "achievements": [
+    {
+      "description": "Reduced merchant onboarding time by leading redesign of the KYC flow",
+      "metric": "3 days to 18 hours",
+      "source_section": "Cashfree Payments — Senior Product Manager"
+    },
+    {
+      "description": "Increased weekly active merchants via a new self-serve merchant dashboard",
+      "metric": "22% increase",
+      "source_section": "Cashfree Payments — Senior Product Manager"
+    },
+    {
+      "description": "Cut chargeback rate by introducing a fraud scoring model with data science",
+      "metric": "31% reduction",
+      "source_section": "Cashfree Payments — Senior Product Manager"
+    },
+    {
+      "description": "Improved delivery partner app order acceptance rate via A/B experiments",
+      "metric": "9% increase",
+      "source_section": "Swiggy — Product Manager"
+    }
+  ],
+  "leadership_experience": [
+    "Led a cross-functional team of 6 (engineering, design, data) to launch a revamped KYC flow (Cashfree)",
+    "Coordinated across 4 engineering pods in two cities to ship a partner payout redesign (Swiggy) — coordination, not direct people management"
+  ],
+  "product_experience": [
+    "Owned merchant onboarding and risk/fraud detection roadmap at Cashfree Payments (fintech/payments)",
+    "Managed restaurant partner rating/feedback product and partner tools backlog at Swiggy (marketplace)",
+    "Contributed to search & discovery and restaurant listing page redesign at Zomato as Associate PM (marketplace)"
+  ],
+  "technical_experience": [
+    "Uses SQL for product analytics (stated skill, not tied to a specific bullet)",
+    "Built a side-project mobile app (Campus Meal-Split) using React Native and Firebase, demonstrating hands-on technical fluency uncommon for a PM"
+  ],
+  "metrics": [
+    {
+      "metric": "Merchant onboarding time reduced from 3 days to 18 hours",
+      "context": "KYC flow redesign",
+      "source_section": "Cashfree Payments"
+    },
+    {
+      "metric": "22% increase in weekly active merchants",
+      "context": "Self-serve merchant dashboard launch",
+      "source_section": "Cashfree Payments"
+    },
+    {
+      "metric": "31% reduction in chargeback rate",
+      "context": "Fraud scoring model",
+      "source_section": "Cashfree Payments"
+    },
+    {
+      "metric": "9% improvement in order acceptance rate",
+      "context": "A/B experiments on delivery partner app",
+      "source_section": "Swiggy"
+    },
+    {
+      "metric": "~300 students over a 6-month pilot",
+      "context": "Campus Meal-Split App adoption",
+      "source_section": "Projects"
+    }
+  ],
+  "domains": [
+    "Fintech / Payments",
+    "Food delivery & marketplaces",
+    "Consumer tech"
+  ],
+  "total_years_experience_estimate": 8.2,
+  "strongest_achievements": [
+    "Reduced merchant onboarding time from 3 days to 18 hours by leading a KYC flow redesign (Cashfree)",
+    "Cut chargeback rate by 31% by introducing a fraud scoring model (Cashfree)",
+    "Increased weekly active merchants by 22% via a self-serve dashboard launch (Cashfree)"
+  ],
+  "weakest_sections": [
+    "Zomato entry: all three bullets ('Worked on...', 'Assisted...', 'Contributed to...') are generic with no scope, scale, or outcome",
+    "Summary section is generic boilerplate that does not differentiate the candidate or preview the strongest achievements below it",
+    "Certifications section states '(none listed)' rather than being omitted, drawing attention to an empty section"
+  ],
+  "missing_metrics": [
+    "'Owned the merchant onboarding product line' (Cashfree) — no scale given (e.g. merchant volume, transaction value)",
+    "'Responsible for the roadmap of the risk and fraud detection product area' (Cashfree) — no outcome or scale stated",
+    "'Helped improve partner satisfaction scores' (Swiggy) — no baseline, target, or resulting number",
+    "'Coordinated...to ship a partner payout redesign' (Swiggy) — ships the project but states no resulting impact",
+    "'Managed the restaurant partner rating and feedback product' (Swiggy) — no scale (# partners) or outcome (rating change)",
+    "All three Zomato bullets lack any metric, scope, or outcome"
+  ],
+  "redundant_content": [
+    "'Responsible for' is used as a bullet opener twice (Cashfree risk/fraud roadmap; Swiggy PRDs/backlog), diluting both",
+    "Summary section restates the fintech/consumer domain claim without adding information beyond what the work experience already shows"
+  ],
+  "weak_action_verbs": [
+    {
+      "issue": "'Responsible for' is a passive, ownership-diluting opener",
+      "location": "Cashfree Payments — risk and fraud roadmap bullet",
+      "severity": "minor",
+      "recommendation": "Replace with an active verb naming the outcome, e.g. 'Drove the risk and fraud detection roadmap, shipping X that reduced Y.'"
+    },
+    {
+      "issue": "'Responsible for' repeated as a weak opener",
+      "location": "Swiggy — PRDs/backlog bullet",
+      "severity": "minor",
+      "recommendation": "Replace with 'Authored PRDs and prioritized the backlog for...' and state a resulting outcome."
+    },
+    {
+      "issue": "'Helped improve' is vague and undersells individual ownership",
+      "location": "Swiggy — partner satisfaction bullet",
+      "severity": "major",
+      "recommendation": "State the specific action taken and the resulting score change, e.g. 'Raised partner satisfaction score from X to Y by...'"
+    },
+    {
+      "issue": "'Worked on' is a low-signal opener that implies no ownership or contribution",
+      "location": "Zomato — search and discovery bullet",
+      "severity": "major",
+      "recommendation": "Name the specific contribution made and its result."
+    },
+    {
+      "issue": "'Assisted' and 'Contributed to' understate scope for the entire Zomato entry",
+      "location": "Zomato — bullets 2 and 3",
+      "severity": "minor",
+      "recommendation": "If the associate-level scope is accurate, keep the framing but name the specific research findings or redesign elements owned."
+    }
+  ],
+  "grammar_issues": [],
+  "ats_formatting_issues": [
+    {
+      "issue": "Em dash ('—') used to separate title, company, and location",
+      "location": "All work experience entry headers",
+      "severity": "minor",
+      "recommendation": "Use a comma or pipe ('|') separator, which parses more reliably across ATS systems."
+    },
+    {
+      "issue": "En dash ('–') used between start and end dates",
+      "location": "All work experience and education date lines",
+      "severity": "suggestion",
+      "recommendation": "Use a plain hyphen ('-') for maximum ATS date-parsing compatibility."
+    },
+    {
+      "issue": "Certifications section contains literal placeholder text '(none listed)'",
+      "location": "CERTIFICATIONS section",
+      "severity": "minor",
+      "recommendation": "Omit the section entirely rather than including an explicit empty placeholder."
+    },
+    {
+      "issue": "Skills are listed as a single comma-separated paragraph rather than grouped or bulleted",
+      "location": "SKILLS section",
+      "severity": "suggestion",
+      "recommendation": "Group into categories (e.g. Product, Technical, Tools) for better keyword scannability by both ATS and recruiters."
+    }
+  ],
+  "human_readable_summary": "## Resume Analysis: Ananya Sharma — Senior Product Manager\n\n**Strongest signal:** Three well-quantified, high-impact achievements from the current Cashfree role — a 3-day-to-18-hour onboarding time cut, a 31% chargeback reduction, and a 22% lift in weekly active merchants. These are the resume's headline material and should lead any rewrite.\n\n**Main concern:** Roughly half the bullets across all three roles (especially the entire Zomato entry) use vague, low-ownership framing ('Worked on', 'Assisted', 'Responsible for', 'Helped improve') with no scope or outcome attached. This creates an uneven resume where strong recent work is undercut by generic earlier entries.\n\n**Career trajectory:** Consistent upward movement — Associate PM (Zomato) → PM (Swiggy) → Senior PM (Cashfree) — across marketplace and fintech domains, roughly 8 years of experience assuming 'Present' resolves to the analysis date.\n\n**Quick wins:** Add scale/outcome numbers to the ~6 identified metric-less bullets, remove the repeated 'Responsible for' framing, and drop the empty Certifications section rather than flagging it as blank.\n",
+  "analysis_confidence": "high",
+  "limitations": [
+    "Duration for the current Cashfree role and total years of experience assume 'Present' resolves to the analysis date (2026-07-10); actual tenure will differ if this resume is reviewed later without updating.",
+    "Several bullets lack scope indicators (team size, user base, budget), so seniority/scope cannot be fully corroborated beyond what's explicitly stated.",
+    "No portfolio links, publications, or awards exist beyond what's listed, so nothing beyond the stated content could be verified."
+  ]
+}
