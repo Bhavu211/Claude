@@ -1,0 +1,60 @@
+{
+  "cover_letter": {
+    "subject_line": "Application for Senior Product Manager, Risk & Fraud — Ananya Sharma",
+    "body": "Dear [Hiring Manager Name],\n\nI'm writing to apply for the Senior Product Manager, Risk & Fraud role at Razorpay. As the Senior Product Manager currently owning risk and fraud detection at Cashfree Payments, I've spent the last four years solving exactly the problem this role is built around: reducing fraud losses without slowing down legitimate merchants.\n\nIn my current role, I led a cross-functional team of 6 through a KYC flow redesign that cut merchant onboarding time from 3 days to 18 hours, and partnered directly with our data science team to ship a fraud scoring model that reduced chargeback rate by 31%. I also work hands-on with compliance and legal on RBI regulatory requirements — the same kind of regulatory fluency this role calls for with RBI and PCI-DSS.\n\nWhat draws me to Razorpay specifically is the scale of the bet you're making on agentic commerce: as Agent Studio lets AI agents transact autonomously on behalf of businesses, the fraud surface this team owns is about to get more interesting, not less. I'd welcome the chance to bring my track record in quantified risk reduction to a team actively redefining what fraud detection means in an AI-native payments world.\n\nI'd welcome the opportunity to discuss how my experience at Cashfree, Swiggy, and Zomato could contribute to your risk and fraud team. Thank you for your consideration.\n\nSincerely,\nAnanya Sharma",
+    "tailoring_notes": "The second paragraph leads with the two headline metrics because they map directly to the JD's 'What success looks like' section. The third paragraph is the only place a specific real company fact (Agent Studio, agentic payments) is used, grounded in the supplied company_context rather than invented.",
+    "placeholders_used": [
+      "[Hiring Manager Name]"
+    ]
+  },
+  "recruiter_outreach_message": {
+    "subject_line": "Senior PM, Risk & Fraud — quick intro",
+    "body": "Hi [Recruiter Name],\n\nI saw the Senior Product Manager, Risk & Fraud opening at Razorpay and wanted to reach out directly. I currently own risk and fraud detection product at Cashfree Payments — most recently cutting our chargeback rate 31% and merchant onboarding time from 3 days to 18 hours. Given Razorpay's push into agentic payments, I think there's strong overlap between what I've built and where this team is headed.\n\nWould you be open to a short call to discuss the role? Happy to share more detail on the work above.\n\nBest,\nAnanya",
+    "tailoring_notes": "Kept to 3 short paragraphs appropriate for a cold recruiter message; leads with the same two headline metrics as the cover letter for consistency, and references Agent Studio to show research effort without repeating the cover letter's fuller framing.",
+    "placeholders_used": [
+      "[Recruiter Name]"
+    ]
+  },
+  "linkedin_connection_request": {
+    "subject_line": null,
+    "body": "Hi [Name], I'm a Senior PM in fraud/risk at Cashfree Payments (cut chargebacks 31%, onboarding time 3 days→18hrs) and saw Razorpay's Risk & Fraud PM opening. Would love to connect and learn more about the team's work on agentic payments.",
+    "tailoring_notes": "Written to fit LinkedIn's 300-character connection note limit (237 characters used) — condenses the two headline metrics and the Agent Studio reference into a single sentence each.",
+    "placeholders_used": [
+      "[Name]"
+    ]
+  },
+  "referral_request": {
+    "subject_line": "Quick favor — referral for a role at Razorpay?",
+    "body": "Hi [Contact Name],\n\nHope you're doing well! I saw that Razorpay has an opening for a Senior Product Manager, Risk & Fraud, and I'm really interested — it's a strong match for what I've been building at Cashfree Payments (fraud/risk product, cut chargebacks 31%, cut onboarding time from 3 days to 18 hours).\n\nI know you [reference your actual connection — e.g. work there, or know someone on the team] — would you be open to referring me, or connecting me with whoever owns hiring for this role? I'm happy to send over my resume and a short blurb to make it easy.\n\nThanks so much either way!\nAnanya",
+    "tailoring_notes": "[Contact Name] and the relationship bracket are left as explicit placeholders since no specific referral contact or relationship was provided — filling those in with an invented mutual connection would misrepresent a relationship that may not exist.",
+    "placeholders_used": [
+      "[Contact Name]",
+      "[reference your actual connection — e.g. work there, or know someone on the team]"
+    ]
+  },
+  "follow_up_email": {
+    "subject_line": "Following up — Senior Product Manager, Risk & Fraud application",
+    "body": "Hi [Hiring Manager Name],\n\nI wanted to follow up on my application for the Senior Product Manager, Risk & Fraud role, submitted on [Application Date]. I remain very interested in the opportunity — particularly given Razorpay's work on agentic payments and the fraud/risk challenges that raises.\n\nHappy to share any additional information that would help move my application forward. Thank you again for your time.\n\nBest,\nAnanya Sharma",
+    "tailoring_notes": "Kept brief and non-pushy per standard follow-up etiquette (typically sent 1-2 weeks after applying); [Application Date] is left as a placeholder since the actual submission date isn't known to this agent.",
+    "placeholders_used": [
+      "[Hiring Manager Name]",
+      "[Application Date]"
+    ]
+  },
+  "thank_you_email": {
+    "subject_line": "Thank you — Senior Product Manager, Risk & Fraud",
+    "body": "Hi [Interviewer Name],\n\nThank you for taking the time to speak with me today about the Senior Product Manager, Risk & Fraud role. I enjoyed our conversation, especially [reference a specific topic or moment from the actual conversation, e.g. a particular question they asked or a project they described].\n\nOur discussion reinforced how well this role lines up with the work I've been doing at Cashfree — particularly around balancing fraud reduction with onboarding speed, which sounds like exactly the tension this team navigates. I'm excited about the opportunity and happy to provide any further information you need.\n\nThanks again,\nAnanya Sharma",
+    "tailoring_notes": "This agent was not given real interview discussion notes, so the specific-moment reference is deliberately left as an explicit placeholder rather than inventing a detail from a conversation this agent has no knowledge of — filling that in with a fabricated moment would be an easily-caught lie if the interviewer recalls the actual conversation.",
+    "placeholders_used": [
+      "[Interviewer Name]",
+      "[reference a specific topic or moment from the actual conversation, e.g. a particular question they asked or a project they described]"
+    ]
+  },
+  "human_readable_summary": "## Application Assets: Ananya Sharma → Razorpay\n\n**All 6 assets drafted**, grounded in the same resume facts used throughout this system (KYC redesign, fraud scoring model, RBI compliance work) and the real Razorpay context (Agent Studio, agentic payments).\n\n**9 bracketed placeholders across all 6 assets** — for a recruiter/hiring manager/interviewer name, a referral contact and relationship, an application date, and a specific interview moment. None of these were invented; this agent wasn't given real values for them, so each is marked explicitly rather than filled with a plausible-sounding fake that a real recipient could catch.\n\n**LinkedIn connection request fits the platform's hard 300-character limit** (checked, not assumed) while still carrying both headline metrics and the Agent Studio reference.\n",
+  "generation_confidence": "high",
+  "limitations": [
+    "Recruiter/hiring manager/interviewer names were not provided, so outreach, follow-up, and thank-you assets use bracketed placeholders rather than invented names.",
+    "No real interview discussion notes were provided, so the thank-you email's specific-moment reference is a placeholder, not a real detail — filling it in accurately requires the candidate's own memory of the actual conversation.",
+    "No real referral contact or relationship was provided, so the referral request cannot reference an actual shared history — using it unedited risks reading as a form letter."
+  ]
+}
