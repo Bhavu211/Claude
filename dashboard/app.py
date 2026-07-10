@@ -8,6 +8,7 @@ SQLite database this page writes to.
 from __future__ import annotations
 
 import hashlib
+import hmac
 import os
 import sys
 import time
@@ -82,6 +83,7 @@ with col_right:
     )
 
 has_key = bool(os.environ.get("ANTHROPIC_API_KEY"))
+live_passcode = os.environ.get("LIVE_MODE_PASSCODE")  # optional — unset means Live mode is ungated
 mode = st.radio(
     "Execution mode",
     ["Demo (replays verified sample outputs, no API key needed)", "Live (calls the real Anthropic API)"],
@@ -91,6 +93,14 @@ mode = st.radio(
 if mode.startswith("Live") and not has_key:
     st.warning("ANTHROPIC_API_KEY is not set in this environment — live mode will fail. Set it or use Demo mode.")
 
+passcode_ok = True
+entered_passcode = ""
+if mode.startswith("Live") and live_passcode:
+    entered_passcode = st.text_input("Live mode passcode", type="password", help="This deployment restricts Live mode (billed API calls) to people who know the passcode.")
+    passcode_ok = hmac.compare_digest(entered_passcode, live_passcode)
+    if entered_passcode and not passcode_ok:
+        st.error("Incorrect passcode — Live mode stays locked. Use Demo mode instead, or get the correct passcode.")
+
 # Preview uploaded files
 if resume_file or jd_file:
     with st.expander("Uploaded files", expanded=True):
@@ -99,13 +109,20 @@ if resume_file or jd_file:
         if jd_file:
             st.write(f"📄 **{jd_file.name}** — {jd_file.size:,} bytes")
 
-run_clicked = st.button("▶ Run Pipeline", type="primary", disabled=not (resume_file and (jd_file or jd_pasted) and company_name and job_title))
+run_clicked = st.button(
+    "▶ Run Pipeline", type="primary",
+    disabled=not (resume_file and (jd_file or jd_pasted) and company_name and job_title and passcode_ok),
+)
 
 # ---------------------------------------------------------------------------
 # Execution
 # ---------------------------------------------------------------------------
 
 if run_clicked:
+    if mode.startswith("Live") and live_passcode and not passcode_ok:
+        st.error("Live mode is locked behind a passcode on this deployment.")
+        st.stop()
+
     try:
         resume_text = extract_text(resume_file.name, resume_file.getvalue())
     except UnsupportedFileType as exc:

@@ -31,6 +31,23 @@ export ANTHROPIC_API_KEY=sk-ant-...
 streamlit run dashboard/app.py
 ```
 
+### Gating Live mode behind a passcode
+
+If this app is deployed somewhere public (e.g. Streamlit Community Cloud)
+with `ANTHROPIC_API_KEY` set, anyone with the URL can trigger real, billed
+API calls — there's no login system. To restrict who can use Live mode,
+also set `LIVE_MODE_PASSCODE`:
+
+```bash
+export LIVE_MODE_PASSCODE=some-shared-secret
+```
+
+When set, selecting Live mode on the home page reveals a passcode field;
+the "Run Pipeline" button stays disabled until the correct passcode is
+entered. Demo mode is never gated — it's always free to explore. Leaving
+`LIVE_MODE_PASSCODE` unset (the default) leaves Live mode ungated, exactly
+as before this option existed.
+
 ## What's dynamic vs. what's fixed
 
 **Dynamic — no code change needed when agents change:** `dashboard/discovery.py`
