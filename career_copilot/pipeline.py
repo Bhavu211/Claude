@@ -16,11 +16,14 @@ correctly.
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional
+from typing import TYPE_CHECKING, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
 from career_copilot.core.registry import AGENT_REGISTRY, AGENT_BY_ID
+
+if TYPE_CHECKING:
+    from career_copilot.core.run_log import RunLogger
 from career_copilot.agents.planner import PlannerAgent, PlannerInput, PlannerOutput
 from career_copilot.agents.critic import CriticAgent, CriticInput, CriticOutput
 from career_copilot.agents.supervisor import SupervisorAgent, SupervisorInput, SupervisorOutput
@@ -277,7 +280,9 @@ def _build_input(agent_id: str, data: PipelineInput, outputs: Dict[str, BaseMode
 # ---------------------------------------------------------------------------
 
 
-def run_pipeline(data: PipelineInput) -> PipelineResult:
+def run_pipeline(data: PipelineInput, logger: Optional["RunLogger"] = None) -> PipelineResult:
+    """Run the full 18-agent system. Pass a `RunLogger` (career_copilot.core.run_log)
+    to persist this run to SQLite — logging is opt-in and never affects orchestration."""
     planner = PlannerAgent()
     plan = planner.run(PlannerInput(
         user_goal=data.user_goal,
@@ -321,9 +326,14 @@ def run_pipeline(data: PipelineInput) -> PipelineResult:
         final_report_output=outputs["final_report"].model_dump_json() if "final_report" in outputs else None,
     ))
 
-    return PipelineResult(
+    result = PipelineResult(
         planner_output=plan,
         agent_outputs={aid: out.model_dump() for aid, out in outputs.items()},
         critic_output=critic_output,
         supervisor_output=supervisor_output,
     )
+
+    if logger is not None:
+        logger.log_run(pipeline_input=data, result=result)
+
+    return result
