@@ -84,6 +84,15 @@ with col_right:
 
 has_key = bool(os.environ.get("ANTHROPIC_API_KEY"))
 live_passcode = os.environ.get("LIVE_MODE_PASSCODE")  # optional — unset means Live mode is ungated
+
+_cost_cap_raw = os.environ.get("LIVE_MODE_COST_LIMIT_USD")
+live_cost_limit_usd: float | None = None
+if _cost_cap_raw:
+    try:
+        live_cost_limit_usd = float(_cost_cap_raw)
+    except ValueError:
+        st.warning(f"LIVE_MODE_COST_LIMIT_USD is set to {_cost_cap_raw!r}, which isn't a number — ignoring it.")
+
 mode = st.radio(
     "Execution mode",
     ["Demo (replays verified sample outputs, no API key needed)", "Live (calls the real Anthropic API)"],
@@ -92,6 +101,8 @@ mode = st.radio(
 )
 if mode.startswith("Live") and not has_key:
     st.warning("ANTHROPIC_API_KEY is not set in this environment — live mode will fail. Set it or use Demo mode.")
+if mode.startswith("Live") and live_cost_limit_usd is not None:
+    st.caption(f"💵 This deployment stops a Live run immediately if it hits **${live_cost_limit_usd:.2f}** in estimated cost.")
 
 passcode_ok = True
 entered_passcode = ""
@@ -218,17 +229,29 @@ if run_clicked:
                 "task": event.message, "status": "running" if "started" in event.event_type else "completed",
                 "duration_ms": None, "error": "",
             })
+        elif event.event_type == "cost_limit_exceeded":
+            for aid in list(statuses):
+                if statuses[aid] in ("pending", "running"):
+                    statuses[aid] = "skipped"
+            log_rows.append({
+                "timestamp": event.timestamp, "agent": "cost limit", "task": event.message,
+                "status": "failed", "duration_ms": None, "error": "",
+            })
 
         render_live(running_agent_id=event.agent_id if event.event_type == "agent_started" else None)
 
     render_live()
 
     client_factory = (lambda: DemoLLMClient(delay_seconds=0.15)) if mode.startswith("Demo") else None
+    active_cost_limit = live_cost_limit_usd if mode.startswith("Live") else None
     logger = RunLogger(db_path="career_copilot_runs.sqlite3")
 
     with st.spinner("Running..."):
         try:
-            result = run_pipeline(pipeline_input, logger=logger, on_event=on_event, client_factory=client_factory)
+            result = run_pipeline(
+                pipeline_input, logger=logger, on_event=on_event,
+                client_factory=client_factory, cost_limit_usd=active_cost_limit,
+            )
         except Exception as exc:  # noqa: BLE001 — surface the real error in the UI rather than a raw traceback
             db.complete_application(
                 application_id, ats_score=None, skills_missing=[], interview_readiness=None,
@@ -283,7 +306,16 @@ if run_clicked:
             required_skills=None,
         )
 
-    st.success(f"Pipeline complete — output saved to `{folder}`")
+    if result.stopped_for_cost_limit:
+        spent = f"${result.total_cost_usd:.4f}" if result.total_cost_usd is not None else "an untracked amount"
+        st.error(
+            f"⛔ Stopped early — this run hit the ${active_cost_limit:.2f} cost limit "
+            f"(spent {spent}) and was cut off before completing. Partial results are saved to `{folder}`."
+        )
+    else:
+        st.success(f"Pipeline complete — output saved to `{folder}`")
+    if result.total_cost_usd is not None and mode.startswith("Live"):
+        st.caption(f"💵 Estimated cost this run: ${result.total_cost_usd:.4f}")
     gate = result.supervisor_output.quality_gate.value if result.supervisor_output else "unknown"
     ready = result.supervisor_output.final_deliverable_ready if result.supervisor_output else False
     badge_color = "#16A34A" if ready else "#D97706"
