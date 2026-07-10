@@ -28,7 +28,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 13 | Application Assets Agent | ✅ Built, sample-verified |
 | 14 | Career Strategy Agent | ✅ Built, sample-verified |
 | 15 | Final Report Agent | ✅ Built, sample-verified |
-| 16 | Planner Agent | ⏳ Not started |
+| 16 | Planner Agent | ✅ Built, sample-verified |
 | 17 | Critic Agent | ⏳ Not started |
 | 18 | Supervisor Agent | ⏳ Not started |
 
@@ -41,6 +41,9 @@ career_copilot/
     llm_client.py     # Anthropic API wrapper — forces structured JSON via tool_choice;
                        # also run_with_web_search() for research-grounded agents
     base_agent.py     # BaseAgent[TIn, TOut]: validated input -> validated output
+    registry.py        # AGENT_REGISTRY — machine-readable catalog of all 15 specialist
+                         # agents (requires/optional_inputs/depends_on) that Planner and
+                         # Supervisor ground their orchestration in, instead of guessing
   agents/
     resume_analysis.py       # Agent 1
     jd_intelligence.py       # Agent 2
@@ -57,6 +60,7 @@ career_copilot/
     application_assets.py        # Agent 13
     career_strategy.py           # Agent 14 — two-phase like Company Intelligence; synthesizes agents 6-10
     final_report.py               # Agent 15 — synthesizes all 14 upstream agents' summaries
+    planner.py                     # Agent 16 — orchestration layer; plans against AGENT_REGISTRY
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11, 12, 13, 14
@@ -77,6 +81,7 @@ outputs/
   application_assets_sample_output.{json,md}       # verified sample output, agent 13
   career_strategy_sample_output.{json,md}          # verified sample output, agent 14
   final_report_sample_output.{json,md}             # verified sample output, agent 15 — the consolidated dashboard
+  planner_sample_output.{json,md}                  # verified sample output, agent 16
 ```
 
 Every agent:
@@ -123,3 +128,12 @@ each agent's output shape.
   resume, since its job is generative, not extractive.
 - **Reporting:** agents return JSON for machine consumption; the Final Report
   Agent (agent 15) is responsible for rendering the consolidated HTML dashboard.
+- **Orchestration layer (agents 16-18):** Planner, Critic, and Supervisor don't
+  analyze resumes/JDs/companies themselves — they reason about the *other 15
+  agents*. Their shared ground truth is `core/registry.py`'s `AGENT_REGISTRY`,
+  a machine-readable catalog of every agent's required/optional inputs and
+  real dependencies, built directly from how each agent is implemented. This
+  makes it structurally impossible for the orchestration layer to invent an
+  agent that doesn't exist or a dependency edge that isn't real — Planner
+  Agent's sample plan had every `agent_id` and `depends_on` reference
+  programmatically checked against the registry before being accepted.

@@ -1,0 +1,205 @@
+{
+  "user_intent": {
+    "primary_intent": "complete_application_package",
+    "secondary_intents": [
+      "career_roadmap",
+      "promotion_readiness"
+    ],
+    "reasoning": "The user asked for a tailored resume, gap analysis, interview prep, and a sense of whether this is a good career move for a specific role at a specific company — this spans nearly the full system rather than one narrow task, and the career-move framing pulls in Career Strategy Agent's territory as a secondary intent alongside the core application package."
+  },
+  "execution_plan": [
+    {
+      "agent_id": "resume_analysis",
+      "action": "run",
+      "reason": "Foundational extraction every downstream agent's quality benefits from; resume is available.",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "jd_intelligence",
+      "action": "run",
+      "reason": "JD is available and the user wants a tailored application, which requires knowing what the JD actually screens for.",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "company_intelligence",
+      "action": "run",
+      "reason": "Company name is available; company-specific interview questions and application assets both benefit from real research.",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "agent_id": "ats_optimization",
+      "action": "run",
+      "reason": "Explicitly relevant to 'tailored resume' — resume and JD are both available.",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "resume_rewrite",
+      "action": "run",
+      "reason": "Directly requested ('tailored resume').",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "gap_analysis",
+      "action": "run",
+      "reason": "Directly requested ('gap analysis').",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "skill_evidence",
+      "action": "run",
+      "reason": "Deepens gap analysis with evidence-strength grading, feeding Portfolio and Learning agents.",
+      "priority": "critical",
+      "depends_on": []
+    },
+    {
+      "agent_id": "recruiter_simulation",
+      "action": "run",
+      "reason": "Gives the user a realistic gut-check alongside the more analytical gap analysis, feeding Career Strategy's fit assessment.",
+      "priority": "high",
+      "depends_on": []
+    },
+    {
+      "agent_id": "portfolio_recommendation",
+      "action": "run",
+      "reason": "Requested implicitly by the career-move framing; needs Gap Analysis and Skill Evidence outputs first.",
+      "priority": "high",
+      "depends_on": [
+        "gap_analysis",
+        "skill_evidence"
+      ]
+    },
+    {
+      "agent_id": "learning_certification",
+      "action": "run",
+      "reason": "Requested implicitly by the career-move framing; needs Gap Analysis and Skill Evidence outputs first.",
+      "priority": "high",
+      "depends_on": [
+        "gap_analysis",
+        "skill_evidence"
+      ]
+    },
+    {
+      "agent_id": "interview_coach",
+      "action": "run",
+      "reason": "Directly requested ('interview prep'); higher-quality company-specific questions if Company Intelligence has finished.",
+      "priority": "critical",
+      "depends_on": [
+        "company_intelligence"
+      ]
+    },
+    {
+      "agent_id": "linkedin_optimization",
+      "action": "run",
+      "reason": "Standard part of a complete application package; can reference real Portfolio Recommendation projects if available.",
+      "priority": "high",
+      "depends_on": [
+        "portfolio_recommendation"
+      ]
+    },
+    {
+      "agent_id": "application_assets",
+      "action": "run",
+      "reason": "Standard part of a complete application package; benefits from Company Intelligence's real context.",
+      "priority": "high",
+      "depends_on": [
+        "company_intelligence"
+      ]
+    },
+    {
+      "agent_id": "career_strategy",
+      "action": "run",
+      "reason": "Directly requested ('is this a good career move'); needs Gap Analysis, Skill Evidence, Recruiter Simulation, Portfolio, and Learning outputs to synthesize rather than re-deriving fit from scratch.",
+      "priority": "high",
+      "depends_on": [
+        "gap_analysis",
+        "skill_evidence",
+        "recruiter_simulation",
+        "portfolio_recommendation",
+        "learning_certification"
+      ]
+    },
+    {
+      "agent_id": "final_report",
+      "action": "run",
+      "reason": "User asked for a complete package; this is the only agent that consolidates everything into one deliverable. Must run last.",
+      "priority": "critical",
+      "depends_on": [
+        "resume_analysis",
+        "jd_intelligence",
+        "company_intelligence",
+        "ats_optimization",
+        "resume_rewrite",
+        "gap_analysis",
+        "skill_evidence",
+        "recruiter_simulation",
+        "portfolio_recommendation",
+        "learning_certification",
+        "interview_coach",
+        "linkedin_optimization",
+        "application_assets",
+        "career_strategy"
+      ]
+    }
+  ],
+  "parallel_groups": [
+    {
+      "group_label": "A",
+      "agent_ids": [
+        "resume_analysis",
+        "jd_intelligence",
+        "company_intelligence",
+        "ats_optimization",
+        "resume_rewrite",
+        "gap_analysis",
+        "skill_evidence",
+        "recruiter_simulation"
+      ],
+      "reasoning": "None of these agents require another agent's output per the registry — all only need resume_text/jd_text/company_name directly, so they can start immediately and run concurrently."
+    },
+    {
+      "group_label": "B",
+      "agent_ids": [
+        "interview_coach",
+        "application_assets",
+        "portfolio_recommendation",
+        "learning_certification"
+      ],
+      "reasoning": "Each has a real dependency on Group A's output (Company Intelligence for the first two; Gap Analysis + Skill Evidence for the second two) but no dependency on each other, so they can run concurrently once Group A finishes."
+    },
+    {
+      "group_label": "C",
+      "agent_ids": [
+        "linkedin_optimization",
+        "career_strategy"
+      ],
+      "reasoning": "LinkedIn Optimization depends on Portfolio Recommendation (Group B); Career Strategy depends on Gap Analysis, Skill Evidence, Recruiter Simulation, Portfolio Recommendation, and Learning & Certification (all Group A/B) — neither depends on the other, so they can run together once B finishes."
+    }
+  ],
+  "missing_inputs": [],
+  "conflicts_resolved": [],
+  "estimated_completion": {
+    "complexity": "high",
+    "agent_count": 15,
+    "estimated_time_minutes": "18-28 minutes",
+    "confidence": "high"
+  },
+  "risks": [
+    "Company Intelligence, Learning & Certification, and Career Strategy Agents all depend on live web search — if search results are thin for this company, downstream quality (company-specific interview questions, certification ROI grading, salary estimate) degrades accordingly, through no fault of the agents themselves.",
+    "This plan assumes agents within a parallel group can actually execute concurrently in the runtime environment; if execution is strictly sequential regardless of grouping, the estimated time should be revised upward to roughly the sum of all 15 agents' individual runtimes.",
+    "Final Report Agent's quality depends on all 14 upstream agents completing successfully — a failure in any single upstream agent (e.g. a web search failure in Company Intelligence) would leave a gap in the final report that this plan cannot detect in advance."
+  ],
+  "final_execution_strategy": "Run all 8 dependency-free agents in Parallel Group A first. Once Group A completes, run the 4 agents in Group B that depend on Group A's outputs (Company Intelligence for interview/application quality; Gap Analysis + Skill Evidence for Portfolio/Learning). Once Group B completes, run the 2 agents in Group C that depend on Group B. Finally, run Final Report Agent alone once everything else has completed, since it depends on all 14 other agents. This 4-tier structure runs the maximum number of agents concurrently at every stage without violating any real dependency.",
+  "human_readable_summary": "## Execution Plan: Complete Application Package — Senior PM, Risk & Fraud @ Razorpay\n\n**Primary intent: Complete Job Application Package** (secondary: career roadmap / promotion readiness, from the \"is this a good career move\" framing).\n\n**All 15 agents will run** — nothing is skipped, since a genuinely complete package touches every part of this system. No missing inputs and no conflicts were detected; resume, JD, and company name are all available.\n\n**4-tier execution structure**, built directly from the real dependency graph (not an arbitrary ordering):\n- **Group A (8 agents, parallel):** Resume Analysis, JD Intelligence, Company Intelligence, ATS Optimization, Resume Rewrite, Gap Analysis, Skill Evidence, Recruiter Simulation — none of these need another agent's output.\n- **Group B (4 agents, parallel):** Interview Coach + Application Assets (want Company Intelligence's context), Portfolio Recommendation + Learning & Certification (need Gap Analysis + Skill Evidence's findings).\n- **Group C (2 agents, parallel):** LinkedIn Optimization (wants Portfolio Recommendation) and Career Strategy (needs 5 upstream agents' findings).\n- **Final step:** Final Report Agent, alone, once everything else is done.\n\n**Estimated time: 18-28 minutes**, driven mainly by the three agents that do live web research (Company Intelligence, Learning & Certification, Career Strategy) rather than by agent count alone.\n",
+  "planning_confidence": "high",
+  "limitations": [
+    "This plan assumes the execution environment can actually run agents within a parallel group concurrently; if not, the time estimate needs revision but the dependency structure itself remains correct.",
+    "No conflicts were detected between agents in this plan, but this Planner does not itself resolve conflicts that arise mid-execution (e.g. if two agents' actual outputs disagree once run) — that's Supervisor Agent's job downstream.",
+    "years_of_experience was not explicitly provided as a separate flag; since it's derivable from resume dates, this was not treated as a blocking missing input, but a resume with ambiguous or missing dates could change that."
+  ]
+}
