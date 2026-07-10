@@ -1,0 +1,436 @@
+{
+  "agent_reviews": [
+    {
+      "agent_id": "resume_analysis",
+      "scores": {
+        "accuracy": 96,
+        "authenticity": 94,
+        "ats_readiness": 90,
+        "recruiter_readability": 92,
+        "completeness": 95,
+        "evidence_quality": 97,
+        "company_alignment": 85,
+        "career_impact": 88,
+        "consistency": 96,
+        "actionability": 90
+      },
+      "overall_score": 93,
+      "strengths": [
+        "Every metric, achievement, and weak-verb flag traces to a specific quoted resume bullet.",
+        "Explicitly separates fact (metrics list) from judgment (strongest_achievements) rather than blending them."
+      ],
+      "weaknesses": [
+        "total_years_experience_estimate (8.2) depends on an unstated assumption about the analysis date, which is only surfaced in prose limitations, not as a structured caveat."
+      ],
+      "issues_found": [
+        {
+          "issue": "The 8.2-year experience estimate's dependency on 'Present' resolving to the analysis date is explained only in free-text limitations, not tied to the estimate field itself.",
+          "severity": "suggestion",
+          "location": "total_years_experience_estimate / limitations",
+          "recommended_fix": "Consider a companion field like 'estimate_as_of_date' so the dependency travels with the number, not just nearby prose."
+        }
+      ],
+      "approval_status": "approved_with_minor_revisions",
+      "review_reasoning": "No fabrication risk in a pure-extraction agent; the only note is a structural nit about where an assumption lives, not whether it's disclosed (it is)."
+    },
+    {
+      "agent_id": "jd_intelligence",
+      "scores": {
+        "accuracy": 95,
+        "authenticity": 93,
+        "ats_readiness": 88,
+        "recruiter_readability": 91,
+        "completeness": 94,
+        "evidence_quality": 96,
+        "company_alignment": 90,
+        "career_impact": 87,
+        "consistency": 93,
+        "actionability": 89
+      },
+      "overall_score": 92,
+      "strengths": [
+        "Priority classification (critical/important/nice-to-have) is grounded in the JD's own section headings and language, not guessed.",
+        "hidden_expectations are conservative — only 5 inferred, each with a specific cited signal_text."
+      ],
+      "weaknesses": [
+        "Some overlap in phrasing between individual requirement entries and the higher-level hiring_priorities list."
+      ],
+      "issues_found": [
+        {
+          "issue": "'hiring_priorities' restates several 'requirements' entries in near-identical language rather than adding a distinct layer of synthesis.",
+          "severity": "suggestion",
+          "location": "hiring_priorities",
+          "recommended_fix": "Tighten hiring_priorities to emphasize relative weighting/tradeoffs the requirements list doesn't already state."
+        }
+      ],
+      "approval_status": "approved_with_minor_revisions",
+      "review_reasoning": "Strong, source-grounded extraction; the only note is stylistic redundancy, not an accuracy problem."
+    },
+    {
+      "agent_id": "company_intelligence",
+      "scores": {
+        "accuracy": 90,
+        "authenticity": 95,
+        "ats_readiness": 80,
+        "recruiter_readability": 90,
+        "completeness": 88,
+        "evidence_quality": 95,
+        "company_alignment": 97,
+        "career_impact": 92,
+        "consistency": 94,
+        "actionability": 91
+      },
+      "overall_score": 92,
+      "strengths": [
+        "Best evidence hygiene of any reviewed agent: explicitly separates sourced claims from an anonymous-forum culture claim and a conflicting revenue figure, rather than blending uncertainty into confident prose.",
+        "10 real, checkable sources cited with publisher names, several official (razorpay.com, Scrum Alliance-equivalent primary sources)."
+      ],
+      "weaknesses": [
+        "research_confidence is MEDIUM rather than HIGH, which is honest but means some downstream agents (Career Strategy, Interview Coach) inherit that uncertainty."
+      ],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. This is the model example of how to handle live-research uncertainty: flag it explicitly (unverified_or_assumed) rather than either hiding it or refusing to give an answer."
+    },
+    {
+      "agent_id": "ats_optimization",
+      "scores": {
+        "accuracy": 97,
+        "authenticity": 91,
+        "ats_readiness": 98,
+        "recruiter_readability": 90,
+        "completeness": 93,
+        "evidence_quality": 95,
+        "company_alignment": 88,
+        "career_impact": 89,
+        "consistency": 98,
+        "actionability": 94
+      },
+      "overall_score": 95,
+      "strengths": [
+        "score_reasoning's point deductions (-8, -6, -4) sum exactly to the stated 82/100 score — verified by re-computing, not just re-read.",
+        "Explicitly refuses to assess layout-level ATS risk (columns, tables) it structurally cannot see from plain text, rather than guessing."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. Arithmetic in score_reasoning checks out exactly, and the agent's stated scope limitations match what it actually could and couldn't assess from text alone."
+    },
+    {
+      "agent_id": "resume_rewrite",
+      "scores": {
+        "accuracy": 93,
+        "authenticity": 90,
+        "ats_readiness": 92,
+        "recruiter_readability": 94,
+        "completeness": 91,
+        "evidence_quality": 92,
+        "company_alignment": 89,
+        "career_impact": 93,
+        "consistency": 90,
+        "actionability": 93
+      },
+      "overall_score": 91,
+      "strengths": [
+        "Correctly declined to generate an Executive version rather than force-generating one with inflated scope — a genuine judgment call, not just following a rule mechanically.",
+        "unmet_improvement_opportunities honestly lists 4 places a metric was withheld rather than invented."
+      ],
+      "weaknesses": [
+        "The Startup version changes 'Managed' to 'Owned' for the Swiggy partner-rating bullet — a defensible synonym, but 'Owned' carries a stronger ownership claim than 'Managed' in most recruiters' reading."
+      ],
+      "issues_found": [
+        {
+          "issue": "Startup version's verb swap ('Managed' → 'Owned') for the Swiggy bullet edges toward scope inflation — it's a common resume-writing convention, but it's the one word-choice in this output that isn't a strictly neutral rephrasing.",
+          "severity": "minor",
+          "location": "versions[startup].full_text — Swiggy entry, bullet 1",
+          "recommended_fix": "Either revert to 'Managed' or add a note recommending the candidate confirm they were the sole/primary owner before using 'Owned' in an interview."
+        }
+      ],
+      "approval_status": "approved_with_minor_revisions",
+      "review_reasoning": "Strong non-fabrication discipline overall (the declined Executive version is the standout evidence of that), with one genuinely borderline word choice worth a second look rather than a clear error."
+    },
+    {
+      "agent_id": "gap_analysis",
+      "scores": {
+        "accuracy": 97,
+        "authenticity": 93,
+        "ats_readiness": 87,
+        "recruiter_readability": 92,
+        "completeness": 96,
+        "evidence_quality": 98,
+        "company_alignment": 91,
+        "career_impact": 93,
+        "consistency": 98,
+        "actionability": 95
+      },
+      "overall_score": 95,
+      "strengths": [
+        "Presence/severity counts are internally consistent (8+2+2=12 rows; 8 none+2 optional+1 important+1 critical=12) — verified by recount.",
+        "Every 'no' presence row correctly has null supporting_evidence, honoring its own stated rule."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. This is the most rigorously self-consistent output reviewed — every count cross-checks cleanly."
+    },
+    {
+      "agent_id": "skill_evidence",
+      "scores": {
+        "accuracy": 96,
+        "authenticity": 92,
+        "ats_readiness": 85,
+        "recruiter_readability": 91,
+        "completeness": 95,
+        "evidence_quality": 98,
+        "company_alignment": 88,
+        "career_impact": 92,
+        "consistency": 97,
+        "actionability": 95
+      },
+      "overall_score": 94,
+      "strengths": [
+        "Confidence distribution (5 high, 2 medium, 2 low, 2 none = 11) matches its own stated scope (11 skill-shaped requirements, correctly excluding years-of-experience).",
+        "Genuinely differentiates from Gap Analysis Agent rather than duplicating it — SQL and Amplitude are 'present' in Gap Analysis but correctly graded LOW here specifically for lacking a demonstrating bullet."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. The clearest evidence in this review set that two agents covering similar ground produced complementary, non-redundant findings rather than copies of each other."
+    },
+    {
+      "agent_id": "portfolio_recommendation",
+      "scores": {
+        "accuracy": 94,
+        "authenticity": 90,
+        "ats_readiness": 75,
+        "recruiter_readability": 89,
+        "completeness": 92,
+        "evidence_quality": 93,
+        "company_alignment": 94,
+        "career_impact": 91,
+        "consistency": 93,
+        "actionability": 88
+      },
+      "overall_score": 90,
+      "strengths": [
+        "Correctly declined to portfolio-ize the mentoring and certification gaps, explaining why a solo project can't substitute for either — shows real judgment about project selection, not just enthusiasm.",
+        "All 3 projects are grounded in the actual JD/company domain (fraud/risk/payments), not generic portfolio filler."
+      ],
+      "weaknesses": [
+        "Estimated build times (1 evening to 2 weekends per project) may be optimistic for a candidate working full-time."
+      ],
+      "issues_found": [
+        {
+          "issue": "Build-time estimates across all 3 projects assume more free time than a typical full-time Senior PM candidate likely has.",
+          "severity": "suggestion",
+          "location": "estimated_build_time (all 3 projects)",
+          "recommended_fix": "Either widen the estimates or add a caveat that they assume dedicated weekend time, not time squeezed around a full-time job."
+        }
+      ],
+      "approval_status": "approved_with_minor_revisions",
+      "review_reasoning": "Strong project design with real judgment about what is and isn't portfolio-shaped; the only note is optimism about available time, not a factual problem."
+    },
+    {
+      "agent_id": "learning_certification",
+      "scores": {
+        "accuracy": 82,
+        "authenticity": 91,
+        "ats_readiness": 80,
+        "recruiter_readability": 88,
+        "completeness": 90,
+        "evidence_quality": 94,
+        "company_alignment": 90,
+        "career_impact": 90,
+        "consistency": 68,
+        "actionability": 87
+      },
+      "overall_score": 84,
+      "strengths": [
+        "Every learning resource is a real, verifiable, currently-existing resource (GoPractice, Amplitude Academy, the official PCI Security Standards Council) — no invented course names or URLs.",
+        "Certification ROI grading explicitly flags that most supporting commentary is promotional, rather than repeating vendor marketing as fact."
+      ],
+      "weaknesses": [
+        "total_estimated_time states '~45-55 hours' but the sum of the individual competency plans' own estimated_time ranges is 30-44 hours (15-20 + 5-8 + 6-10 + 4-6) — the stated total doesn't match what it's supposedly totaling."
+      ],
+      "issues_found": [
+        {
+          "issue": "total_estimated_time ('~45-55 hours of concentrated learning/building') does not match the sum of the 4 non-mentoring competency plans' own estimated_time fields, which total 30-44 hours.",
+          "severity": "major",
+          "location": "total_estimated_time (top-level) vs. competency_plans[*].estimated_time",
+          "recommended_fix": "Recompute total_estimated_time as the actual sum of the line items (30-44 hours) or explain what additional time the higher figure accounts for; as written, a candidate budgeting time against this plan would over- or under-allocate by roughly 10-15 hours."
+        }
+      ],
+      "approval_status": "requires_major_revisions",
+      "review_reasoning": "The research and resource-grounding discipline is excellent — the flaw is purely arithmetic: a summary-level number doesn't reconcile with the granular numbers it's supposed to summarize. This is exactly the kind of cross-field consistency check that requires actually re-adding the numbers, not just re-reading the prose."
+    },
+    {
+      "agent_id": "recruiter_simulation",
+      "scores": {
+        "accuracy": 93,
+        "authenticity": 95,
+        "ats_readiness": 78,
+        "recruiter_readability": 97,
+        "completeness": 90,
+        "evidence_quality": 93,
+        "company_alignment": 90,
+        "career_impact": 91,
+        "consistency": 95,
+        "actionability": 90
+      },
+      "overall_score": 92,
+      "strengths": [
+        "Both reasons_to_shortlist and reasons_to_reject are genuinely populated (3 and 2) rather than one-sided cheerleading dressed as a decision.",
+        "The voice is authentically blunt without inventing any specific fact not in the resume/JD."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. Successfully threads a hard needle: subjective, opinionated tone without a single unsupported factual claim."
+    },
+    {
+      "agent_id": "interview_coach",
+      "scores": {
+        "accuracy": 95,
+        "authenticity": 92,
+        "ats_readiness": 76,
+        "recruiter_readability": 90,
+        "completeness": 94,
+        "evidence_quality": 96,
+        "company_alignment": 93,
+        "career_impact": 92,
+        "consistency": 95,
+        "actionability": 94
+      },
+      "overall_score": 93,
+      "strengths": [
+        "The mentoring behavioral question correctly has star_answer=null rather than a fabricated story — verified directly against the JSON, not just the summary's claim.",
+        "3/4 behavioral STAR answers trace to specific quoted resume bullets in source_evidence."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. This is the highest-stakes place in the whole system for fabrication risk (inventing a candidate's own history) and it held the line."
+    },
+    {
+      "agent_id": "linkedin_optimization",
+      "scores": {
+        "accuracy": 94,
+        "authenticity": 89,
+        "ats_readiness": 82,
+        "recruiter_readability": 93,
+        "completeness": 91,
+        "evidence_quality": 94,
+        "company_alignment": 90,
+        "career_impact": 91,
+        "consistency": 94,
+        "actionability": 91
+      },
+      "overall_score": 91,
+      "strengths": [
+        "Skills ranking correctly keeps SQL/Amplitude out of the top 3 despite JD relevance, matching Skill Evidence Agent's LOW confidence grading rather than optimizing purely for keyword match.",
+        "Mentoring is omitted from the skills list entirely (not just ranked low) — the more honest choice given zero evidence."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. Evidence-honest skill ordering is exactly the discipline this agent's system prompt asked for, and it's followed precisely."
+    },
+    {
+      "agent_id": "application_assets",
+      "scores": {
+        "accuracy": 94,
+        "authenticity": 88,
+        "ats_readiness": 70,
+        "recruiter_readability": 91,
+        "completeness": 93,
+        "evidence_quality": 93,
+        "company_alignment": 90,
+        "career_impact": 88,
+        "consistency": 97,
+        "actionability": 92
+      },
+      "overall_score": 90,
+      "strengths": [
+        "9 placeholders claimed in the summary; 9 placeholders actually counted across the 6 assets — verified by recount, exact match.",
+        "LinkedIn connection request verified at 237 characters — under the platform's real 300-character limit, checked programmatically not eyeballed."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found; both a specific numeric claim (placeholder count) and a hard platform constraint (character limit) were independently verified to be accurate, not just asserted."
+    },
+    {
+      "agent_id": "career_strategy",
+      "scores": {
+        "accuracy": 90,
+        "authenticity": 91,
+        "ats_readiness": 75,
+        "recruiter_readability": 90,
+        "completeness": 93,
+        "evidence_quality": 92,
+        "company_alignment": 93,
+        "career_impact": 95,
+        "consistency": 95,
+        "actionability": 93
+      },
+      "overall_score": 92,
+      "strengths": [
+        "market_salary_estimate explicitly states sources disagreed by roughly 2x rather than presenting a falsely precise number.",
+        "role_fit_assessment (good_fit_with_gaps) is consistent with, not contradictory to, Recruiter Simulation's independent 'shortlist' call."
+      ],
+      "weaknesses": [],
+      "issues_found": [],
+      "approval_status": "approved",
+      "review_reasoning": "No issues found. Successfully synthesizes 5 upstream agents without introducing a new, unsupported claim or contradicting any of them."
+    },
+    {
+      "agent_id": "final_report",
+      "scores": {
+        "accuracy": 93,
+        "authenticity": 92,
+        "ats_readiness": 85,
+        "recruiter_readability": 95,
+        "completeness": 94,
+        "evidence_quality": 93,
+        "company_alignment": 92,
+        "career_impact": 93,
+        "consistency": 96,
+        "actionability": 95
+      },
+      "overall_score": 93,
+      "strengths": [
+        "coherence_check correctly identifies the PM mentoring gap as corroborated by 6 independent agents — verified true by cross-referencing the other 14 reviews in this same critique.",
+        "prioritized_next_steps deduplicates overlapping upstream recommendations into 6 distinct actions rather than listing all 14 agents' individual suggestions."
+      ],
+      "weaknesses": [
+        "The final_readiness_dashboard's overall_readiness_status is 'good' while 3 of 8 individual metrics are 'warning' — defensible (the warnings aren't disqualifying) but worth a reader double-checking the individual metrics, not just the top-line status."
+      ],
+      "issues_found": [
+        {
+          "issue": "Overall status 'good' sits above 3 'warning'-status metrics; a reader skimming only the top-line status could miss that mentoring, role fit, and application-asset placeholders all need attention.",
+          "severity": "suggestion",
+          "location": "final_readiness_dashboard.overall_readiness_status",
+          "recommended_fix": "Consider a status like 'good_with_flags' or ensure the banner text (which does mention the gap) stays visually adjacent to the status badge, as it does in the rendered HTML report."
+        }
+      ],
+      "approval_status": "approved_with_minor_revisions",
+      "review_reasoning": "This agent's core promise — introduce no new facts, only synthesize — holds up: every claim in it traces to one of the 14 upstream outputs also reviewed here. The only note is a presentation nuance about how prominently the warnings surface next to the 'good' headline status."
+    }
+  ],
+  "final_verdict": {
+    "overall_system_quality_score": 91,
+    "critical_issues_count": 0,
+    "major_issues_count": 1,
+    "minor_issues_count": 1,
+    "hallucination_risk": "low",
+    "confidence_level": "high",
+    "final_recommendation": "Approve all 15 outputs for user delivery, with one required fix before Learning & Certification Agent's roadmap is shown: correct total_estimated_time to match the sum of its own competency plan estimates (30-44 hours, not 45-55). Every other output is approved as-is or with only suggestion-level polish. The system's non-fabrication discipline held up under adversarial review: the single most consequential finding across all 15 outputs — the PM mentoring gap — was independently and consistently corroborated by 6 different agents using 6 different methods, with zero contradictions found anywhere, and no invented facts, sources, projects, or credentials were found in any reviewed output."
+  },
+  "human_readable_summary": "## Critic Review: All 15 Content Agents\n\n**Overall system quality: 91/100.** 9 agents approved outright, 5 approved with minor/suggestion-level notes, 1 (Learning & Certification) requires a fix before delivery. Zero critical issues. Zero rejected outputs.\n\n**The one real problem found:** Learning & Certification Agent's `total_estimated_time` (\"~45-55 hours\") doesn't match the sum of its own 4 competency plans' individual time estimates (30-44 hours) — a genuine arithmetic inconsistency, caught by actually re-adding the numbers rather than re-reading the prose. This is a Major issue, not Critical: it's a planning-accuracy problem, not a fabricated fact.\n\n**Hallucination risk: Low.** Every claim across all 15 outputs traced to real resume/JD/research content. The PM mentoring gap — the single most consequential finding in the entire system — was independently corroborated by 6 different agents using 6 different methods, with zero contradictions found anywhere.\n\n**Everything else checked out on recount:** ATS Optimization's score arithmetic (100-8-6-4=82 ✓), Gap Analysis's row counts (8+2+2=12 ✓), Skill Evidence's confidence distribution (5+2+2+2=11 ✓), Application Assets' placeholder count (9 ✓) and LinkedIn character limit (237/300 ✓) all independently verified correct.\n",
+  "review_confidence": "high",
+  "limitations": [
+    "This review had access to the full structured JSON for all 15 agents, not just their prose summaries — review depth would be lower if only summaries were available, as noted per-agent where relevant.",
+    "This is a single review pass; it does not re-run any upstream agent or verify claims against sources outside what those agents themselves cited (e.g. it did not independently re-search Razorpay's compensation data, only checked that Career Strategy Agent's figures matched what it claimed to have found).",
+    "Scoring across 10 dimensions per agent necessarily involves judgment calls (e.g. how much to weight a single arithmetic error against an otherwise strong output) — a different reviewer could reasonably land on adjacent but not identical scores."
+  ]
+}

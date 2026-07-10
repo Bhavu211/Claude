@@ -29,7 +29,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 14 | Career Strategy Agent | ✅ Built, sample-verified |
 | 15 | Final Report Agent | ✅ Built, sample-verified |
 | 16 | Planner Agent | ✅ Built, sample-verified |
-| 17 | Critic Agent | ⏳ Not started |
+| 17 | Critic Agent | ✅ Built, sample-verified |
 | 18 | Supervisor Agent | ⏳ Not started |
 
 ## Architecture
@@ -61,6 +61,7 @@ career_copilot/
     career_strategy.py           # Agent 14 — two-phase like Company Intelligence; synthesizes agents 6-10
     final_report.py               # Agent 15 — synthesizes all 14 upstream agents' summaries
     planner.py                     # Agent 16 — orchestration layer; plans against AGENT_REGISTRY
+    critic.py                       # Agent 17 — reviews agents 1-15's real outputs against AGENT_REGISTRY
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
   sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11, 12, 13, 14
@@ -82,6 +83,7 @@ outputs/
   career_strategy_sample_output.{json,md}          # verified sample output, agent 14
   final_report_sample_output.{json,md}             # verified sample output, agent 15 — the consolidated dashboard
   planner_sample_output.{json,md}                  # verified sample output, agent 16
+  critic_sample_output.{json,md}                   # verified sample output, agent 17 — a real review of agents 1-15
 ```
 
 Every agent:

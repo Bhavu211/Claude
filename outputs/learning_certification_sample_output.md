@@ -4,7 +4,7 @@
 
 **Certifications: neither is recommended as a priority.** CSPO grades LOW ROI for this candidate specifically — it's attendance-based, not exam-rigorous, and most valuable for career-switchers rather than an 8-year senior PM. Pragmatic Institute's program grades MEDIUM, with an explicit caveat: most of what's written about its value online is promotional material (PR wires, the institute's own site), not independent evaluation. Both are outranked by the SQL and mentoring gaps, which the JD actually weighs as Must-haves.
 
-**Total commitment:** ~45-55 hours of concentrated work over 4-6 weeks, plus an ongoing 3-6 month mentoring relationship running in the background.
+**Total commitment:** ~30-44 hours of concentrated work over 4-6 weeks (the sum of the SQL, Amplitude, PCI-DSS, and writing estimates below), plus an ongoing 3-6 month mentoring relationship running in the background.
 
 ---
 
