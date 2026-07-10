@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .venv/
 *.egg-info/
+*.zip
+career_copilot_runs.sqlite3
+dashboard/*.sqlite3
+dashboard/*_export.csv
+dashboard/*_export.xlsx
+outputs/*/

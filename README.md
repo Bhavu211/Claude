@@ -46,6 +46,11 @@ career_copilot/
     registry.py        # AGENT_REGISTRY — machine-readable catalog of all 15 specialist
                          # agents (requires/optional_inputs/depends_on) that Planner and
                          # Supervisor ground their orchestration in, instead of guessing
+    pricing.py          # per-model token pricing -> estimate_cost()
+    run_log.py           # RunLogger — persists every run_pipeline() call to SQLite
+  evals/
+    judge.py             # JudgeAgent — LLM-as-judge scoring for dev-time validation
+    harness.py            # EvalCase/EvalResult/EvalReport + run_eval_suite()
   agents/
     resume_analysis.py       # Agent 1
     jd_intelligence.py       # Agent 2
@@ -89,6 +94,10 @@ outputs/
   planner_sample_output.{json,md}                  # verified sample output, agent 16
   critic_sample_output.{json,md}                   # verified sample output, agent 17 — a real review of agents 1-15
   supervisor_sample_output.{json,md}               # verified sample output, agent 18 — the final go/no-go verdict
+docs/
+  agents/           # docs/agents/<agent_id>.md — purpose, inputs, outputs, limitations, future work, per agent
+  product/          # PRD.md, USER_STORIES.md, ROADMAP.md, RISKS.md, COMPETITIVE_ANALYSIS.md
+  portfolio/        # problem statement, architecture diagram, lessons learned, screenshots
 ```
 
 Every agent:
@@ -127,6 +136,49 @@ This wiring was dry-run-verified (dependency order, inter-agent field
 mapping) by replaying the project's own validated `outputs/*_sample_output.json`
 fixtures through a monkeypatched `LLMClient` — no `ANTHROPIC_API_KEY` needed
 to confirm the plumbing is correct; a live run needs one.
+
+### Persisting every run
+
+Pass a `RunLogger` to persist each run's date, company, JD snippet, resume
+version, ATS score, missing skills, interview question count, and the full
+verdict to SQLite — nothing is logged unless you opt in:
+
+```python
+from career_copilot.core.run_log import RunLogger
+
+logger = RunLogger(db_path="career_copilot_runs.sqlite3")
+result = run_pipeline(pipeline_input, logger=logger)
+for run in logger.query_runs(company_name="Razorpay"):
+    print(run.run_at, run.ats_score, run.quality_gate)
+```
+
+### Evaluating an agent
+
+`career_copilot/evals/` scaffolds dev-time validation: write a suite of
+easy/normal/edge/bad-input/missing-information cases per agent, run them
+through an LLM judge, and get back per-case hallucination detection, scores,
+token counts, and cost — the workflow Phase 1 of the project's validation
+plan calls for, once a live API key is available to populate real numbers:
+
+```python
+from career_copilot.agents.resume_analysis import ResumeAnalysisAgent
+from career_copilot.evals.harness import EvalCase, run_eval_suite
+
+cases = [
+    EvalCase(case_id="easy-1", category="easy", description="Well-formed resume.",
+             input_kwargs={"resume_text": open("samples/sample_resume.txt").read()}),
+    EvalCase(case_id="edge-1", category="edge", description="Minimal, sparse resume.",
+             input_kwargs={"resume_text": "Jane Doe. 1 year experience."}),
+]
+report = run_eval_suite("resume_analysis", ResumeAnalysisAgent(), cases)
+print(report.mean_overall_score, report.hallucination_count, report.total_cost_usd)
+```
+
+## Documentation
+
+- [`docs/agents/`](docs/agents/) — one page per agent: purpose, problem solved, inputs, outputs, workflow, limitations, future improvements.
+- [`docs/product/`](docs/product/) — PRD, user stories, roadmap, risks, competitive analysis.
+- [`docs/portfolio/`](docs/portfolio/) — problem statement, architecture diagram, lessons learned, and screenshots of every agent's HTML report.
 
 ## Running a single agent
 

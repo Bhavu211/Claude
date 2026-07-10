@@ -16,11 +16,16 @@ correctly.
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional
+from datetime import datetime, timezone
+from typing import TYPE_CHECKING, Callable, Dict, List, Optional
 
 from pydantic import BaseModel, Field
 
 from career_copilot.core.registry import AGENT_REGISTRY, AGENT_BY_ID
+
+if TYPE_CHECKING:
+    from career_copilot.core.run_log import RunLogger
+    from career_copilot.core.llm_client import LLMClient
 from career_copilot.agents.planner import PlannerAgent, PlannerInput, PlannerOutput
 from career_copilot.agents.critic import CriticAgent, CriticInput, CriticOutput
 from career_copilot.agents.supervisor import SupervisorAgent, SupervisorInput, SupervisorOutput
@@ -66,6 +71,27 @@ class PipelineResult(BaseModel):
     agent_outputs: Dict[str, dict] = Field(..., description="agent_id -> that agent's raw output dict")
     critic_output: Optional[CriticOutput] = None
     supervisor_output: Optional[SupervisorOutput] = None
+
+
+class ExecutionEvent(BaseModel):
+    """One step of a run_pipeline() call, emitted to an optional `on_event`
+    callback so a caller (e.g. a live dashboard) can render progress without
+    duplicating any orchestration logic."""
+
+    event_type: str = Field(
+        ..., description="'plan_ready' | 'agent_started' | 'agent_completed' | 'agent_failed' | "
+        "'critic_started' | 'critic_completed' | 'supervisor_started' | 'supervisor_completed' | 'pipeline_completed'"
+    )
+    agent_id: Optional[str] = None
+    message: str = ""
+    timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    run_order: Optional[List[str]] = Field(default=None, description="Set only on 'plan_ready'")
+    error: Optional[str] = Field(default=None, description="Set only on 'agent_failed'")
+
+
+def _emit(on_event: Optional[Callable[[ExecutionEvent], None]], **kwargs) -> None:
+    if on_event is not None:
+        on_event(ExecutionEvent(**kwargs))
 
 
 # ---------------------------------------------------------------------------
@@ -277,8 +303,36 @@ def _build_input(agent_id: str, data: PipelineInput, outputs: Dict[str, BaseMode
 # ---------------------------------------------------------------------------
 
 
-def run_pipeline(data: PipelineInput) -> PipelineResult:
-    planner = PlannerAgent()
+def run_pipeline(
+    data: PipelineInput,
+    logger: Optional["RunLogger"] = None,
+    on_event: Optional[Callable[[ExecutionEvent], None]] = None,
+    client_factory: Optional[Callable[[], "LLMClient"]] = None,
+) -> PipelineResult:
+    """Run the full 18-agent system.
+
+    - `logger`: pass a `RunLogger` (career_copilot.core.run_log) to persist this
+      run to SQLite — opt-in, never affects orchestration.
+    - `on_event`: called with an `ExecutionEvent` at each step (plan ready, each
+      agent started/completed/failed, critic/supervisor started/completed) — lets
+      a caller (e.g. a live dashboard) render progress without reimplementing
+      any orchestration logic.
+    - `client_factory`: called with no args to build the `LLMClient` each agent
+      uses. Defaults to each agent's own default (a real `LLMClient`). Pass
+      `lambda: DemoLLMClient()` (career_copilot.core.demo_client) to replay this
+      project's verified sample fixtures instead of calling the live API.
+
+    A single agent failing does not abort the run — it's recorded as
+    'agent_failed' and skipped; agents that hard-depend on its output will
+    then also fail naturally when they can't find what they need, and are
+    themselves recorded rather than raising out of this function. Planner,
+    Critic, and Supervisor are still run at the end against whatever
+    actually completed.
+    """
+    def _agent(agent_cls):
+        return agent_cls(client=client_factory()) if client_factory else agent_cls()
+
+    planner = _agent(PlannerAgent)
     plan = planner.run(PlannerInput(
         user_goal=data.user_goal,
         has_resume=bool(data.resume_text),
@@ -288,16 +342,25 @@ def run_pipeline(data: PipelineInput) -> PipelineResult:
 
     run_ids = [item.agent_id for item in plan.execution_plan if item.action == "run"]
     order = _topological_order(run_ids)
+    _emit(on_event, event_type="plan_ready", message=f"{len(order)} agent(s) planned to run", run_order=order)
 
     outputs: Dict[str, BaseModel] = {}
+    failed_ids: List[str] = []
     for agent_id in order:
         agent_cls, _ = _AGENT_CLASSES[agent_id]
-        agent_input = _build_input(agent_id, data, outputs)
-        outputs[agent_id] = agent_cls().run(agent_input)
+        _emit(on_event, event_type="agent_started", agent_id=agent_id, message=f"Running {agent_cls.__name__}")
+        try:
+            agent_input = _build_input(agent_id, data, outputs)
+            outputs[agent_id] = _agent(agent_cls).run(agent_input)
+            _emit(on_event, event_type="agent_completed", agent_id=agent_id, message="Completed")
+        except Exception as exc:  # noqa: BLE001 — a failing agent must not abort the whole run
+            failed_ids.append(agent_id)
+            _emit(on_event, event_type="agent_failed", agent_id=agent_id, message="Failed", error=str(exc))
 
     critic_output = None
     if any(aid != "final_report" for aid in outputs):
-        critic = CriticAgent()
+        _emit(on_event, event_type="critic_started", message="Reviewing all completed agent outputs")
+        critic = _agent(CriticAgent)
         critic_kwargs = {
             "resume_text": data.resume_text, "jd_text": data.jd_text, "company_name": data.company_name,
         }
@@ -306,9 +369,10 @@ def run_pipeline(data: PipelineInput) -> PipelineResult:
                 continue
             critic_kwargs[f"{aid}_output"] = out.model_dump_json()
         critic_output = critic.run(CriticInput(**critic_kwargs))
+        _emit(on_event, event_type="critic_completed", message="Review complete")
 
-    supervisor_output = None
-    supervisor = SupervisorAgent()
+    _emit(on_event, event_type="supervisor_started", message="Rendering final verdict")
+    supervisor = _agent(SupervisorAgent)
     supervisor_output = supervisor.run(SupervisorInput(
         candidate_name=data.candidate_name,
         target_role=data.target_role,
@@ -316,14 +380,21 @@ def run_pipeline(data: PipelineInput) -> PipelineResult:
         user_goal=data.user_goal,
         planner_output=plan.model_dump_json(),
         completed_agent_ids=list(outputs.keys()),
-        failed_agent_ids=[],
+        failed_agent_ids=failed_ids,
         critic_output=critic_output.model_dump_json() if critic_output else None,
         final_report_output=outputs["final_report"].model_dump_json() if "final_report" in outputs else None,
     ))
+    _emit(on_event, event_type="supervisor_completed", message="Verdict ready")
 
-    return PipelineResult(
+    result = PipelineResult(
         planner_output=plan,
         agent_outputs={aid: out.model_dump() for aid, out in outputs.items()},
         critic_output=critic_output,
         supervisor_output=supervisor_output,
     )
+
+    if logger is not None:
+        logger.log_run(pipeline_input=data, result=result)
+
+    _emit(on_event, event_type="pipeline_completed", message="Pipeline finished")
+    return result
