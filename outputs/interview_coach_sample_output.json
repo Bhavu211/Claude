@@ -1,0 +1,145 @@
+{
+  "hr_questions": [
+    {
+      "question": "Why are you considering leaving Cashfree after building such a strong track record there?",
+      "why_asked": "Tests whether the move is toward something (growth, mission fit) rather than escaping a bad situation.",
+      "prep_notes": "Frame around growth into broader fraud/risk ownership at a company entering IPO-prep, not dissatisfaction with Cashfree.",
+      "star_answer": null
+    },
+    {
+      "question": "This role is described as fast-changing and ambiguous — how do you stay effective when priorities shift week to week?",
+      "why_asked": "Directly lifted from the JD's own language ('priorities shift weekly'); screens for culture fit.",
+      "prep_notes": "Use the KYC flow redesign as an example of driving a project from ambiguity to a shipped, measured outcome.",
+      "star_answer": null
+    },
+    {
+      "question": "What are your salary expectations, and what's your notice period?",
+      "why_asked": "Standard logistics; screens for budget and timeline alignment early.",
+      "prep_notes": "Research market range for Senior PM fraud/risk roles in Bengaluru fintech beforehand; be ready to discuss notice period negotiability.",
+      "star_answer": null
+    },
+    {
+      "question": "How do you handle working with compliance and legal teams who may slow down product velocity?",
+      "why_asked": "JD requires heavy compliance/legal collaboration; screens for whether the candidate resents or embraces that friction.",
+      "prep_notes": "Use the RBI regulatory collaboration at Cashfree as the anchor — frame compliance partnership as core to the job, not an obstacle.",
+      "star_answer": null
+    }
+  ],
+  "behavioral_questions": [
+    {
+      "question": "Tell me about a time you led a cross-functional team through a major product change.",
+      "why_asked": "Tests cross-functional leadership under a concrete deliverable, not just individual contribution.",
+      "prep_notes": null,
+      "star_answer": {
+        "situation": "At Cashfree Payments, merchant onboarding relied on a slow, multi-day KYC process.",
+        "task": "Redesign the KYC flow to reduce onboarding friction while staying compliant with RBI requirements.",
+        "action": "Led a cross-functional team of 6 across engineering, design, and data to redesign and ship a revamped KYC flow.",
+        "result": "Reduced merchant onboarding time from 3 days to 18 hours.",
+        "source_evidence": "'Led a cross-functional team of 6 (engineering, design, data) to launch a revamped KYC flow, reducing merchant onboarding time from 3 days to 18 hours.'"
+      }
+    },
+    {
+      "question": "Describe a time you used data to change the direction of a product decision.",
+      "why_asked": "Tests data-driven decision-making specifically in the fraud/risk domain this role owns.",
+      "prep_notes": null,
+      "star_answer": {
+        "situation": "Cashfree's chargeback rate on payment transactions represented a growing risk cost.",
+        "task": "Reduce fraud losses without materially increasing friction for legitimate merchants.",
+        "action": "Partnered directly with the data science team to introduce a fraud scoring model into the product.",
+        "result": "Cut chargeback rate by 31%.",
+        "source_evidence": "'Partnered with data science to introduce a fraud scoring model, cutting chargeback rate by 31%.'"
+      }
+    },
+    {
+      "question": "Tell me about a time you had to influence stakeholders you didn't directly manage.",
+      "why_asked": "Tests cross-functional influence without authority — relevant given heavy compliance/legal collaboration in this role.",
+      "prep_notes": null,
+      "star_answer": {
+        "situation": "Delivering the KYC flow redesign required working with compliance and legal on RBI regulatory requirements throughout the project.",
+        "task": "Ensure the new onboarding flow met regulatory requirements without stalling the delivery timeline.",
+        "action": "Worked closely with compliance and legal teams on RBI regulatory requirements as an ongoing part of the redesign effort.",
+        "result": "The redesign shipped, reducing onboarding time from 3 days to 18 hours while remaining compliant.",
+        "source_evidence": "'Worked closely with compliance and legal teams on RBI regulatory requirements' plus the KYC flow redesign bullet."
+      }
+    },
+    {
+      "question": "Tell me about a time you mentored or developed another PM.",
+      "why_asked": "Directly probes the JD's Must-have requirement for PM mentoring/management experience.",
+      "prep_notes": "No resume-backed example exists for this — do not fabricate one in the interview either. If real (even informal) mentoring experience exists outside what's on the resume, prepare that specific story now. If none exists, honestly reframe toward adjacent evidence (e.g. cross-functional leadership of the 6-person KYC team) while acknowledging formal mentoring is a genuine growth area — this is the single highest-risk unprepared moment in this interview loop.",
+      "star_answer": null
+    }
+  ],
+  "technical_questions": [
+    {
+      "question": "How would you write a SQL query to identify merchants with an unusually high false-positive rate on fraud flags?",
+      "why_asked": "The JD calls SQL a Must-have; this is a live, PM-level SQL fluency check, not a coding interview.",
+      "prep_notes": "Practice this exact type of query beforehand — be ready to talk through your query logic out loud, not just state the answer.",
+      "star_answer": null
+    },
+    {
+      "question": "Explain how a fraud scoring model like the one you shipped actually works, at a level a non-technical exec could follow.",
+      "why_asked": "Tests whether the candidate can go one layer deeper than 'we partnered with data science' — probes real technical fluency vs. surface-level involvement.",
+      "prep_notes": "Prepare a plain-language explanation distinguishing what data science owned (the model) from what you owned (which merchants to flag, what threshold to use, how false positives get handled).",
+      "star_answer": null
+    },
+    {
+      "question": "What would you do if the fraud model's false-positive rate spiked right after a new feature launch?",
+      "why_asked": "Ties directly to the JD's stated KPI (false positive rate) and tests incident-response product judgment.",
+      "prep_notes": "Use a structured framing: detect, diagnose, mitigate, prevent recurrence — grounded in real product judgment even without a directly matching resume story.",
+      "star_answer": null
+    }
+  ],
+  "product_questions": [
+    {
+      "question": "How would you design a risk-scoring system for a brand-new merchant with no transaction history?",
+      "why_asked": "Core product-sense question for this exact role — a cold-start risk problem.",
+      "prep_notes": "Structure your answer: what signals exist pre-transaction (KYC data, business category, geography), how you'd calibrate conservatively, how you'd adjust as real data accumulates.",
+      "star_answer": null
+    },
+    {
+      "question": "If chargeback rate and merchant onboarding speed are in tension, how do you decide where to draw the line?",
+      "why_asked": "Directly probes the JD's stated tension: fraud loss rate down without materially increasing false positives.",
+      "prep_notes": "Reference your own Cashfree experience balancing exactly this trade-off as the anchor for your framework.",
+      "star_answer": null
+    },
+    {
+      "question": "How would you prioritize the risk/fraud roadmap for the next two quarters with limited engineering capacity?",
+      "why_asked": "Tests roadmap prioritization reasoning specific to the risk/fraud domain.",
+      "prep_notes": "Use an explicit framework (e.g. impact vs. effort, or expected-loss-reduction per engineering-week) rather than a gut-feel answer.",
+      "star_answer": null
+    }
+  ],
+  "company_specific_questions": [
+    {
+      "question": "Razorpay recently launched Agent Studio, letting AI agents transact autonomously on behalf of businesses. How does that change what 'fraud' even means for this role?",
+      "why_asked": "Tests whether the candidate has done real research and can reason about a genuinely new problem (agentic fraud surface) rather than just reciting resume experience.",
+      "prep_notes": "No resume-backed answer exists for this forward-looking question — reason out loud about how autonomous-agent transactions might need new signals (e.g. agent identity/authorization checks) beyond traditional human-transaction fraud signals.",
+      "star_answer": null
+    },
+    {
+      "question": "Razorpay is preparing for an IPO. How would that change how you approach risk and compliance decisions compared to a private company?",
+      "why_asked": "Grounded in real, current company context; tests governance-maturity awareness.",
+      "prep_notes": "Emphasize auditability, documentation discipline, and predictable metrics reporting — traits that matter more under IPO-readiness scrutiny.",
+      "star_answer": null
+    },
+    {
+      "question": "Razorpay's stated values include 'challenging the status quo' and 'drive with autonomy.' Tell me about a time you challenged an existing process.",
+      "why_asked": "Directly lifted from the company's own stated hiring values — a values-fit interview question.",
+      "prep_notes": "The KYC flow redesign is a strong anchor — it replaced an existing multi-day process outright, not just incremental tuning.",
+      "star_answer": null
+    }
+  ],
+  "preparation_priorities": [
+    "Prepare a real or honestly-reframed answer for the mentoring/leadership behavioral question — the single highest-risk unprepared moment given the resume's one real gap.",
+    "Practice explaining the fraud scoring model one layer deeper than the resume bullet — be ready to distinguish your product ownership from data science's model ownership.",
+    "Prepare a specific SQL example out loud, even though none is on the resume — this is the JD's most concretely-stated Must-have skill.",
+    "Have a point of view ready on Agent Studio / agentic payments and what it means for fraud risk — shows research depth beyond the JD."
+  ],
+  "human_readable_summary": "## Interview Prep: Senior PM — Risk & Fraud @ Razorpay\n\n**17 questions across 5 categories**, all grounded in the actual resume, JD, and real Razorpay context (IPO prep, Agent Studio launch, stated hiring values).\n\n**The one gap this prep can't paper over:** the mentoring behavioral question has no resume-backed STAR answer, and none was invented. This is flagged as the #1 prep priority — either surface a real (even informal) example now, or prepare to address the gap honestly rather than be caught improvising in the room.\n\n**Where this candidate is well-prepared:** the KYC flow redesign and fraud scoring model bullets anchor strong, fully-evidenced STAR answers for 3 of 4 behavioral questions, and map directly onto the technical and product questions too — the same two achievements do a lot of work across this entire prep.\n",
+  "prep_confidence": "high",
+  "limitations": [
+    "Company-specific questions rely on the company context provided (Razorpay's IPO prep and Agent Studio launch); without that context this agent would fall back to JD-text-only grounding and be noticeably less specific.",
+    "The mentoring/leadership behavioral question has no resume-backed STAR answer — this agent will not fabricate one; the candidate needs a real answer prepared separately.",
+    "This agent cannot predict this specific interview panel's actual question set — these are realistic, well-grounded possibilities, not a guarantee of what will be asked."
+  ]
+}

@@ -23,7 +23,7 @@ never fabricate.** Agents are built and verified one at a time.
 | 8 | Portfolio Recommendation Agent | ✅ Built, sample-verified |
 | 9 | Learning & Certification Agent | ✅ Built, sample-verified |
 | 10 | Recruiter Simulation Agent | ✅ Built, sample-verified |
-| 11 | Interview Coach Agent | ⏳ Not started |
+| 11 | Interview Coach Agent | ✅ Built, sample-verified |
 | 12 | LinkedIn Optimization Agent | ⏳ Not started |
 | 13 | Application Assets Agent | ⏳ Not started |
 | 14 | Career Strategy Agent | ⏳ Not started |
@@ -52,10 +52,11 @@ career_copilot/
     portfolio_recommendation.py  # Agent 8 — takes structured gaps, not a raw document
     learning_certification.py    # Agent 9 — two-phase like Company Intelligence
     recruiter_simulation.py      # Agent 10
+    interview_coach.py           # Agent 11
   cli.py              # run a single agent from the command line (docs-only agents)
 samples/
-  sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10
-  sample_jd.txt        # fixture used to verify agents 2, 4, 5, 6, 7, 10 (paired with sample_resume.txt's PM/fintech profile)
+  sample_resume.txt   # fixture used to verify agents 1, 4, 5, 6, 7, 10, 11
+  sample_jd.txt        # fixture used to verify agents 2, 4, 5, 6, 7, 10, 11 (paired with sample_resume.txt's PM/fintech profile)
 outputs/
   resume_analysis_sample_output.{json,md}     # verified sample output, agent 1
   jd_intelligence_sample_output.{json,md}      # verified sample output, agent 2
@@ -67,6 +68,7 @@ outputs/
   portfolio_recommendation_sample_output.{json,md} # verified sample output, agent 8
   learning_certification_sample_output.{json,md}   # verified sample output, agent 9
   recruiter_simulation_sample_output.{json,md}     # verified sample output, agent 10
+  interview_coach_sample_output.{json,md}          # verified sample output, agent 11
 ```
 
 Every agent:
