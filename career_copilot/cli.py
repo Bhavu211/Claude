@@ -27,6 +27,7 @@ from career_copilot.agents.gap_analysis import GapAnalysisAgent, GapAnalysisInpu
 from career_copilot.agents.skill_evidence import SkillEvidenceAgent, SkillEvidenceInput
 from career_copilot.agents.recruiter_simulation import RecruiterSimulationAgent, RecruiterSimulationInput
 from career_copilot.agents.interview_coach import InterviewCoachAgent, InterviewCoachInput
+from career_copilot.agents.linkedin_optimization import LinkedInOptimizationAgent, LinkedInOptimizationInput
 
 # agent_key -> (agent_cls, input_cls, field_names)
 # field_names is an ordered tuple of input fields, one per file argument.
@@ -44,6 +45,7 @@ AGENTS = {
     "skill_evidence": (SkillEvidenceAgent, SkillEvidenceInput, ("resume_text", "jd_text")),
     "recruiter_simulation": (RecruiterSimulationAgent, RecruiterSimulationInput, ("resume_text", "jd_text")),
     "interview_coach": (InterviewCoachAgent, InterviewCoachInput, ("resume_text", "jd_text")),
+    "linkedin_optimization": (LinkedInOptimizationAgent, LinkedInOptimizationInput, ("resume_text", "jd_text")),
     # portfolio_recommendation and learning_certification are intentionally
     # absent: their required input (gaps_to_close, a list) isn't a document
     # to read from a file.
