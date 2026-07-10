@@ -13,9 +13,11 @@ import json
 import sys
 
 from career_copilot.agents.resume_analysis import ResumeAnalysisAgent, ResumeAnalysisInput
+from career_copilot.agents.jd_intelligence import JDIntelligenceAgent, JDIntelligenceInput
 
 AGENTS = {
     "resume_analysis": (ResumeAnalysisAgent, ResumeAnalysisInput, "resume_text"),
+    "jd_intelligence": (JDIntelligenceAgent, JDIntelligenceInput, "jd_text"),
 }
 
 

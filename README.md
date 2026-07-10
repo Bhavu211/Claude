@@ -14,7 +14,7 @@ never fabricate.** Agents are built and verified one at a time.
 | # | Agent | Status |
 |---|-------|--------|
 | 1 | Resume Analysis Agent | ✅ Built, sample-verified |
-| 2 | JD Intelligence Agent | ⏳ Not started |
+| 2 | JD Intelligence Agent | ✅ Built, sample-verified |
 | 3 | Company Intelligence Agent | ⏳ Not started |
 | 4 | ATS Optimization Agent | ⏳ Not started |
 | 5 | Resume Rewrite Agent | ⏳ Not started |
@@ -42,11 +42,14 @@ career_copilot/
     base_agent.py     # BaseAgent[TIn, TOut]: validated input -> validated output
   agents/
     resume_analysis.py   # Agent 1
+    jd_intelligence.py   # Agent 2
   cli.py              # run a single agent from the command line
 samples/
-  sample_resume.txt   # fixture used to verify each agent
+  sample_resume.txt   # fixture used to verify agent 1
+  sample_jd.txt        # fixture used to verify agent 2 (paired with sample_resume.txt's PM/fintech profile)
 outputs/
-  resume_analysis_sample_output.{json,md}   # verified sample output
+  resume_analysis_sample_output.{json,md}   # verified sample output, agent 1
+  jd_intelligence_sample_output.{json,md}    # verified sample output, agent 2
 ```
 
 Every agent:
